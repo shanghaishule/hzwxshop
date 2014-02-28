@@ -44,6 +44,11 @@ a:hover{ text-decoration: underline; }
 .think-form .login .verify { height: 24px; width: 150px; line-height: 24px; padding: 3px; border: 1px solid #ccc; }
 .login-other{ float: left; padding-left: 60px; margin-left: -1px; display: inline; border-left: 1px solid #ddd; }
 .login-other .head strong{ font-weight: normal; color: #999; }
+
+table th{
+	color:white;
+	margin-left:5px;
+}
 </style>
 <div class="abody">
         <div class="">
@@ -61,21 +66,21 @@ a:hover{ text-decoration: underline; }
                         <td>
                             <input class="text" required="" value="请输入用户名" onclick="if(this.value=='请输入用户名'){this.value=''}" onblur="if(this.value==''){this.value='请输入用户名'}" type="text" name="username">
                         </td>
-                    
-                        <th>密　码</th>
+                        
+                        <th>邮　　箱</th>
                         <td>
-                            <input class="text" type="password" name="password">
+                            <input class="text" type="text" name="email" value="请输入电子邮箱" onclick="if(this.value=='请输入电子邮箱'){this.value=''}" onblur="if(this.value==''){this.value='请输入电子邮箱'}">
                         </td>
                     </tr>
 					 <tr>
+					 	<th>密　码</th>
+                        <td>
+                            <input class="text" type="password" name="password">
+                        </td>
+                        
                         <th>重复密码</th>
                         <td>
                             <input class="text" type="password" name="repassword">
-                        </td>
-                    
-                        <th>邮　箱</th>
-                        <td>
-                            <input class="text" type="text" name="email" value="请输入电子邮箱" onclick="if(this.value=='请输入电子邮箱'){this.value=''}" onblur="if(this.value==''){this.value='请输入电子邮箱'}">
                         </td>
                     </tr>
                     <tr>

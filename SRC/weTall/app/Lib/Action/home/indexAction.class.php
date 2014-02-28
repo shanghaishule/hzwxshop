@@ -97,7 +97,7 @@ class indexAction extends frontendAction {
     	if(IS_POST){
     	 //搜索关键字时候	
     		$keyword=$this->_post("txtkeyword","trim");
-    		//搜索的方式本店，微指购，店铺
+    		//搜索的方式本店，微蔻，店铺
     		$method=$this->_post("method");
     		
     		$tokenTall = $this->getTokenTall();
@@ -115,11 +115,11 @@ class indexAction extends frontendAction {
                 $_SESSION['keyword']=$keyword;
                 $_SESSION['token']=$token;
                 $_SESSION['method']=$method;
-    		}else if($method=="weFig"){//微指购
+    		}else if($method=="weFig"){//微蔻
     			$this->nextPage($method, $keyword,$sortBy);
                 $_SESSION['keyword']=$keyword;
                 $_SESSION['method']=$method;
-    		}else{//店铺内搜索微指购
+    		}else{//店铺内搜索微蔻
     			$this->nextPage($method, $keyword,$sortBy);
     			$_SESSION['keyword']=$keyword;
     			$_SESSION['method']=$method;

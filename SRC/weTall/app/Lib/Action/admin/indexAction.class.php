@@ -30,9 +30,9 @@ class indexAction extends backendAction {
         	
         	$data["name"]=$wxUser["wxname"];
         	$data["weName"]=$wxUser["wxname"];
-        	$data["title"]="微指购店铺";
-        	$data["descr"]="微指购店铺";
-        	$data["keywords"]="微指购店铺";
+        	$data["title"]="微蔻店铺";
+        	$data["descr"]="微蔻店铺";
+        	$data["keywords"]="微蔻店铺";
         	$weshop->add($data);
         }
         
@@ -269,12 +269,13 @@ class indexAction extends backendAction {
             if ($r = $this->_mod->where(array('often'=>2))->select()) {
                 $left_menu[2]['sub'] = $r;
             }
+            /*
             $left_menu[3] = array('id'=>3,'name'=>'账务管理');
             $left_menu[3]['sub'] = array();
             if ($r = $this->_mod->where(array('often'=>3))->select()) {
             	$left_menu[3]['sub'] = $r;
             }
-            
+            */
             
             $left_menu[99] = array('id'=>99,'name'=>'店铺管理');
             $left_menu[99]['sub'] = array();

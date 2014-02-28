@@ -1,4 +1,5 @@
 <?php
+$parent_url = rtrim(__ROOT__,'weTall/');
 return array(
     'APP_GROUP_LIST' => 'home,admin', //分组
     'DEFAULT_GROUP' => 'home', //默认分组
@@ -12,4 +13,6 @@ return array(
     'LOAD_EXT_CONFIG' => 'url,db', //扩展配置
     
     'SHOW_PAGE_TRACE' => false,
+		
+	'PARENT_URL'=>$parent_url,
 );
