@@ -1,0 +1,16 @@
+打开mysql：运行   select now();  看看是否要调整时间
+
+数据库名：hzwxshop
+编码格式：utf8 -- UTF-8 Unicode
+排序规则：utf8_general_ci
+
+用户名：bestchoi_shule
+密码：shule_123
+
+=======================================
+服务器安装好之后，调整PHP时区为上海。
+打开php.ini文件，找到 date.timezone 那一行，去掉前面的“;” ，修改为：date.timezone = Asia/Shanghai
+修改php.ini文件后重启apache。
+通过phpinfo()验证。
+=======================================
+zend studio 打开工程后，查看字符集是否为utf8
