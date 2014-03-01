@@ -61,7 +61,7 @@
             <h1><a href="/" title="多用户微信营销服务平台"><img src="tpl/Home/lanrain/common/images/logo-lanrain.png" /></a></h1>
             <div class="navr">
         <ul id="topMenu">         
-            <li <if condition="(ACTION_NAME eq 'index') and (GROUP_NAME eq 'Home')">class="menuon"</if> ><a href="/" >首页</a></li>
+            <li <if condition="(ACTION_NAME eq 'index') and (GROUP_NAME eq 'Home')">class="menuon"</if> ><a href="{lanrain::U('Home/Index/index')}" >首页</a></li>
                 <li <eq name="ACTION_NAME" value="fc">class="menuon"</eq>><a href="{lanrain::U('Home/Index/fc')}">功能介绍</a></li>
                 <li <eq name="ACTION_NAME" value="about">class="menuon"</eq>><a href="{lanrain::U('Home/Index/about')}">关于我们</a></li>
                 <li <eq name="ACTION_NAME" value="price">class="menuon"</eq>><a href="{lanrain::U('Home/Index/price')}">资费说明</a></li>

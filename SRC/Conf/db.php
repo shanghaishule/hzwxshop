@@ -9,9 +9,9 @@ return array(
 	
 'DB_NAME'=>'hzwxshop',
 	
-'DB_USER'=>'bestchoi_shule',
+'DB_USER'=>'hzwxshop',
 	
-'DB_PWD'=>'shule_123',
+'DB_PWD'=>'hzwxshop',
 	
 'DB_PREFIX'=>'tp_',
 
