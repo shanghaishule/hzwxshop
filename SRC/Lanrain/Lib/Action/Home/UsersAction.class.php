@@ -150,7 +150,7 @@ class UsersAction extends BaseAction{
 		
 			session(C('USER_AUTH_KEY'),null);
 		
-			$this->error('已经登出！',U('Home/index/index'));
+			$this->error('已经登出！',U('Home/Index/index'));
 
 	}
 	

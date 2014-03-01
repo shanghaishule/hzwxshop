@@ -29,8 +29,8 @@ var searchid = 5;
 			<a href="{lanrain::U('Index/login')}">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 			<a href="{lanrain::U('Index/reg')}">注册</a>
 			<else/>
-			你好,<a href="/#" hidefocus="true"  ><span style="color:red">{lanrain:$Think.session.uname}</span></a>（uid:{lanrain:$Think.session.uid}）
-			<a href="/#" onClick="Javascript:window.open('{lanrain::U('System/Admin/logout')}','_blank')" >退出</a>
+			你好,<a href="javascript:void(0);" hidefocus="true"  ><span style="color:red">{lanrain:$Think.session.uname}</span></a>（uid:{lanrain:$Think.session.uid}）
+			<a href="javascript:void(0);" onClick="Javascript:window.open('{lanrain::U('Home/Users/logout')}','_blank')" >退出</a>
 	</if>	
 	</div>
 	

@@ -227,7 +227,7 @@ class indexAction extends backendAction {
             ));
             M('admin')->where(array('id'=>$admin['id']))->save(array('last_time'=>time(), 'last_ip'=>get_client_ip()));
             $tokenTall = $_SESSION["tokenTall"];
-            header("location: /weTall/index.php?g=admin&m=index&a=index&tokenTall=".$tokenTall);
+            header("location: ".__ROOT__."/index.php?g=admin&m=index&a=index&tokenTall=".$tokenTall);
         //    $this->success(L('login_success'), U('index/index'));
        // } else {
        //     $this->display();
