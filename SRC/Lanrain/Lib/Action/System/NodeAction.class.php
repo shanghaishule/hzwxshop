@@ -12,12 +12,7 @@ class NodeAction extends BackAction{
 		$Node = D('Node')->getAllNode();
 		$array = array();
 		// 构建生成树中所需的数据
-		foreach($Node as $k => $r) {
-			//不显示商城管理
-			if ($r['name']=='Tall') {
-				continue;
-			}
-			
+		foreach($Node as $k => $r) {			
 			$r['id']      = $r['id'];
 			$r['title']   = $r['title'];
 			$r['name']    = $r['name'];

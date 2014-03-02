@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50611
 File Encoding         : 65001
 
-Date: 2014-02-28 17:10:52
+Date: 2014-03-01 17:16:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -571,7 +571,7 @@ CREATE TABLE `tp_admin` (
 -- ----------------------------
 -- Records of tp_admin
 -- ----------------------------
-INSERT INTO `tp_admin` VALUES ('1', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1', '0.0.0.0', '1393570927', '123456@qq.com', '1');
+INSERT INTO `tp_admin` VALUES ('1', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1', '0.0.0.0', '1393659099', '123456@qq.com', '1');
 
 -- ----------------------------
 -- Table structure for `tp_admin_auth`
@@ -6613,7 +6613,7 @@ INSERT INTO `tp_node` VALUES ('78', 'upsave', '更新数据库', '1', '0', '73',
 INSERT INTO `tp_node` VALUES ('79', 'del', '删除友情链接', '1', '0', '73', '3', null, '0', '0');
 INSERT INTO `tp_node` VALUES ('81', 'Token', '公众号管理', '1', '0', '80', '2', null, '0', '2');
 INSERT INTO `tp_node` VALUES ('83', 'alipay', '在线支付接口', '1', '0', '6', '3', null, '0', '2');
-INSERT INTO `tp_node` VALUES ('84', 'Tall', '商城管理', '1', '0', '1', '0', null, '0', '1');
+INSERT INTO `tp_node` VALUES ('84', 'Tall', '商城管理', '1', '0', '1', '0', null, '0', '0');
 INSERT INTO `tp_node` VALUES ('87', 'Brand', '品牌管理', '1', '品牌管理', '84', '2', null, '0', '2');
 INSERT INTO `tp_node` VALUES ('86', 'Tall', '商品分类', '1', '0', '84', '2', null, '0', '2');
 INSERT INTO `tp_node` VALUES ('88', 'Info_Notice', '信息发布管理', '1', '公告发布管理', '84', '2', null, '0', '2');
@@ -8882,14 +8882,14 @@ INSERT INTO `tp_token_open` VALUES ('83', '1', 'exvhyb1389448578', 'tianqi,qiush
 INSERT INTO `tp_token_open` VALUES ('84', '1', 'bedrkd1389506077', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('85', '1', 'bwthgd1389506594', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('86', '1', 'jnbqpn1389536099', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
-INSERT INTO `tp_token_open` VALUES ('87', '1', 'gmbqsf1389536537', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,host_kev,diyform,dx,shop,etuan,diymen_set,WeiXitie,Yuyue,fenxiang,youhuiquan,Panorama');
+INSERT INTO `tp_token_open` VALUES ('87', '1', 'gmbqsf1389536537', 'tianqi,peiliao,liaotian,fujin,choujiang,userinfo,api,caipiao,gua2,shouye,adma,huiyuanka,shenhe,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('88', '1', 'uroagv1389537002', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('89', '1', 'wodxsp1389537386', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('90', '13', 'tkufwy1389599026', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,host_kev,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('91', '1', 'ncptjo1389693014', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('92', '14', 'lelgwg1389754273', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('93', '15', 'xcdvgb1389755323', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
-INSERT INTO `tp_token_open` VALUES ('94', '1', 'eolvhz1392992775', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
+INSERT INTO `tp_token_open` VALUES ('94', '1', 'eolvhz1392992775', 'tianqi,peiliao,liaotian,fujin,choujiang,userinfo,api,caipiao,gua2,shouye,adma,huiyuanka,shenhe,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('95', '17', 'tmpjis1393039145', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('96', '18', 'xaybdf1393044422', 'tianqi,qiushi,jishuan,kuaidi,xiaohua,peiliao,liaotian,shouji,fujin,fanyi,suanming,shouye,adma,geci');
 INSERT INTO `tp_token_open` VALUES ('97', '19', 'rpniee1393046049', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,adma,huiyuanka,shenhe,geci,host_kev,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan,shouye,');
@@ -9132,7 +9132,7 @@ CREATE TABLE `tp_user` (
 -- ----------------------------
 -- Records of tp_user
 -- ----------------------------
-INSERT INTO `tp_user` VALUES ('1', 'admin', 'b80c4de605487af2bf83a7cbd1d68025', '5', '1', '', '1393472645', '114.92.125.56', '', '');
+INSERT INTO `tp_user` VALUES ('1', 'admin', 'b80c4de605487af2bf83a7cbd1d68025', '5', '1', '', '1393657180', '0.0.0.0', '', '');
 INSERT INTO `tp_user` VALUES ('2', 'test', '098f6bcd4621d373cade4e832627b4f6', '9', '1', '测试账号', '1387947699', '127.0.0.1', '新建用户', '');
 INSERT INTO `tp_user` VALUES ('3', 'zzz', '453e41d218e071ccfb2d1c99ce23906a', '0', '0', null, '1392799780', null, null, 'zzz@111.com');
 INSERT INTO `tp_user` VALUES ('4', 'zzzz', '453e41d218e071ccfb2d1c99ce23906a', '0', '0', null, '1393377222', null, null, 'zzzz@111.com');
@@ -9289,7 +9289,7 @@ CREATE TABLE `tp_users` (
 -- ----------------------------
 -- Records of tp_users
 -- ----------------------------
-INSERT INTO `tp_users` VALUES ('1', '4', 'shule', 'e10adc3949ba59abbe56e057f20f883e', 'zhouxingxing_ok_12@163.com', '1387626525', '1393473411', '1', '112.64.61.145', '114.92.125.56', '18', '0', '0', '0', '21', '100', '1422028800', '55', '2');
+INSERT INTO `tp_users` VALUES ('1', '5', 'shule', 'e10adc3949ba59abbe56e057f20f883e', 'zhouxingxing_ok_12@163.com', '1387626525', '1393665372', '1', '112.64.61.145', '::1', '0', '0', '0', '0', '21', '100', '1422028800', '0', '3');
 INSERT INTO `tp_users` VALUES ('2', '4', 'Vxiao_shou', 'b80c4de605487af2bf83a7cbd1d68025', '2198738059@qq.com', '1387684025', '1389607299', '1', '114.92.104.26', '114.92.118.249', '13', '0', '0', '0', '1', '0', '1419436800', '10', '1');
 INSERT INTO `tp_users` VALUES ('3', '4', 'niula', '4c741d1974426b420e1c566a55853176', '181728897@qq.com', '1387731522', '1389613924', '1', '112.65.211.251', '114.92.118.249', '28', '3', '0', '0', '3', '0', '1427299200', '56', '1');
 INSERT INTO `tp_users` VALUES ('4', '1', '12300', 'a1b7f6c7d739aa48d5dfaacf54df3994', '24222879@qq.com', '1387947769', '1387947769', '1', '111.113.225.239', '111.113.225.239', '0', '0', '0', '0', '1', '0', '1388206969', '0', '0');
@@ -9594,41 +9594,6 @@ CREATE TABLE `tp_voiceresponse` (
 -- Records of tp_voiceresponse
 -- ----------------------------
 INSERT INTO `tp_voiceresponse` VALUES ('1', '22', 'ceshi', '1386598438', '1386689301', '蔡琴', '敖包相会 - 蔡琴', 'http://zhangmenshiting.baidu.com/data2/music/106183022/1059804031386612061128.mp3?xcode=be5f0644dad5ad49634087484d10e0cf00be95224351102c', 'http://zhangmenshiting.baidu.com/data2/music/106183022/1059804031386612061128.mp3?xcode=be5f0644dad5ad49634087484d10e0cf00be95224351102c', '敖包相会 - 蔡琴敖包相会 - 蔡琴敖包相会 - 蔡琴敖包相会 - 蔡琴敖包相会 - 蔡琴敖包相会 - 蔡琴敖包相会 - 蔡琴敖包相会 - 蔡琴敖包相会 - 蔡琴敖包相会 - 蔡琴', 'hepwpm1386426879');
-
--- ----------------------------
--- Table structure for `tp_vote`
--- ----------------------------
-DROP TABLE IF EXISTS `tp_vote`;
-CREATE TABLE `tp_vote` (
-  `token` varchar(30) CHARACTER SET latin1 NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `res` int(11) NOT NULL,
-  `gameOverFlag` char(1) CHARACTER SET latin1 NOT NULL DEFAULT 'Y',
-  `heardUrl` varchar(200) DEFAULT NULL,
-  `tokenTall` varchar(20) DEFAULT NULL,
-  `tel` varchar(11) DEFAULT NULL,
-  PRIMARY KEY (`token`),
-  UNIQUE KEY `token` (`token`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
-
--- ----------------------------
--- Records of tp_vote
--- ----------------------------
-INSERT INTO `tp_vote` VALUES ('oIcj-jhUgRxNdlwdoU7T5HpIt-Jk', '欢迎您', '0', 'Y', 'hi', 'exvhyb1389448578', null);
-INSERT INTO `tp_vote` VALUES ('oe6eXt3GYnUHS-Eu6PUEkQWdHmP0', '欢迎您', '0', 'Y', 'hi', 'zkgmyo1389447577', null);
-INSERT INTO `tp_vote` VALUES ('oQf_5jhyKMMJVTXPbIM8rwnda-Uo', '刘海', '0', 'Y', 'hi', 'fflqia1387704099', '18311018237');
-INSERT INTO `tp_vote` VALUES ('oIcj-jqwK4VNN4zkfhFisW2UvL_I', '发条鸟', '0', 'Y', 'hi', 'exvhyb1389448578', '15900785656');
-INSERT INTO `tp_vote` VALUES ('oIcj-jlFPtOhua3bVDkE7fiCMjzo', '刘德华', '370', 'Y', 'hi', 'exvhyb1389448578', '844265377');
-INSERT INTO `tp_vote` VALUES ('oIcj-jmOvsvicT3ceNRYkMs8RGHQ', '5852', '0', 'Y', 'hi', 'exvhyb1389448578', '58588');
-INSERT INTO `tp_vote` VALUES ('oIcj-js4K_ix0XkM2xTbvddjmBvQ', '小伦', '500', 'Y', 'hi', 'exvhyb1389448578', '15216606480');
-INSERT INTO `tp_vote` VALUES ('oe6eXt8XE4HIaBY0GZOhx6wYiQ8I', '朱?基', '0', 'Y', 'hi', 'zkgmyo1389447577', '164265');
-INSERT INTO `tp_vote` VALUES ('oLxqWt7FVoFZnpOhSMyvky4ALxME', '欢迎您', '0', 'Y', 'hi', 'ufbxci1388905536', null);
-INSERT INTO `tp_vote` VALUES ('oQf_5jkeaZRHBGdUlCmA3b25ZfWc', '欢迎您', '0', 'Y', 'hi', 'fflqia1387704099', null);
-INSERT INTO `tp_vote` VALUES ('oXMj-js3BUGUyAXIUQ9aWHZiqF-g', '小伦', '0', 'Y', 'hi', 'wodxsp1389537386', '15216606480');
-INSERT INTO `tp_vote` VALUES ('oe6eXt-EvblMrlg5T_E6JIFRzE_U', '小伦', '500', 'Y', 'hi', 'gmbqsf1389536537', '121');
-INSERT INTO `tp_vote` VALUES ('oe6eXt71YhlXmJdJbVQw8_P9fipg', '欢迎您', '0', 'Y', 'hi', 'gmbqsf1389536537', null);
-INSERT INTO `tp_vote` VALUES ('oe6eXt_HAVmnWkYu4tUi_AkIsm74', '周告生', '110', 'Y', 'hi', 'gmbqsf1389536537', '18321018237');
-INSERT INTO `tp_vote` VALUES ('of46Gt_iR69PWHsPprUZxR3zSOMU', '欢迎您', '500', 'Y', 'hi', 'xcdvgb1389755323', null);
 
 -- ----------------------------
 -- Table structure for `tp_weather`
@@ -12403,6 +12368,38 @@ INSERT INTO `tp_wecha_wall_xunlie` VALUES ('XB04-2713-553M-M531', null, 'X');
 INSERT INTO `tp_wecha_wall_xunlie` VALUES ('XB04-2470-3417-M654', null, 'X');
 
 -- ----------------------------
+-- Table structure for `tp_weixin_vote`
+-- ----------------------------
+DROP TABLE IF EXISTS `tp_weixin_vote`;
+CREATE TABLE `tp_weixin_vote` (
+  `token` varchar(30) CHARACTER SET latin1 NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `res` int(11) NOT NULL,
+  `gameOverFlag` char(1) CHARACTER SET latin1 NOT NULL DEFAULT 'Y',
+  `heardUrl` varchar(200) DEFAULT NULL,
+  `tokenTall` varchar(20) DEFAULT NULL,
+  `tel` varchar(11) DEFAULT NULL,
+  PRIMARY KEY (`token`),
+  UNIQUE KEY `token` (`token`)
+) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+
+-- ----------------------------
+-- Records of tp_weixin_vote
+-- ----------------------------
+INSERT INTO `tp_weixin_vote` VALUES ('oIcj-jhUgRxNdlwdoU7T5HpIt-Jk', '欢迎您', '0', 'Y', 'hi', 'exvhyb1389448578', null);
+INSERT INTO `tp_weixin_vote` VALUES ('oe6eXt3GYnUHS-Eu6PUEkQWdHmP0', '欢迎您', '0', 'Y', 'hi', 'zkgmyo1389447577', null);
+INSERT INTO `tp_weixin_vote` VALUES ('oQf_5jhyKMMJVTXPbIM8rwnda-Uo', '刘海', '0', 'Y', 'hi', 'fflqia1387704099', '18311018237');
+INSERT INTO `tp_weixin_vote` VALUES ('oIcj-jqwK4VNN4zkfhFisW2UvL_I', '发条鸟', '0', 'Y', 'hi', 'exvhyb1389448578', '15900785656');
+INSERT INTO `tp_weixin_vote` VALUES ('oIcj-jlFPtOhua3bVDkE7fiCMjzo', '刘德华', '370', 'Y', 'hi', 'exvhyb1389448578', '844265377');
+INSERT INTO `tp_weixin_vote` VALUES ('oIcj-jmOvsvicT3ceNRYkMs8RGHQ', '5852', '0', 'Y', 'hi', 'exvhyb1389448578', '58588');
+INSERT INTO `tp_weixin_vote` VALUES ('oIcj-js4K_ix0XkM2xTbvddjmBvQ', '小伦', '500', 'Y', 'hi', 'exvhyb1389448578', '15216606480');
+INSERT INTO `tp_weixin_vote` VALUES ('oe6eXt8XE4HIaBY0GZOhx6wYiQ8I', '朱?基', '0', 'Y', 'hi', 'zkgmyo1389447577', '164265');
+INSERT INTO `tp_weixin_vote` VALUES ('oLxqWt7FVoFZnpOhSMyvky4ALxME', '欢迎您', '0', 'Y', 'hi', 'ufbxci1388905536', null);
+INSERT INTO `tp_weixin_vote` VALUES ('oQf_5jkeaZRHBGdUlCmA3b25ZfWc', '欢迎您', '0', 'Y', 'hi', 'fflqia1387704099', null);
+INSERT INTO `tp_weixin_vote` VALUES ('oXMj-js3BUGUyAXIUQ9aWHZiqF-g', '小伦', '0', 'Y', 'hi', 'wodxsp1389537386', '15216606480');
+INSERT INTO `tp_weixin_vote` VALUES ('of46Gt_iR69PWHsPprUZxR3zSOMU', '欢迎您', '500', 'Y', 'hi', 'xcdvgb1389755323', null);
+
+-- ----------------------------
 -- Table structure for `tp_wxuser`
 -- ----------------------------
 DROP TABLE IF EXISTS `tp_wxuser`;
@@ -12442,7 +12439,7 @@ CREATE TABLE `tp_wxuser` (
 -- ----------------------------
 -- Records of tp_wxuser
 -- ----------------------------
-INSERT INTO `tp_wxuser` VALUES ('30', '1', '蜀乐订餐', 'gh_7bb59981c2bd', 'shuleding', './tpl/User/default/common/images/portrait.jpg', 'gmbqsf1389536537', '上海', '上海', '1389536537@yourdomain.com', '0', '1', '情感', '', '100', '1', '0', '0', '1389536568', '1', '1389536568', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');
+INSERT INTO `tp_wxuser` VALUES ('30', '1', '蜀乐订餐', 'gh_7bb59981c2bd', 'shuleding', './tpl/User/default/common/images/portrait.jpg', 'gmbqsf1389536537', '上海', '上海', '1389536537@yourdomain.com', '0', '1', '情感', '', '100000', '1', '0', '0', '1389536568', '32', '1389536568', '132_index', '1', 'yl_list', '1', 'ktv_content', '0');
 INSERT INTO `tp_wxuser` VALUES ('37', '1', '微指购', 'gh_69e97bb30d8d', 'TTvzhigo', '/tpl/User/default/common/images/portrait.jpg', 'eolvhz1392992775', '河北', '保定', '1392992775@yourdomain.com', '0', '1', '情感', '', '100', '1', '0', '0', '1392992832', '1', '1392992832', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');
 INSERT INTO `tp_wxuser` VALUES ('38', '17', '伊人', 'gh_8154d3ddaa39', 'yiren_yours', '/tpl/User/default/common/images/portrait.jpg', 'tmpjis1393039145', '都市', '都市', '1393039145@yourdomain.com', '0', '1', '情感', '', '0', '0', '0', '0', '1393039261', '11', '1393039261', '111_index', '1', 'yl_list', '1', 'ktv_content', '0');
 INSERT INTO `tp_wxuser` VALUES ('39', '18', '微销售', 'gh_ea77b91d57ea', 'Vxiao_shou', '/tpl/User/default/common/images/portrait.jpg', 'xaybdf1393044422', '上海', '上海', '1393044422@yourdomain.com', '0', '8', '服务', '', '0', '0', '0', '0', '1393044533', '1', '1393044533', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');

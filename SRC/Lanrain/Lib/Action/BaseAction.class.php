@@ -27,7 +27,8 @@ class BaseAction extends Action
                     'Host',
                     'Product',
                     'Selfform',
-	'Xitie'
+					'Xitie',
+                	'Diymen_class'
                 );
                 if (in_array($name, $m_arr)) {
                     $data['pid']     = $id;
