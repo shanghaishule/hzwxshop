@@ -39,6 +39,7 @@ class GroupAction extends BackAction{
                     $this->assign("jumpUrl",U('Group/index'));
                     $this->success('编辑成功！');
                 }else{
+                	
                      $this->error('编辑失败!');
                 }
             }else{
