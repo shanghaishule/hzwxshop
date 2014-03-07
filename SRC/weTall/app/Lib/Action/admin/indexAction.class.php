@@ -24,7 +24,7 @@ class indexAction extends backendAction {
         $where2["token"]=$token;
         if (false == $weshop->where($where)->find()) {
         	$data["tokenTall"] = $token;
-        	$data["headurl"] = "/tpl/User/default/common/images/portrait.jpg";
+        	$data["headurl"] = "__PARENTURL__/tpl/User/default/common/images/portrait.jpg";
         	$data["HaveReal"] = "0";
         	$wxUser=M("wxuser")->where($where2)->find();
         	
@@ -276,6 +276,11 @@ class indexAction extends backendAction {
             	$left_menu[3]['sub'] = $r;
             }
             */
+            $left_menu[4] = array('id'=>4,'name'=>'会员管理');
+            $left_menu[4]['sub'] = array();
+            if ($r = $this->_mod->where(array('often'=>4))->select()) {
+            	$left_menu[4]['sub'] = $r;
+            }
             
             $left_menu[99] = array('id'=>99,'name'=>'店铺管理');
             $left_menu[99]['sub'] = array();
