@@ -9,25 +9,25 @@
 	  <tr>
 		<td >ID</td>
 		<td>公众号名称</td>
-		<td >所属等级</td>
-		<td >所属用户名</td>
-		<td >使用次数</td>
-		
-		<td>状态</td>
+		<td>所属等级</td>
+		<td>所属前台用户</td>
+		<td>所属管理者</td>
+		<!-- td>使用次数</td>
+		<td>状态</td -->
 		<td>管理操作</td>
 	  </tr>
 	    <volist name="list" id="vo">
 			<tr>
 				<td align='center'>{lanrain:$vo.id}</td>
 				<td >{lanrain:$vo.wxname}</td>
-				<td ><if condition="$vo['usr']['gid'] eq -1">0<else/>{lanrain:$vo.user.gid}</if></td>
+				<td ><if condition="$vo['user']['gid'] eq -1">0<else/>{lanrain:$vo.user.gid}</if></td>
 				<td >{lanrain:$vo.user.username}</td>
-				<td align='center'>{lanrain:$vo.usenum}</td>
-				<td align='center'><eq name="vo.status" value="1"><font color="red">√</font><else/><font color="blue">×</font></eq> 
-				</td>
+				<td >{lanrain:$vo.user.backusername}</td>
+				<!-- td align='center'>{lanrain:$vo.usenum}</td>
+				<td align='center'><eq name="vo.status" value="1"><font color="red">√</font><else/><font color="blue">×</font></eq>
+				</td -->
 				<td align='center'>
-					
-					| <eq name="vo.username" value="admin"><font color="#cccccc">删除</font><else/><a href="javascript:void(0)" onclick="return confirmurl('{lanrain::U('Token/del/',array('id'=>$vo['id']))}','确定删除该用户吗?')">删除</a></eq>
+					<eq name="vo.username" value="admin"><font color="#cccccc">删除</font><else/><a href="javascript:void(0)" onclick="return confirmurl('{lanrain::U('Token/del/',array('id'=>$vo['id']))}','确定删除该用户吗?')">删除</a></eq>
 				</td>
 			</tr>
 	    </volist>
@@ -41,10 +41,6 @@
     </tr>
    
 </table>
-
-<div class="bottom">
-<span>功能详细说明：</span>
-</div>
 
 </body>
 </html>

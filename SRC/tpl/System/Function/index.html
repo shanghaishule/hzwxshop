@@ -9,10 +9,9 @@
 	  <tr>
 		<td >ID</td>
 		<td>模块名</td>
-		<td >等级条件</td>
-		<td >功能描述</td>
-		<td >使用次数</td>
-		
+		<td>使用等级</td>
+		<td width="400">功能描述</td>
+		<!-- td>使用次数</td -->
 		<td>状态</td>
 		<td>管理操作</td>
 	  </tr>
@@ -20,14 +19,14 @@
 			<tr>
 				<td align='center'>{lanrain:$vo.id}</td>
 				<td >{lanrain:$vo.name}</td>
-				<td >{lanrain:$vo.gid}</td>
+				<td >{lanrain:$group[$vo['gid']]}</td>
 				<td >{lanrain:$vo.info}</td>
-				<td align='center'>{lanrain:$vo.usenum}</td>
+				<!-- td align='center'>{lanrain:$vo.usenum}</td -->
 				<td align='center'><eq name="vo.status" value="1"><font color="red">√</font><else/><font color="blue">×</font></eq> 
 				</td>
 				<td align='center'>
 					<a href="{lanrain::U('Function/edit/',array('id'=>$vo['id']))}">修改</a>
-					| <eq name="vo.username" value="admin"><font color="#cccccc">删除</font><else/><a href="javascript:void(0)" onclick="return confirmurl('{lanrain::U('Function/del/',array('id'=>$vo['id']))}','确定删除该用户吗?')">删除</a></eq>
+					| <eq name="vo.username" value="admin"><font color="#cccccc">删除</font><else/><a href="javascript:void(0)" onclick="return confirmurl('{lanrain::U('Function/del/',array('id'=>$vo['id']))}','确定删除该功能吗?')">删除</a></eq>
 				</td>
 			</tr>
 	    </volist>
@@ -41,10 +40,6 @@
     </tr>
    
 </table>
-
-<div class="bottom">
-<span>功能详细说明：</span>
-</div>
 
 </body>
 </html>

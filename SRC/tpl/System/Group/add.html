@@ -17,6 +17,7 @@
 				success:function(msg){
 					msg=eval('('+msg+')');
 					alert(msg.info);
+					window.location.href="{lanrain::U('Group/index',array('pid'=>$pid, 'level'=>$level))}";
 				}
 			});
 		})

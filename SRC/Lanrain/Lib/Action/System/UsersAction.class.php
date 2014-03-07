@@ -1,19 +1,27 @@
 <?php
 class UsersAction extends BackAction{
+	
 	public function index(){
 		$db=D('Users');
 		$group=M('User_group')->field('id,name')->order('id desc')->select();
 		$count= $db->count();
 		$Page= new Page($count,25);
 		$show= $Page->show();
-		$list = $db->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$list = $db->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->where($this->belong_where)->select();
 		foreach($group as $key=>$val){
 			$g[$val['id']]=$val['name'];
 		}
 		unset($group);
+		$belong=M('User')->field('id, username')->order('id desc')->select();
+		foreach($belong as $key=>$val){
+			$be[$val['id']]=$val['username'];
+		}
+		unset($belong);
+		//dump($list);exit;
 		$this->assign('info',$list);
 		$this->assign('page',$show);
 		$this->assign('group',$g);
+		$this->assign('belong',$be);
 		$this->display();
 	}
 	
@@ -44,6 +52,9 @@ class UsersAction extends BackAction{
         }else{
             $role = M('User_group')->field('id,name')->where('status = 1')->select();
             $this->assign('role',$role);
+            $userinfo = M('User')->field('id, username')->where('status = 1')->select();
+            $this->assign('userinfo',$userinfo);
+            
             $this->assign('tpltitle','添加');
             $this->display();
         }
@@ -116,6 +127,8 @@ class UsersAction extends BackAction{
             $info = $UserDB->find($id);
             $this->assign('tpltitle','编辑');
             $this->assign('role',$role);
+            $userinfo = M('User')->field('id, username')->where('status = 1')->select();
+            $this->assign('userinfo',$userinfo);
             $this->assign('info',$info);
             $this->display('add');
         }
@@ -148,10 +161,23 @@ class UsersAction extends BackAction{
 			M('member')->where($where)->delete();
 			M('indent')->where($where)->delete();
 			M('areply')->where($where)->delete();
-			$this->assign("jumpUrl");
 			$this->success('删除成功！');            
         }else{
             $this->error('删除失败!');
         }
+    }
+    
+    //冻结、取消冻结
+    public function set(){
+    	$id = $this->_get('id','intval',0);
+    	if(!$id)$this->error('参数错误!');
+    	$status = $this->_get('status','intval',0);
+    	
+    	$UserDB = D('Users');
+    	if($UserDB->save(array('id'=>$id, 'status'=>$status))){
+    		$this->success('操作成功！');
+    	}else{
+    		$this->error('操作失败!');
+    	}
     }
 }

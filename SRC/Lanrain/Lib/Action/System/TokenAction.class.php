@@ -1,24 +1,35 @@
 <?php
 class TokenAction extends BackAction{
 	public function index(){
+		
+		$frontuser = M('Users')->where($this->belong_where)->select();
+		foreach ($frontuser as $val){
+			$belong_where_wx .= $val['id'].',';
+		}
+		
 		$map = array();
+		$map['uid']  = array('in',$belong_where_wx);
+		
 		$UserDB = D('Wxuser');
 		$count = $UserDB->where($map)->count();
-		$Page       = new Page($count,5);// 实例化分页类 传入总记录数
+		$Page       = new Page($count,10);// 实例化分页类 传入总记录数
 		// 进行分页数据查询 注意page方法的参数的前面部分是当前的页数使用 $_GET[p]获取
 		$nowPage = isset($_GET['p'])?$_GET['p']:1;
 		$show       = $Page->show();// 分页显示输出
 		$list = $UserDB->where($map)->order('id ASC')->limit($Page->firstRow.','.$Page->listRows)->order('id desc')->select();
 		foreach($list as $key=>$value){
-			$user=M('Users')->field('id,gid,username')->where(array('id'=>$value['uid']))->find();
+			$user=M('Users')->field('id,gid,username,belonguser')->where(array('id'=>$value['uid']))->find();
 			if($user){
 				$list[$key]['user']['username']=$user['username'];
 				$list[$key]['user']['gid']=$user['gid']-1;
+				$back_user = M('user')->where(array('id'=>$user['belonguser']))->find();
+				$list[$key]['user']['backusername']=$back_user['username'];
 			}
+			
 		}
 		//dump($list);
 		$this->assign('list',$list);
-		$this->assign('page',$show);// 赋值分页输出
+		$this->assign('page',$show);// 赋值分页输出		
 		$this->display();
 		
 		

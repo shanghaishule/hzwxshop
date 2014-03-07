@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50611
 File Encoding         : 65001
 
-Date: 2014-03-01 17:16:47
+Date: 2014-03-06 17:10:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -210,21 +210,6 @@ INSERT INTO `tp_access` VALUES ('11', '92', '84', '2', null);
 INSERT INTO `tp_access` VALUES ('11', '93', '84', '2', null);
 INSERT INTO `tp_access` VALUES ('11', '94', '84', '2', null);
 INSERT INTO `tp_access` VALUES ('11', '95', '84', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '76', '73', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '75', '73', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '74', '73', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '73', '4', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '72', '66', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '71', '66', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '70', '66', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '69', '66', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '68', '66', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '67', '66', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '66', '4', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '65', '64', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '64', '4', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '4', '1', '0', null);
-INSERT INTO `tp_access` VALUES ('13', '1', '0', '1', null);
 INSERT INTO `tp_access` VALUES ('12', '95', '84', '2', null);
 INSERT INTO `tp_access` VALUES ('12', '94', '84', '2', null);
 INSERT INTO `tp_access` VALUES ('12', '93', '84', '2', null);
@@ -283,9 +268,17 @@ INSERT INTO `tp_access` VALUES ('12', '65', '64', '3', null);
 INSERT INTO `tp_access` VALUES ('12', '64', '4', '2', null);
 INSERT INTO `tp_access` VALUES ('12', '4', '1', '0', null);
 INSERT INTO `tp_access` VALUES ('12', '1', '0', '1', null);
-INSERT INTO `tp_access` VALUES ('13', '77', '73', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '78', '73', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '79', '73', '3', null);
+INSERT INTO `tp_access` VALUES ('13', '47', '46', '3', null);
+INSERT INTO `tp_access` VALUES ('13', '46', '45', '2', null);
+INSERT INTO `tp_access` VALUES ('13', '45', '1', '0', null);
+INSERT INTO `tp_access` VALUES ('13', '81', '80', '2', null);
+INSERT INTO `tp_access` VALUES ('13', '80', '1', '1', null);
+INSERT INTO `tp_access` VALUES ('13', '37', '35', '3', null);
+INSERT INTO `tp_access` VALUES ('13', '36', '35', '3', null);
+INSERT INTO `tp_access` VALUES ('13', '35', '1', '0', null);
+INSERT INTO `tp_access` VALUES ('13', '62', '60', '3', null);
+INSERT INTO `tp_access` VALUES ('13', '63', '60', '3', null);
+INSERT INTO `tp_access` VALUES ('13', '1', '0', '1', null);
 INSERT INTO `tp_access` VALUES ('13', '3', '1', '0', null);
 INSERT INTO `tp_access` VALUES ('13', '48', '3', '2', null);
 INSERT INTO `tp_access` VALUES ('13', '49', '48', '3', null);
@@ -307,25 +300,6 @@ INSERT INTO `tp_access` VALUES ('13', '58', '57', '3', null);
 INSERT INTO `tp_access` VALUES ('13', '59', '57', '3', null);
 INSERT INTO `tp_access` VALUES ('13', '60', '5', '2', null);
 INSERT INTO `tp_access` VALUES ('13', '61', '60', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '62', '60', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '63', '60', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '35', '1', '0', null);
-INSERT INTO `tp_access` VALUES ('13', '36', '35', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '37', '35', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '80', '1', '1', null);
-INSERT INTO `tp_access` VALUES ('13', '81', '80', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '45', '1', '0', null);
-INSERT INTO `tp_access` VALUES ('13', '46', '45', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '47', '46', '3', null);
-INSERT INTO `tp_access` VALUES ('13', '84', '1', '0', null);
-INSERT INTO `tp_access` VALUES ('13', '87', '84', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '86', '84', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '88', '84', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '90', '84', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '92', '84', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '93', '84', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '94', '84', '2', null);
-INSERT INTO `tp_access` VALUES ('13', '95', '84', '2', null);
 
 -- ----------------------------
 -- Table structure for `tp_account_bill_dtl`
@@ -864,18 +838,11 @@ CREATE TABLE `tp_areply` (
 -- Records of tp_areply
 -- ----------------------------
 INSERT INTO `tp_areply` VALUES ('1', '', '亲~感谢您关注滚石新天地，位于西安市南大街中段的滚石新天地KTV，耗资8000万打造，1万多平米，158个包间，是西北地区规模最大、最时尚的量贩式KTV，业界公认国内顶级K歌场所。预约电话：029-87265678 029-87275678（经开店）。关注新浪微博@滚石新天地KTV，还有更多惊喜等着你！！！！！！', '8', '', '1379811411', '1380423892', 'gunshixintiandi', '');
-INSERT INTO `tp_areply` VALUES ('2', '', '感谢您关注易网！', '3', '', '1379820793', '', 'allwww2000', '0');
-INSERT INTO `tp_areply` VALUES ('3', '', '1.附近周边信息查询lbs\r\n2.音乐查询　音乐＋音乐名 例：音乐爱你一万年\r\n3.天气查询　城市名＋天气　例上海天气\r\n4.手机归属地查询(吉凶 运势) 手机＋手机号码　例：手机13917778912\r\n5.身份证查询　身份证＋号码　　例：身份证342423198803015568\r\n6.公交查询　公交＋城市＋公交编号　例：上海公交774\r\n7.火车查询　火车＋城市＋目的地　例火车上海南京\r\n8.翻译 支持 及时翻译，语音翻译　翻译＋关键词 例：翻译你好\r\n9.彩票查询　彩票＋彩票名 例如:彩票双色球\r\n10.周公解梦　梦见+关键词　例如:梦见父母\r\n11.陪聊　直接输入聊天关键词即可\r\n12.聊天　直接输入聊天关键词即可\r\n13.藏头诗 藏头诗+关键词　例：藏头诗我爱你　\r\n14.笑话　直接发送笑话\r\n15.糗事　直接发送糗事\r\n16.快递 快递＋快递名＋快递号　例：快递顺丰117215889174\r\n17.健康指数查询　健康＋高，＋重　例：健康170,65\r\n18.朗读 朗读＋关键词　例：朗读PigCms多用户营销系统\r\n19.计算器 计算器使用方法　例：计算50-50　，计算100*100\r\n20.输入服务了解平台系统的售后服务\r\n21.输入抽奖，即可玩幸运大抽奖\r\n22.输入会员即可填写会员资料\r\n23.更多功能请回复帮助，或者help\r\n', '2', '', '1380272307', '', 'Marks_143', '0');
 INSERT INTO `tp_areply` VALUES ('6', '', '感谢关注重新发现，我们的账号已全面升级！回复创刊号可获取重新发现最全介绍；回复城市名＋天气（如上海天气）可查询城市天气；回复梦见+关键词（如梦见父母）可周公解梦；回复音乐+歌名（如音乐爱你一万年）可听歌~更多功能请回复帮助~', '17', '', '1381475367', '1381475497', 'chongxinfaxian', '');
 INSERT INTO `tp_areply` VALUES ('7', '1', '', '19', '', '1381486620', '1381486655', 'zhaiyiming01', '1');
-INSERT INTO `tp_areply` VALUES ('8', '关于', '', '2', '', '1381564058', '1381564419', 'haierZYKT', '1');
 INSERT INTO `tp_areply` VALUES ('9', '12', '1.附近周边信息查询lbs\r\n2.音乐查询　音乐＋音乐名 例：音乐爱你一万年\r\n3.天气查询　城市名＋天气　例上海天气\r\n4.手机归属地查询(吉凶 运势) 手机＋手机号码　例：手机13917778912\r\n5.身份证查询　身份证＋号码　　例：身份证342423198803015568\r\n6.公交查询　公交＋城市＋公交编号　例：上海公交774\r\n7.火车查询　火车＋城市＋目的地　例火车上海南京\r\n8.翻译 支持 及时翻译，语音翻译　翻译＋关键词 例：翻译你好\r\n9.彩票查询　彩票＋彩票名 例如:彩票双色球\r\n10.周公解梦　梦见+关键词　例如:梦见父母\r\n11.陪聊　直接输入聊天关键词即可\r\n12.聊天　直接输入聊天关键词即可\r\n13.藏头诗 藏头诗+关键词　例：藏头诗我爱你　\r\n14.笑话　直接发送笑话\r\n15.糗事　直接发送糗事\r\n16.快递 快递＋快递名＋快递号　例：快递顺丰117215889174\r\n17.健康指数查询　健康＋高，＋重　例：健康170,65\r\n18.朗读 朗读＋关键词　例：朗读LanRain多用户营销系统\r\n19.计算器 计算器使用方法　例：计算50-50　，计算100*100\r\n20.输入服务了解平台系统的售后服务\r\n21.输入抽奖，即可玩幸运大抽奖\r\n22.输入会员即可填写会员资料\r\n23.更多功能请回复帮助，或者help', '7', '', '1382407986', '1385381817', 'jiuyidujiao', '');
 INSERT INTO `tp_areply` VALUES ('10', '', 'werwerwerwerwerw', '19', '', '1382450356', '', 'rcefgr1382448360', '0');
-INSERT INTO `tp_areply` VALUES ('12', '', '我爱你/示爱/示爱/示爱\r\n你敢不爱我我就干掉你！', '24', '', '1386355162', '', 'zqkteb1386354730', '0');
-INSERT INTO `tp_areply` VALUES ('26', '首页', '欢迎关注', '31', '', '1393208285', '1393208591', 'xcpxya1393207490', '1');
-INSERT INTO `tp_areply` VALUES ('20', '', '你好吗！！！！', '24', '', '1386748061', '', 'edigco1386747424', '0');
 INSERT INTO `tp_areply` VALUES ('24', '首页', '', '19', '', '1393049618', '1393058973', 'rpniee1393046049', '1');
-INSERT INTO `tp_areply` VALUES ('25', '首页', '微指购欢迎你', '26', '', '1393149111', '', 'ayimeo1393148169', '0');
 
 -- ----------------------------
 -- Table structure for `tp_article`
@@ -2383,39 +2350,20 @@ CREATE TABLE `tp_img` (
 -- ----------------------------
 INSERT INTO `tp_img` VALUES ('1', '8', 'gsxtd', '微官网', '2', '欢迎访问西安滚石新世界KTV官方公众平台。微网页全新上线，回复“微官网”即可找到我哟~~', '231', '欢迎关注滚石新天地', 'http://www.ilongxin.com.img.800cdn.com/10001/image/fm.jpg', '1', '', 'http://www.ilongxin.com/10001/index.html', '1379136245', '1379811938', '3', 'gunshixintiandi', '欢迎关注滚石新天地');
 INSERT INTO `tp_img` VALUES ('2', '8', 'gsxtd', '分享', '2', '把我们的推广页分享给朋友吧~', '231', '欢迎关注滚石新天地', 'http://www.ilongxin.com.img.800cdn.com/10001/image/fm.jpg', '1', '', 'http://wx.ilongxin.com/index.php/show/gunshixintiandi', '1379136462', '1379136462', '0', 'gunshixintiandi', '滚石新天地推广页');
-INSERT INTO `tp_img` VALUES ('3', '3', 'yiwang', '33', '2', '爱美丽美容会所微网页---美丽，从爱美丽开始！', '232', '菜单专用', 'http://weixin.allapp.cn/demo1/images/top.jpg', '1', '&lt;p&gt;\r\n	&amp;nbsp;\r\n&lt;/p&gt;', 'http://weixin.allapp.cn/demo1/index.html', '1379287875', '1379318853', '2', 'allwww2000', '爱美丽美容会所');
-INSERT INTO `tp_img` VALUES ('4', '3', 'yiwang', '32', '2', '闪电自行车---I am specialized', '232', '菜单专用', 'http://weixin.allapp.cn/demo2/image/t1.jpg', '1', '', 'http://weixin.allapp.cn/demo2/index.html', '1379288052', '1379318865', '2', 'allwww2000', '闪电自行车');
-INSERT INTO `tp_img` VALUES ('5', '3', 'yiwang', '31', '2', '滚石KTV微网站', '232', '菜单专用', 'http://www.ilongxin.com/10001/image/t1.jpg', '1', '', 'http://www.ilongxin.com/10001/index.html', '1379288287', '1379318875', '2', 'allwww2000', '滚石KTV');
 INSERT INTO `tp_img` VALUES ('6', '8', 'gsxtd', '联系我们', '2', '感谢您关注支持滚石新天地！', '231', '欢迎关注滚石新天地', 'http://t2.qpic.cn/mblogpic/eb239777115983dc7eca/460', '1', '&lt;p&gt;\r\n	&amp;nbsp;\r\n&lt;/p&gt;', 'http://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5MzAyMTk0MA==&amp;appmsgid=10000062&amp;itemidx=1&amp;sign=618f00fa3fe92fa648ff500ee8379541#wechat_redirect', '1379816574', '1380266396', '3', 'gunshixintiandi', '加入滚石 / contact us');
 INSERT INTO `tp_img` VALUES ('7', '8', 'gsxtd', '门店展示', '2', '亲~点击这里~看滚石新天地KTV门店详情~~', '231', '欢迎关注滚石新天地', 'http://www.ilongxin.com/10001/subpage/images/ditu_nandajie.jpg', '1', '', 'http://www.ilongxin.com/10001/subpage/ditu_index.html', '1379818828', '1380267860', '3', 'gunshixintiandi', '滚石新天地KTV门店展示');
-INSERT INTO `tp_img` VALUES ('8', '3', 'yiwang', '易网优势', '2', '易网优势易网优势易网优势', '232', '菜单专用', '', '1', '', 'https://mp.weixin.qq.com/cgi-bin/operate_appmsg?token=1488672612&amp;lang=zh_CN&amp;sub=edit&amp;t=wxm-appmsgs-edit-new&amp;type=10&amp;subtype=3&amp;AppMsgId=10000215&amp;lang=zh_CN&amp;ismul=1', '1379820694', '1379820694', '2', 'allwww2000', '易网优势');
 INSERT INTO `tp_img` VALUES ('9', '8', 'gsxtd', '最新活动', '2', '亲们，国庆活动开始了，赶快参加哦！好运就是手指间。', '231', '欢迎关注滚石新天地', 'http://t2.qpic.cn/mblogpic/d97c7a386eefee0dfe02/460', '1', '&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;', 'http://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5MzAyMTk0MA==&amp;appmsgid=10000086&amp;itemidx=1&amp;sign=6ed9462ade9ffbfd1b4d2d1d13c7c3d8#wechat_redirect', '1380262283', '1380434403', '8', 'gunshixintiandi', '亲，国庆活动开始了');
 INSERT INTO `tp_img` VALUES ('13', '17', 'cxfx', '名片', '2', '', '234', '推广页', '', '1', '', 'http://wx.ilongxin.com/index.php/show/chongxinfaxian', '1381466151', '1381466151', '0', 'chongxinfaxian', '重新发现宣传页');
 INSERT INTO `tp_img` VALUES ('14', '19', 'zym', '网站 翟一名 1 0', '2', '', '235', '网址', 'http://www.ilongxin.com.img.800cdn.com/10010/subpage/images/content/wy.jpg', '1', '', 'http://www.ilongxin.com/10010/index.html', '1381484869', '1381486551', '0', 'zhaiyiming01', '翟一名微网站');
-INSERT INTO `tp_img` VALUES ('16', '2', 'amuck999', '产品', '2', '', '236', '菜单回复相关', 'http://imei.coversky.mobi/he/image/fm.jpg', '1', '', 'http://imei.coversky.mobi/he/subpage/products/product_index.html', '1381562993', '1381568733', '2', 'haierZYKT', '产品信息');
-INSERT INTO `tp_img` VALUES ('17', '2', 'amuck999', '资讯', '2', '', '236', '菜单回复相关', 'http://imei.coversky.mobi/he/image/fm.jpg', '1', '', 'http://imei.coversky.mobi/he/subpage/qyzx.html', '1381563040', '1381563334', '1', 'haierZYKT', '企业资讯信息');
-INSERT INTO `tp_img` VALUES ('18', '2', 'amuck999', '行业方案', '2', '', '236', '菜单回复相关', 'http://imei.coversky.mobi/he/image/fm.jpg', '1', '', 'http://imei.coversky.mobi/he/subpage/hyal_index.html', '1381563129', '1381563129', '2', 'haierZYKT', '行业解决方案');
-INSERT INTO `tp_img` VALUES ('19', '2', 'amuck999', '关于', '2', '海尔中央空调-专业方案，节能首选', '236', '菜单回复相关', 'http://imei.coversky.mobi/he/image/fm.jpg', '1', '', 'http://imei.coversky.mobi/he/index.html', '1381566791', '1381567055', '1', 'haierZYKT', '欢迎访问海尔中央空调交互平台');
 INSERT INTO `tp_img` VALUES ('29', '7', '91dujiao', '你是哈', '2', '你是哈', '245', '雷正东', 'http://wx.loowei.com/Uploads/image/20131126/52943812bfab0.jpg', '1', '你是哈', '你是哈', '1385445403', '1385445403', '3', 'jiuyidujiao', '你是哈');
 INSERT INTO `tp_img` VALUES ('30', '7', '91dujiao', '你好哈', '2', '你好哈', '245', '雷正东', 'http://wx.loowei.comhttp://pic.people.com.cn/NMediaFile/2013/1126/MAIN201311261019000014115924545.jpg', '1', '你好哈', '', '1385445892', '1385445892', '10', 'jiuyidujiao', '你好哈');
 INSERT INTO `tp_img` VALUES ('31', '7', '91dujiao', '个用的24', '2', '234234234', '246', '324234', 'http://sdfsdfsdf', '1', 'ewrwerwerwerw', '', '1385474370', '1385474370', '0', 'jiuyidujiao', '2342342342');
-INSERT INTO `tp_img` VALUES ('37', '24', 'cgc', '美女', '2', '美女', '253', '大转盘', 'http://ceshi.fj400.net/Uploads/image/20131206/52a21b2215e1a.jpg', '1', '<img src=\"/Uploads/image/20131206/52a21b2c2cc4f.jpg\" alt=\"\" />', '', '1386355509', '1386355509', '1', 'zqkteb1386354730', '美女');
-INSERT INTO `tp_img` VALUES ('86', '32', 'vzhigo', '联系我们', '2', '联系我们', '400', '联系我们', 'http://www.vzhigo.com/Uploads/image/20140225/530bfe5d8da20.png', '1', '<p class=\"p0\">\r\n	联系电话：4000-626-000\r\n</p>\r\n<p class=\"p0\">\r\n	QQ:2531333212\r\n</p>\r\n<p class=\"p0\">\r\n	&nbsp;&nbsp;&nbsp;&nbsp;84003477\r\n</p>\r\n<p class=\"p0\">\r\n	公司地址：河北省保定市新市区阳光北大街假日雅典城\r\n</p>', '', '1393295013', '1393295013', '7', 'mndeel1393253119', '联系我们');
-INSERT INTO `tp_img` VALUES ('87', '32', 'vzhigo', '微信商城', '2', '点击进入微指购微信商城', '401', '微信商城', 'http://www.vzhigo.com/Uploads/image/20140225/530c03636323f.png', '1', '', 'http://www.vzhigo.com/index.php?g=Wap&m=weTall&a=index&wecha_id=o_qPgjricLlIB_KpXZolfUTo3hCo', '1393296231', '1393296448', '42', 'mndeel1393253119', '点击进入微指购微信商城');
-INSERT INTO `tp_img` VALUES ('88', '32', 'vzhigo', '我的订单', '2', '我的订单', '401', '微信商城', 'http://www.vzhigo.com/Uploads/image/20140225/530c0c120f6b8.png', '1', '', 'http://bestchoice88.com/weTall/index.php?m=user&a=index&status=1&tokenTall=', '1393297100', '1393298453', '9', 'mndeel1393253119', '点击进入我的订单');
-INSERT INTO `tp_img` VALUES ('89', '32', 'vzhigo', '投诉商家', '2', '点击进入留言投诉', '397', '合作代理', 'http://www.vzhigo.com/Uploads/image/20140225/530c0a0d5c4cd.png', '1', '', 'http://www.vzhigo.com/weTall/index.php?g=home&m=suggestion&a=index', '1393297348', '1393297936', '2', 'mndeel1393253119', '点击进入留言投诉');
-INSERT INTO `tp_img` VALUES ('90', '32', 'vzhigo', '入驻商城', '2', '点击进入申请开店入驻商城', '397', '合作代理', 'http://www.vzhigo.com/Uploads/image/20140225/530c0991261e3.png', '1', '', 'http://www.vzhigo.com/weTall/index.php?m=application&a=index&tokenTall=gmbqsf1389536537', '1393297398', '1393297810', '2', 'mndeel1393253119', '点击进入申请开店入驻商城');
-INSERT INTO `tp_img` VALUES ('85', '32', 'vzhigo', '合作代理', '2', '合作代理', '397', '合作代理', 'http://www.vzhigo.com/Uploads/image/20140225/530bfe22e8d18.png', '1', '<p class=\"p0\" style=\"background:#FFFFFF;\">\r\n	尊敬的各位合作伙伴：\r\n</p>\r\n<p class=\"p0\" style=\"background:#FFFFFF;\">\r\n	首先非常感谢您对微指购平台的认可和支持，信任是合作的基础，这是我们一直强调的核心价值观。\r\n</p>\r\n<p class=\"p0\" style=\"background:#FFFFFF;\">\r\n	微指购平台通过市场与技术支持、产品的策划与推广、营销方案及完善的售后服务，为微指购的代理商提供及时的、量身定做的高效特色服务及全面支持。\r\n</p>\r\n<p class=\"p0\" style=\"text-indent:21.0000pt;\">\r\n	无论您在何方，不管您有多远，无论是个人还是团体，我们都欢迎您成为我们的一员，微指购平台希望每个人都能通过微指购实现价值，正像微信公众平台提出的一样：“再小的个体，也有自己的品牌。”我们将与您始终保持零距离的接触，提供零距离的服务。你如果能有长远的眼光，能看到移动互联网的未来，能认可微信的发展前景，能看懂移动购物的趋势，以及微营销的强大力量。那你非常适合加入我们的团队。&nbsp;我们欢迎全国各地、各广告商、渠道代理商踊跃加盟，\r\n</p>\r\n<p class=\"p0\" style=\"text-indent:21.0000pt;\">\r\n	&nbsp;\r\n</p>\r\n<p class=\"p0\" style=\"text-indent:21.0000pt;\">\r\n	微指购对有意成为合作伙伴的朋友致以诚挚的谢意，感谢您对微指购平台的支持和信任。\r\n</p>\r\n<p class=\"p0\" style=\"background:#FFFFFF;\">\r\n	合作及代理联系方式：企业QQ：4000-626-000\r\n</p>', '', '1393294893', '1393294893', '7', 'mndeel1393253119', '合作代理');
-INSERT INTO `tp_img` VALUES ('84', '32', 'vzhigo', '了解我们', '2', '了解我们', '397', '合作代理', 'http://www.vzhigo.com/Uploads/image/20140225/530bfdaf44106.png', '1', '<p class=\"p0\" style=\"text-align:left;text-indent:21pt;\">\r\n	微指购--是本公司投资在微信平台基础上开发的一个类似淘宝的微信购物商城，以及基于微信平台的企业官方网站，微指购志在帮助那些不懂技术的个人或企业建立属于自己的微信店铺以及微信网站，让完全不懂技术的个人或企业通过简单的配置，即可拥有强大的功能。企业使用微指购服务可以用低廉的成本实现产品营销，以及快速提升企业业绩，微信店铺商家可以轻松实现店铺商品和粉丝的关联与互动，我们为入驻微商城的店铺提供强大的管理功能模块（如商家管理，店铺管理，会员管理，活动管理，在线支付，优惠券管理，以及基于LBS的各种服务）我们的技术团队全部来自于世界500强企业，拥有超过10年软件开发经验，参与过重大项目的开发，过硬的技术支持，让您没有任何后顾之忧。\r\n</p>\r\n<p class=\"p0\" style=\"text-align:left;text-indent:21pt;\">\r\n	&nbsp;\r\n</p>\r\n<p class=\"p0\" style=\"text-align:left;\">\r\n	微指购商城是一款基于微信平台开发的类似于淘宝的电子商务平台，传统互联网电子商务被某公司雄霸天下，导致大量实体店铺生意冷清，惨淡，甚至倒闭，我们的产品就是为实体店铺带来希望，将实体店铺开到7亿微信用户的手机里，打通线上与线下相结合的销售新模式，帮助实体商家提前抢占移动互联网购物市场。\r\n</p>', '', '1393294818', '1393294818', '6', 'mndeel1393253119', '了解我们');
-INSERT INTO `tp_img` VALUES ('83', '31', 'zhangdan', '关注', '2', '公务i', '395', '公司', 'http://www.vzhigo.com/Uploads/image/20140224/530aaca0cd4bd.jpg', '1', '公司啊', '', '1393208489', '1393208489', '5', 'xcpxya1393207490', '公司');
 INSERT INTO `tp_img` VALUES ('80', '19', 'wangchuan', '关注', '2', '', '369', '产品介绍', 'http://www.vzhigo.com/Uploads/image/20140223/5309923803493.jpg', '1', '<p>\r\n	快了吧\r\n</p>', '', '1393080708', '1393136188', '0', 'rpniee1393046049', '产品介绍去');
 INSERT INTO `tp_img` VALUES ('75', '19', 'wangchuan', '关注', '2', '微指购是在微信公众平台的基础上搭建的微官网 微商城的一个功能', '369', '产品介绍', 'http://www.vzhigo.com/Uploads/image/20140223/530992a8a4080.jpg', '1', '微指购是在微信公众平台的基础上搭建的微官网 微商城的一个功能', '', '1393052033', '1393136301', '33', 'rpniee1393046049', '产品介绍');
 INSERT INTO `tp_img` VALUES ('76', '19', 'wangchuan', '关注', '2', '微指购是在微信公众平台的基础上搭建的微官网 微商城的一个功能', '370', '代理详情', 'http://www.vzhigo.com/Uploads/image/20140223/530992922dab8.jpg', '1', '微指购是在微信公众平台的基础上搭建的微官网 微商城的一个功能', '', '1393052083', '1393136278', '33', 'rpniee1393046049', '代理详情');
 INSERT INTO `tp_img` VALUES ('77', '19', 'wangchuan', '关注', '2', '微指购是在微信公众平台的基础上搭建的微官网 微商城的一个功能', '371', '联系我们', 'http://www.vzhigo.com/Uploads/image/20140223/5309927e3534b.jpg', '1', '微指购是在微信公众平台的基础上搭建的微官网 微商城的一个功能', '', '1393052117', '1393136258', '33', 'rpniee1393046049', '联系我们');
 INSERT INTO `tp_img` VALUES ('79', '19', 'wangchuan', '关注', '2', '公司发展需要团队', '372', '企业文化', 'http://www.vzhigo.com/Uploads/image/20140223/5309924be842e.jpg', '1', '<p>\r\n	企业发展需要团队\r\n</p>', '', '1393058924', '1393136209', '4', 'rpniee1393046049', '企业文化');
 INSERT INTO `tp_img` VALUES ('78', '19', 'wangchuan', '关注', '2', '微指购是在微信公众平台的基础上搭建的微官网 微商城的一个功能', '368', '公司简介', 'http://www.vzhigo.com/Uploads/image/20140223/53099268e4951.jpg', '1', '微指购是在微信公众平台的基础上搭建的微官网 微商城的一个功能', '', '1393052467', '1393136237', '29', 'rpniee1393046049', '欢迎关注微指购微信官方网站');
-INSERT INTO `tp_img` VALUES ('81', '26', 'guoziwei', '关注', '2', '', '381', '苹果', 'http://www.vzhigo.com/Uploads/image/20140223/5309c39785e3b.jpg', '1', '<img alt=\"\" src=\"/Uploads/image/20140223/5309c3a5639f2.jpg\" />', '', '1393148842', '1393148842', '4', 'ayimeo1393148169', '苹果');
-INSERT INTO `tp_img` VALUES ('82', '26', 'guoziwei', '关注', '2', '', '381', '苹果', 'http://www.vzhigo.com/Uploads/image/20140223/5309c4791487d.jpg', '1', '<img alt=\"\" src=\"/Uploads/image/20140223/5309c48770269.jpg\" />', '', '1393149069', '1393149069', '4', 'ayimeo1393148169', '苹果好吃');
 
 -- ----------------------------
 -- Table structure for `tp_indent`
@@ -2440,9 +2388,7 @@ CREATE TABLE `tp_indent` (
 -- ----------------------------
 -- Records of tp_indent
 -- ----------------------------
-INSERT INTO `tp_indent` VALUES ('1', '2', '4', 'amuck999', '充值vip会员1个月', '0', 'amuck9991378974790', '0', '100', '1378974790', '0');
 INSERT INTO `tp_indent` VALUES ('2', '7', '4', '91dujiao', '充值vip会员1个月', '0', '91dujiao1379909434', '0', '100', '1379909434', '0');
-INSERT INTO `tp_indent` VALUES ('3', '2', '4', 'amuck999', '充值vip会员1个月', '0', 'amuck9991380174021', '0', '100', '1380174021', '0');
 INSERT INTO `tp_indent` VALUES ('29', '1', '4', 'shule', '充值vip会员12个月', '0', 'shule1393405105', '0', '696', '1393405105', '0');
 INSERT INTO `tp_indent` VALUES ('24', '1', '4', 'shule', '充值vip会员1个月', '0', 'shule1387963370', '0', '100', '1387963370', '0');
 INSERT INTO `tp_indent` VALUES ('25', '7', '4', 'weiyouzhonghe', '充值vip会员1个月', '0', 'weiyouzhonghe1388146', '0', '100', '1388146719', '0');
@@ -7568,15 +7514,13 @@ CREATE TABLE `tp_role` (
   PRIMARY KEY (`id`),
   KEY `pid` (`pid`),
   KEY `status` (`status`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_role
 -- ----------------------------
 INSERT INTO `tp_role` VALUES ('5', '超级管理员', '0', '1', '0', '');
-INSERT INTO `tp_role` VALUES ('6', '演示组', '0', '1', '0', '');
-INSERT INTO `tp_role` VALUES ('9', '普通会员', '0', '1', '0', '');
-INSERT INTO `tp_role` VALUES ('13', '管理员', '0', '1', '0', '');
+INSERT INTO `tp_role` VALUES ('13', '上海代理商', '0', '1', '0', '');
 
 -- ----------------------------
 -- Table structure for `tp_role_user`
@@ -7596,6 +7540,7 @@ INSERT INTO `tp_role_user` VALUES ('2', '9');
 INSERT INTO `tp_role_user` VALUES ('12', '12');
 INSERT INTO `tp_role_user` VALUES ('13', '12');
 INSERT INTO `tp_role_user` VALUES ('14', '13');
+INSERT INTO `tp_role_user` VALUES ('18', '13');
 
 -- ----------------------------
 -- Table structure for `tp_score_item`
@@ -8803,13 +8748,9 @@ CREATE TABLE `tp_text` (
 -- ----------------------------
 -- Records of tp_text
 -- ----------------------------
-INSERT INTO `tp_text` VALUES ('95', '3', 'yiwang', '11', '1', '放置您首页的连接', '1379065615', '1379318936', '0', 'allwww2000');
 INSERT INTO `tp_text` VALUES ('96', '9', '', '11', '1', '22', '1379318651', '1379318651', '0', 'Lbeijing');
 INSERT INTO `tp_text` VALUES ('97', '8', 'gsxtd', 'wifi密码', '2', '亲，wifi密码是87265678', '1379810892', '1380260993', '0', 'gunshixintiandi');
 INSERT INTO `tp_text` VALUES ('99', '8', '', '会员卡签到', '1', '会员卡签到功能，正在开发中，暂时无法直接使用，请移驾到微会员卡--会员卡签到--进行签到。', '1379815950', '1379815950', '0', 'gunshixintiandi');
-INSERT INTO `tp_text` VALUES ('105', '24', '', '测试', '1', '测试回复成功！', '1386355187', '1386355187', '0', 'zqkteb1386354730');
-INSERT INTO `tp_text` VALUES ('130', '32', 'vzhigo', '快递查询', '1', '请直接发送快递类型及订单号查询快递，如：圆通快递E999999999', '1393299031', '1393299115', '0', 'mndeel1393253119');
-INSERT INTO `tp_text` VALUES ('123', '24', '', '测试', '1', '测试', '1386748038', '1386748038', '0', 'edigco1386747424');
 
 -- ----------------------------
 -- Table structure for `tp_token_open`
@@ -8822,41 +8763,22 @@ CREATE TABLE `tp_token_open` (
   `queryname` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `token` (`token`)
-) ENGINE=MyISAM AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=110 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_token_open
 -- ----------------------------
-INSERT INTO `tp_token_open` VALUES ('1', '2', 'kangjianfang2013', 'qiushi,jishuan,langdu,jiankang,kuaidi,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,fujin,choujiang,taobao,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,userinfo,xiaohua,yinle,tianqi,diyform,host_kev,diymen_set,etuan,shop,dx');
-INSERT INTO `tp_token_open` VALUES ('2', '2', 'kangjianfang2013', 'qiushi,jishuan,langdu,jiankang,kuaidi,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,fujin,choujiang,taobao,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,userinfo,xiaohua,yinle,tianqi,diyform,host_kev,diymen_set,etuan,shop,dx');
 INSERT INTO `tp_token_open` VALUES ('3', '7', 'jiuyidujiao', 'qiushi,jishuan,langdu,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,jiankang,caipiao,dx,shop,host_kev,diyform,diymen_set,dx,caipiao,shop,host_kev,diyform,diymen_set,etuan,tianqi');
-INSERT INTO `tp_token_open` VALUES ('4', '3', 'allwww2000', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,liaotian,peiliao,api');
 INSERT INTO `tp_token_open` VALUES ('5', '8', 'gunshixintiandi', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,liaotian,peiliao');
 INSERT INTO `tp_token_open` VALUES ('6', '9', 'L-beijing', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci');
 INSERT INTO `tp_token_open` VALUES ('7', '11', 'ava_bear_studio', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci');
-INSERT INTO `tp_token_open` VALUES ('8', '2', 'Marks_143', 'tianqi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,yuyinfanyi,qiushi');
-INSERT INTO `tp_token_open` VALUES ('9', '2', 'Micheal_Deng799', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci');
-INSERT INTO `tp_token_open` VALUES ('10', '3', 'waipoyinxiang', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci');
 INSERT INTO `tp_token_open` VALUES ('11', '17', 'chongxinfaxian', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci');
 INSERT INTO `tp_token_open` VALUES ('12', '19', 'zhaiyiming01', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,choujiang,gua2,adma,huiyuanka,shenhe,geci,');
-INSERT INTO `tp_token_open` VALUES ('13', '2', 'haierZYKT', 'tianqi,');
 INSERT INTO `tp_token_open` VALUES ('14', '19', 'rcefgr1382448360', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set');
 INSERT INTO `tp_token_open` VALUES ('15', '20', 'bgradg1385493972', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set');
-INSERT INTO `tp_token_open` VALUES ('17', '24', 'zqkteb1386354730', 'qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,geci,host_kev,diyform,dx,shop,etuan,diymen_set,Panorama,Xitie,tianqi,shenhe,');
-INSERT INTO `tp_token_open` VALUES ('104', '29', 'gqgwws1393152646', 'tianqi,qiushi,langdu,xiaohua,changtoushi,peiliao,liaotian,yuyinfanyi,huoche,yinle,fujin,choujiang,userinfo,fanyi,api,suanming,baike,caipiao,gua2,shouye,adma,huiyuanka,shenhe,geci,,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
-INSERT INTO `tp_token_open` VALUES ('21', '24', 'abugqv1386501272', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,host_kev,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue');
-INSERT INTO `tp_token_open` VALUES ('33', '24', 'gcgwdl1386663012', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue');
-INSERT INTO `tp_token_open` VALUES ('34', '24', 'uxovau1386663164', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue');
-INSERT INTO `tp_token_open` VALUES ('37', '24', 'gcoksb1386665613', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,geci,host_kev,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,shenhe');
-INSERT INTO `tp_token_open` VALUES ('47', '24', 'tdntxf1386687819', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue');
-INSERT INTO `tp_token_open` VALUES ('107', '32', 'mndeel1393253119', 'tianqi,qiushi,langdu,xiaohua,changtoushi,peiliao,liaotian,yuyinfanyi,huoche,yinle,fujin,choujiang,userinfo,fanyi,api,suanming,baike,caipiao,gua2,adma,huiyuanka,shenhe,geci,,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
-INSERT INTO `tp_token_open` VALUES ('106', '6', 'zqdxjl1393247343', 'tianqi,qiushi,langdu,xiaohua,changtoushi,peiliao,liaotian,yuyinfanyi,huoche,yinle,fujin,choujiang,userinfo,fanyi,api,suanming,baike,caipiao,gua2,adma,huiyuanka,shenhe,geci,,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
-INSERT INTO `tp_token_open` VALUES ('105', '31', 'xcpxya1393207490', 'tianqi,qiushi,langdu,xiaohua,changtoushi,peiliao,liaotian,yuyinfanyi,huoche,yinle,fujin,choujiang,userinfo,fanyi,api,suanming,baike,caipiao,gua2,shouye,adma,huiyuanka,shenhe,geci,,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
-INSERT INTO `tp_token_open` VALUES ('56', '24', 'edigco1386747424', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue');
-INSERT INTO `tp_token_open` VALUES ('58', '2', 'cjoato1387684030', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
+INSERT INTO `tp_token_open` VALUES ('106', '6', 'zqdxjl1393247343', 'tianqi,peiliao,liaotian,fujin,caipiao,adma,shop,Panorama');
 INSERT INTO `tp_token_open` VALUES ('59', '1', 'fflqia1387704099', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,host_kev,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,api,youhuiquan,fenxiang,Coupon,coupon');
 INSERT INTO `tp_token_open` VALUES ('60', '1', 'ezghec1387710052', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,host_kev,diyform,dx,shop,etuan,diymen_set,WeiXitie,Yuyue,Panorama');
-INSERT INTO `tp_token_open` VALUES ('61', '3', 'dhwemi1387731537', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('62', '4', 'vtpxot1387947775', 'tianqi,qiushi,jishuan,kuaidi,xiaohua,peiliao,liaotian,shouji,fujin,fanyi,suanming,shouye,adma,geci');
 INSERT INTO `tp_token_open` VALUES ('79', '1', 'gtniqt1389437000', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('63', '5', 'pmwqhk1388135822', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
@@ -8866,8 +8788,6 @@ INSERT INTO `tp_token_open` VALUES ('66', '8', 'eufxog1388150715', 'tianqi,qiush
 INSERT INTO `tp_token_open` VALUES ('67', '9', 'exxmql1388193598', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('68', '1', 'gqovxs1388298795', 'tianqi,jishuan,langdu,jiankang,kuaidi,changtoushi,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,host_kev,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan,');
 INSERT INTO `tp_token_open` VALUES ('69', '1', 'ghaslk1388730988', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
-INSERT INTO `tp_token_open` VALUES ('70', '3', 'ufbxci1388905536', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
-INSERT INTO `tp_token_open` VALUES ('71', '3', 'ewticq1388906166', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('72', '10', 'wdbxqm1389193083', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('73', '11', 'yooewg1389250573', 'tianqi,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,host_kev,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('74', '12', 'taysbt1389345882', 'tianqi,qiushi,jishuan,kuaidi,xiaohua,peiliao,liaotian,shouji,fujin,fanyi,suanming,shouye,adma,geci');
@@ -8890,14 +8810,12 @@ INSERT INTO `tp_token_open` VALUES ('91', '1', 'ncptjo1389693014', 'tianqi,qiush
 INSERT INTO `tp_token_open` VALUES ('92', '14', 'lelgwg1389754273', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('93', '15', 'xcdvgb1389755323', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
 INSERT INTO `tp_token_open` VALUES ('94', '1', 'eolvhz1392992775', 'tianqi,peiliao,liaotian,fujin,choujiang,userinfo,api,caipiao,gua2,shouye,adma,huiyuanka,shenhe,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
-INSERT INTO `tp_token_open` VALUES ('95', '17', 'tmpjis1393039145', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,shouye,adma,huiyuanka,shenhe,geci,,host_kev,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
-INSERT INTO `tp_token_open` VALUES ('96', '18', 'xaybdf1393044422', 'tianqi,qiushi,jishuan,kuaidi,xiaohua,peiliao,liaotian,shouji,fujin,fanyi,suanming,shouye,adma,geci');
-INSERT INTO `tp_token_open` VALUES ('97', '19', 'rpniee1393046049', 'tianqi,qiushi,jishuan,langdu,jiankang,kuaidi,xiaohua,changtoushi,peiliao,liaotian,mengjian,yuyinfanyi,huoche,gongjiao,shenfenzheng,shouji,yinle,fujin,choujiang,taobao,userinfo,fanyi,api,suanming,baike,caipiao,choujiang,gua2,adma,huiyuanka,shenhe,geci,host_kev,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan,shouye,');
+INSERT INTO `tp_token_open` VALUES ('95', '17', 'tmpjis1393039145', 'tianqi,peiliao,liaotian,fujin,caipiao,adma,shop,Panorama');
+INSERT INTO `tp_token_open` VALUES ('96', '18', 'xaybdf1393044422', 'tianqi,peiliao,liaotian,fujin,caipiao,adma,shop,Panorama');
+INSERT INTO `tp_token_open` VALUES ('97', '19', 'rpniee1393046049', 'tianqi,peiliao,liaotian,fujin,caipiao,adma,shop,Panorama');
 INSERT INTO `tp_token_open` VALUES ('98', '20', 'bbktzr1393056631', 'tianqi,qiushi,jishuan,kuaidi,xiaohua,peiliao,liaotian,shouji,fujin,fanyi,suanming,shouye,adma,geci');
-INSERT INTO `tp_token_open` VALUES ('99', '24', 'agpsva1393143193', 'tianqi,qiushi,langdu,xiaohua,changtoushi,peiliao,liaotian,yuyinfanyi,huoche,yinle,fujin,choujiang,userinfo,fanyi,api,suanming,baike,caipiao,gua2,shouye,adma,huiyuanka,shenhe,geci,,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
-INSERT INTO `tp_token_open` VALUES ('103', '28', 'vfipwn1393152171', 'tianqi,qiushi,xiaohua,peiliao,liaotian,fujin,fanyi,suanming,adma,geci');
-INSERT INTO `tp_token_open` VALUES ('102', '27', 'zhlfhw1393151027', 'tianqi,qiushi,langdu,xiaohua,changtoushi,peiliao,liaotian,yuyinfanyi,huoche,yinle,fujin,choujiang,userinfo,fanyi,api,suanming,baike,caipiao,gua2,shouye,adma,huiyuanka,shenhe,geci,,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
-INSERT INTO `tp_token_open` VALUES ('101', '26', 'ayimeo1393148169', 'tianqi,qiushi,langdu,xiaohua,changtoushi,peiliao,liaotian,yuyinfanyi,huoche,yinle,fujin,choujiang,userinfo,fanyi,api,suanming,baike,caipiao,gua2,shouye,adma,huiyuanka,shenhe,geci,,,diyform,dx,shop,etuan,diymen_set,Panorama,WeiXitie,Yuyue,fenxiang,youhuiquan');
+INSERT INTO `tp_token_open` VALUES ('108', '33', 'tmpjis1393039145', 'tianqi,peiliao,liaotian,fujin,caipiao,adma,shop,Panorama');
+INSERT INTO `tp_token_open` VALUES ('109', '33', 'xaybdf1393044422', 'tianqi,peiliao,liaotian,fujin,caipiao,adma,shop,Panorama');
 
 -- ----------------------------
 -- Table structure for `tp_topic`
@@ -9127,28 +9045,13 @@ CREATE TABLE `tp_user` (
   `email` varchar(90) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_user
 -- ----------------------------
-INSERT INTO `tp_user` VALUES ('1', 'admin', 'b80c4de605487af2bf83a7cbd1d68025', '5', '1', '', '1393657180', '0.0.0.0', '', '');
-INSERT INTO `tp_user` VALUES ('2', 'test', '098f6bcd4621d373cade4e832627b4f6', '9', '1', '测试账号', '1387947699', '127.0.0.1', '新建用户', '');
-INSERT INTO `tp_user` VALUES ('3', 'zzz', '453e41d218e071ccfb2d1c99ce23906a', '0', '0', null, '1392799780', null, null, 'zzz@111.com');
-INSERT INTO `tp_user` VALUES ('4', 'zzzz', '453e41d218e071ccfb2d1c99ce23906a', '0', '0', null, '1393377222', null, null, 'zzzz@111.com');
-INSERT INTO `tp_user` VALUES ('5', 'zzzzz', '453e41d218e071ccfb2d1c99ce23906a', '0', '0', null, '1390277597', '0.0.0.0', null, 'z@z.com');
-INSERT INTO `tp_user` VALUES ('6', 'aaa', '0b4e7a0e5fe84ad35fb5f95b9ceeac79', '0', '0', null, '1390290982', '0.0.0.0', null, 'aaa@aaa.com');
-INSERT INTO `tp_user` VALUES ('7', 'zzzzzzz', '453e41d218e071ccfb2d1c99ce23906a', '0', '0', null, '1390296798', '0.0.0.0', null, 'zzzzzz@z.com');
-INSERT INTO `tp_user` VALUES ('8', 'aaaa', '5d793fc5b00a2348c3fb9ab59e5ca98a', '0', '0', null, '1390308850', '0.0.0.0', null, 'a@a.com');
-INSERT INTO `tp_user` VALUES ('9', '微指购', 'e10adc3949ba59abbe56e057f20f883e', '0', '0', null, '1393462098', '27.187.202.246', null, '84003477@qq.com');
-INSERT INTO `tp_user` VALUES ('10', '随便', 'bfd925fa86084bd0300fde7fd05ddd97', '0', '0', null, '1393322735', '27.187.202.246', null, '2531333212@qq.com');
-INSERT INTO `tp_user` VALUES ('11', '哦哦', 'e10adc3949ba59abbe56e057f20f883e', '0', '0', null, '1393039710', '114.86.212.50', null, '5687445@qq.com');
-INSERT INTO `tp_user` VALUES ('12', '员工管理', 'e10adc3949ba59abbe56e057f20f883e', '12', '1', '', '1393144966', '58.33.108.218', '', '');
-INSERT INTO `tp_user` VALUES ('13', '管理员001', '25f9e794323b453885f5181f1b624d0b', '12', '1', '', '1393144057', '27.187.202.246', '', '');
-INSERT INTO `tp_user` VALUES ('14', '管理', 'e10adc3949ba59abbe56e057f20f883e', '13', '1', '', '1393210791', '114.92.106.116', '', '');
-INSERT INTO `tp_user` VALUES ('15', '啊哈', '9f60e6e8bd79ba0e55d9928bcbb19d3e', '0', '0', null, '1393325055', '27.186.56.75', null, 'mch2010');
-INSERT INTO `tp_user` VALUES ('16', '李帅', 'e10adc3949ba59abbe56e057f20f883e', '0', '0', null, '1393347952', '27.187.202.246', null, '84003477');
-INSERT INTO `tp_user` VALUES ('17', 'bobo', 'e10adc3949ba59abbe56e057f20f883e', '0', '0', null, '1393470267', '114.92.125.56', null, '解决了');
+INSERT INTO `tp_user` VALUES ('1', 'admin', 'b80c4de605487af2bf83a7cbd1d68025', '5', '1', '', '1394095192', '0.0.0.0', '', '');
+INSERT INTO `tp_user` VALUES ('18', 'zcb', 'f3abb86bd34cf4d52698f14c0da1dc60', '13', '1', '', '1394091306', '0.0.0.0', '', '');
 
 -- ----------------------------
 -- Table structure for `tp_userinfo`
@@ -9283,40 +9186,17 @@ CREATE TABLE `tp_users` (
   `viptime` varchar(13) NOT NULL,
   `connectnum` int(11) NOT NULL DEFAULT '0',
   `lastloginmonth` smallint(2) NOT NULL DEFAULT '0',
+  `belonguser` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_users
 -- ----------------------------
-INSERT INTO `tp_users` VALUES ('1', '5', 'shule', 'e10adc3949ba59abbe56e057f20f883e', 'zhouxingxing_ok_12@163.com', '1387626525', '1393665372', '1', '112.64.61.145', '::1', '0', '0', '0', '0', '21', '100', '1422028800', '0', '3');
-INSERT INTO `tp_users` VALUES ('2', '4', 'Vxiao_shou', 'b80c4de605487af2bf83a7cbd1d68025', '2198738059@qq.com', '1387684025', '1389607299', '1', '114.92.104.26', '114.92.118.249', '13', '0', '0', '0', '1', '0', '1419436800', '10', '1');
-INSERT INTO `tp_users` VALUES ('3', '4', 'niula', '4c741d1974426b420e1c566a55853176', '181728897@qq.com', '1387731522', '1389613924', '1', '112.65.211.251', '114.92.118.249', '28', '3', '0', '0', '3', '0', '1427299200', '56', '1');
-INSERT INTO `tp_users` VALUES ('4', '1', '12300', 'a1b7f6c7d739aa48d5dfaacf54df3994', '24222879@qq.com', '1387947769', '1387947769', '1', '111.113.225.239', '111.113.225.239', '0', '0', '0', '0', '1', '0', '1388206969', '0', '0');
-INSERT INTO `tp_users` VALUES ('5', '4', 'caiybcom', 'e10adc3949ba59abbe56e057f20f883e', 'caiybcom@qq.com', '1388135736', '1388135736', '1', '114.232.152.164', '114.232.152.164', '0', '0', '0', '0', '1', '0', '1388332800', '0', '0');
-INSERT INTO `tp_users` VALUES ('6', '4', '小A', '482d72fedd5e5685c38f118e60663e3a', '313362389@qq.com', '1388136492', '1393247100', '1', '114.92.104.26', '114.92.106.116', '2', '0', '0', '0', '2', '0', '1451404800', '5', '2');
-INSERT INTO `tp_users` VALUES ('7', '1', 'weiyouzhonghe', '670b14728ad9902aecba32e22fa4f6bd', '346815589@qq.com', '1388145671', '1388145671', '1', '27.187.52.85', '27.187.52.85', '2', '0', '0', '0', '1', '0', '1388404871', '3', '0');
-INSERT INTO `tp_users` VALUES ('8', '4', '欧泽美吊顶', 'dd4245b5604deb2d83731a60483c1ad9', 'ouzemeidiaoding@163.com', '1388150650', '1388237916', '1', '120.2.154.223', '27.187.96.184', '40', '5', '0', '0', '1', '0', '1388332800', '119', '12');
-INSERT INTO `tp_users` VALUES ('9', '4', 'caocancheshi', 'dd4245b5604deb2d83731a60483c1ad9', 'caocancheshi@163.com', '1388193589', '1388193589', '1', '27.187.66.15', '27.187.66.15', '61', '0', '0', '0', '1', '0', '1388419200', '83', '0');
-INSERT INTO `tp_users` VALUES ('10', '4', '置地会', 'af903d60c4c58ae3b6da0c101b198106', 'qinghuaci12345@126.com', '1389193067', '1389445099', '1', '219.239.108.197', '58.33.110.101', '188', '2', '0', '0', '1', '0', '1391011200', '49', '1');
-INSERT INTO `tp_users` VALUES ('11', '4', '123456', 'e10adc3949ba59abbe56e057f20f883e', '439633529@qq.com', '1389249575', '1389250528', '1', '123.166.17.81', '123.166.17.81', '18', '0', '0', '0', '1', '0', '1389715200', '21', '1');
-INSERT INTO `tp_users` VALUES ('12', '1', 'zhijianapp', '9d5ccecdbc201e0d7c484d2ec02fb355', 'unary@163.com', '1389345868', '1389345868', '1', '112.2.37.18', '112.2.37.18', '0', '0', '0', '0', '1', '0', '1389605068', '0', '0');
-INSERT INTO `tp_users` VALUES ('13', '4', 'xuxinlai', '7939b2cda40f7151aa9390229fabbb27', 'ot_wuxiao@163.com', '1389598760', '1389972888', '1', '114.92.118.249', '120.90.123.64', '17', '1', '0', '0', '1', '0', '1420041600', '19', '1');
-INSERT INTO `tp_users` VALUES ('14', '4', 'aaaaaa', '0b4e7a0e5fe84ad35fb5f95b9ceeac79', 'sdfwe@adfds.com', '1389754214', '1389761055', '1', '171.105.10.3', '171.105.10.3', '7', '1', '0', '0', '1', '0', '1390147200', '17', '1');
-INSERT INTO `tp_users` VALUES ('15', '4', '老太太', '35fd19fbe470f0cb5581884fa700610f', '285758467@qq.com', '1389755209', '1389841786', '1', '58.16.250.62', '222.86.191.3', '17', '1', '0', '0', '1', '0', '1390147200', '27', '1');
-INSERT INTO `tp_users` VALUES ('16', '1', 'zzz', 'f3abb86bd34cf4d52698f14c0da1dc60', 'zzz@111.com', '1390111199', '1390114768', '1', '::1', '::1', '0', '0', '0', '0', '0', '0', '1390370399', '0', '1');
-INSERT INTO `tp_users` VALUES ('17', '4', '小芳', 'e10adc3949ba59abbe56e057f20f883e', '', '1393039016', '1393140427', '1', '114.86.212.50', '58.33.108.218', '6', '0', '0', '0', '1', '0', '1424534400', '11', '2');
-INSERT INTO `tp_users` VALUES ('18', '1', '汽车', 'fd4b6eeaafbc287dea397f1e85be14df', '111111@qq.com', '1393044420', '1393044420', '1', '114.86.212.50', '114.86.212.50', '0', '0', '0', '0', '1', '0', '1393303620', '0', '0');
-INSERT INTO `tp_users` VALUES ('19', '4', 'wangchuan', '8c249675aea6c3cbd91661bbae767ff1', '84003477@qq.com', '1393045744', '1393413407', '1', '27.187.202.246', '27.187.202.246', '52', '3', '0', '0', '1', '0', '1393516800', '60', '2');
-INSERT INTO `tp_users` VALUES ('20', '1', 'xiaochuan', 'ec2eecf3217b193c8c179a966535b640', '107630007@qq.com', '1393056590', '1393141287', '1', '27.187.202.246', '27.187.202.246', '0', '0', '0', '0', '1', '0', '1393315790', '0', '2');
-INSERT INTO `tp_users` VALUES ('31', '5', 'zhangdan', 'e10adc3949ba59abbe56e057f20f883e', '1126557815@qq.com', '1393207395', '1393208720', '1', '27.187.202.246', '27.187.202.246', '5', '0', '0', '0', '1', '0', '1427385600', '4', '2');
-INSERT INTO `tp_users` VALUES ('23', '1', 'nizaina', 'e10adc3949ba59abbe56e057f20f883e', '1122334@qq.com', '1393141422', '1393141422', '1', '27.187.202.246', '27.187.202.246', '0', '0', '0', '0', '0', '0', '1393400622', '0', '0');
-INSERT INTO `tp_users` VALUES ('24', '5', '员工', 'e10adc3949ba59abbe56e057f20f883e', '', '1393143103', '1393216687', '1', '58.33.108.218', '114.92.106.116', '27', '3', '0', '0', '1', '0', '1393516800', '83', '2');
-INSERT INTO `tp_users` VALUES ('26', '4', 'guoziwei', 'e10adc3949ba59abbe56e057f20f883e', 'woaichi@163.com', '1393148165', '1393337750', '1', '27.187.202.246', '27.187.202.246', '6', '0', '0', '0', '1', '0', '1393344000', '11', '2');
-INSERT INTO `tp_users` VALUES ('27', '4', '支援白沙', 'e10adc3949ba59abbe56e057f20f883e', '', '1393150981', '1393216800', '1', '58.33.108.218', '114.92.106.116', '32', '50000', '0', '0', '101', '1', '1456156800', '44', '2');
-INSERT INTO `tp_users` VALUES ('28', '1', 'xiaobai', 'e10adc3949ba59abbe56e057f20f883e', '', '1393152133', '1393152167', '1', '58.33.108.218', '58.33.108.218', '0', '0', '0', '0', '1', '0', '1393257600', '0', '2');
-INSERT INTO `tp_users` VALUES ('29', '5', 'xiao', 'e10adc3949ba59abbe56e057f20f883e', '', '1393152575', '1393415876', '1', '58.33.108.218', '114.92.125.56', '14', '2', '0', '0', '1', '0', '1393430400', '19', '2');
-INSERT INTO `tp_users` VALUES ('32', '4', 'vzhigo', '0235640970376b741da7037999360301', '', '1393253038', '1393343038', '1', '114.92.106.116', '27.187.202.246', '140', '1', '0', '0', '2', '0', '1487865600', '66', '2');
+INSERT INTO `tp_users` VALUES ('1', '5', 'shule', 'e10adc3949ba59abbe56e057f20f883e', 'zhouxingxing_ok_12@163.com', '1387626525', '1393665372', '1', '112.64.61.145', '::1', '0', '0', '0', '0', '21', '100', '1422028800', '0', '3', '1');
+INSERT INTO `tp_users` VALUES ('33', '3', 'xiaobai', '9fd00aba1fd30c80c943b1b25065b72d', '', '1394033090', '1394088084', '1', '::1', '::1', '0', '0', '0', '0', '0', '0', '1438704000', '0', '3', '18');
+INSERT INTO `tp_users` VALUES ('35', '1', 'bbb', '92eb5ffee6ae2fec3ad71c777531578f', '', '1394094033', '1394094033', '1', '::1', '::1', '0', '0', '0', '0', '0', '0', '1394035200', '0', '0', '18');
+INSERT INTO `tp_users` VALUES ('37', '4', 'sss', '9f6e6800cfae7749eb6c486619254b9c', '', '1394094878', '1394094878', '0', '::1', '::1', '0', '0', '0', '0', '0', '0', '1394094878', '0', '0', '1');
 
 -- ----------------------------
 -- Table structure for `tp_user_address`
@@ -12434,24 +12314,17 @@ CREATE TABLE `tp_wxuser` (
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`),
   KEY `uid_2` (`uid`)
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_wxuser
 -- ----------------------------
 INSERT INTO `tp_wxuser` VALUES ('30', '1', '蜀乐订餐', 'gh_7bb59981c2bd', 'shuleding', './tpl/User/default/common/images/portrait.jpg', 'gmbqsf1389536537', '上海', '上海', '1389536537@yourdomain.com', '0', '1', '情感', '', '100000', '1', '0', '0', '1389536568', '32', '1389536568', '132_index', '1', 'yl_list', '1', 'ktv_content', '0');
 INSERT INTO `tp_wxuser` VALUES ('37', '1', '微指购', 'gh_69e97bb30d8d', 'TTvzhigo', '/tpl/User/default/common/images/portrait.jpg', 'eolvhz1392992775', '河北', '保定', '1392992775@yourdomain.com', '0', '1', '情感', '', '100', '1', '0', '0', '1392992832', '1', '1392992832', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');
-INSERT INTO `tp_wxuser` VALUES ('38', '17', '伊人', 'gh_8154d3ddaa39', 'yiren_yours', '/tpl/User/default/common/images/portrait.jpg', 'tmpjis1393039145', '都市', '都市', '1393039145@yourdomain.com', '0', '1', '情感', '', '0', '0', '0', '0', '1393039261', '11', '1393039261', '111_index', '1', 'yl_list', '1', 'ktv_content', '0');
-INSERT INTO `tp_wxuser` VALUES ('39', '18', '微销售', 'gh_ea77b91d57ea', 'Vxiao_shou', '/tpl/User/default/common/images/portrait.jpg', 'xaybdf1393044422', '上海', '上海', '1393044422@yourdomain.com', '0', '8', '服务', '', '0', '0', '0', '0', '1393044533', '1', '1393044533', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');
-INSERT INTO `tp_wxuser` VALUES ('40', '19', '卡通', 'gh_73878890f1e0', 'wxsc000', '/tpl/User/default/common/images/portrait.jpg', 'rpniee1393046049', '河北', '保定', '1393046049@yourdomain.com', '0', '6', '购物', '', '100', '1', '98', '98', '1393046352', '11', '1393046352', '111_index', '1', 'yl_list', '1', 'yl_content', '0');
-INSERT INTO `tp_wxuser` VALUES ('42', '24', '伊人', 'gh_8154d3ddaa39', 'yiren_yours', '/tpl/User/default/common/images/portrait.jpg', 'agpsva1393143193', '对的', '对的', '1393143193@yourdomain.com', '0', '2', '数码', '', '100000', '1', '0', '0', '1393143299', '23', '1393143299', '123_index', '1', 'yl_list', '1', 'ktv_content', '0');
-INSERT INTO `tp_wxuser` VALUES ('44', '26', '果滋味儿', 'gh_8771458a9633', 'guoziwei517', '/tpl/User/default/common/images/portrait.jpg', 'ayimeo1393148169', '河北', '保定', '1393148169@yourdomain.com', '0', '7', '生活', '', '0', '0', '0', '0', '1393148231', '32', '1393148231', '132_index', '1', 'yl_list', '3', 'ktv_content', '0');
-INSERT INTO `tp_wxuser` VALUES ('45', '27', '支援白沙', 'gh_8a77528ffdff', '1111', '/tpl/User/default/common/images/portrait.jpg', 'zhlfhw1393151027', '111', '11', '1393151027@yourdomain.com', '0', '1', '情感', '', '0', '0', '0', '0', '1393151039', '1', '1393151039', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');
-INSERT INTO `tp_wxuser` VALUES ('46', '28', 'yiren', 'gh_8154d3ddaa39', 'yiren_yours', '/tpl/User/default/common/images/portrait.jpg', 'vfipwn1393152171', 's', 'd', '1393152171@yourdomain.com', '0', '1', '情感', '', '0', '0', '0', '0', '1393152233', '31', '1393152233', '131_index', '1', 'yl_list', '1', 'ktv_content', '0');
-INSERT INTO `tp_wxuser` VALUES ('47', '29', 'yiren', 'gh_8154d3ddaa39', 'yiren_yours', '/tpl/User/default/common/images/portrait.jpg', 'gqgwws1393152646', 'ds', 'df', '1393152646@yourdomain.com', '0', '1', '情感', '', '0', '0', '0', '0', '1393152666', '1', '1393152666', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');
-INSERT INTO `tp_wxuser` VALUES ('48', '31', '张丹', 'gh_5ace609286b6', 'zd1126557815', '/tpl/User/default/common/images/portrait.jpg', 'xcpxya1393207490', '河北', '保定', '1393207490@yourdomain.com', '0', '8', '服务', '', '0', '0', '0', '0', '1393207543', '32', '1393207543', '132_index', '1', 'yl_list', '1', 'ktv_content', '0');
-INSERT INTO `tp_wxuser` VALUES ('49', '6', '微销售', 'gh_8a77528ffdff', 'Vxiao_shou', '/tpl/User/default/common/images/portrait.jpg', 'zqdxjl1393247343', '上海', '上海', '1393247343@yourdomain.com', '0', '1', '情感', '', '0', '0', '0', '0', '1393247425', '1', '1393247425', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');
-INSERT INTO `tp_wxuser` VALUES ('50', '32', '微指购', 'gh_69e97bb30d8d', 'TTvhigo', '/tpl/User/default/common/images/portrait.jpg', 'mndeel1393253119', '河北', '保定', '1393253119@yourdomain.com', '0', '1', '情感', '', '100', '0', '0', '0', '1393253416', '32', '1393253416', '132_index', '1', 'yl_list', '1', 'ktv_content', '0');
+INSERT INTO `tp_wxuser` VALUES ('38', '33', '伊人', 'gh_8154d3ddaa39', 'yiren_yours', '/tpl/User/default/common/images/portrait.jpg', 'tmpjis1393039145', '都市', '都市', '1393039145@yourdomain.com', '0', '1', '情感', '', '0', '0', '0', '0', '1393039261', '11', '1393039261', '111_index', '1', 'yl_list', '1', 'ktv_content', '0');
+INSERT INTO `tp_wxuser` VALUES ('39', '33', '微销售', 'gh_ea77b91d57ea', 'Vxiao_shou', '/tpl/User/default/common/images/portrait.jpg', 'xaybdf1393044422', '上海', '上海', '1393044422@yourdomain.com', '0', '8', '服务', '', '0', '0', '0', '0', '1393044533', '1', '1393044533', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');
+INSERT INTO `tp_wxuser` VALUES ('40', '33', '卡通', 'gh_73878890f1e0', 'wxsc000', '/tpl/User/default/common/images/portrait.jpg', 'rpniee1393046049', '河北', '保定', '1393046049@yourdomain.com', '0', '6', '购物', '', '100', '1', '98', '98', '1393046352', '11', '1393046352', '111_index', '1', 'yl_list', '1', 'yl_content', '0');
+INSERT INTO `tp_wxuser` VALUES ('49', '33', '微销售', 'gh_8a77528ffdff', 'Vxiao_shou', '/tpl/User/default/common/images/portrait.jpg', 'zqdxjl1393247343', '上海', '上海', '1393247343@yourdomain.com', '0', '1', '情感', '', '0', '0', '0', '0', '1393247425', '1', '1393247425', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');
 
 -- ----------------------------
 -- Table structure for `tp_xitie`

@@ -8,16 +8,15 @@
 </head>
 <body class="warp">
 <div id="artlist" class="addn">
-<gt name="info.id" value="0">
-<script src="./tpl/User/default/common/js/date/WdatePicker.js"></script>
+	<script src="./tpl/User/default/common/js/date/WdatePicker.js"></script>
+		<gt name="info.id" value="0">
 			<form action="{lanrain::U('Users/edit')}" method="post" name="form" id="myform">
 			<input type="hidden" name="id" value="{lanrain:$info.id}">
 		<else />
 			<form action="{lanrain::U('Users/add')}" method="post" name="form" id="myform">
 		</gt>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" id="addn">
-
-				 <tr>
+				<tr>
 					<th colspan="4">{lanrain:$title}</th>
 				</tr>
 				<tr>
@@ -78,7 +77,21 @@
 				<tr>
 					<td height="48" align="right"><strong>到期时间：</strong></td>
 					<td colspan="3" class="lt">
-						<input type="text" name="viptime" onClick="WdatePicker()" class="ipt" size="45" value="{lanrain:$info.viptime|date="Y-m-d",###}">
+						<gt name="info.id" value="0">
+							<input type="text" name="viptime" onClick="WdatePicker()" class="ipt" size="45" value="{lanrain:$info.viptime|date="Y-m-d",###}">
+						<else />
+							<input type="text" name="viptime" onClick="WdatePicker()" class="ipt" size="45" value="">
+						</gt>
+					</td>
+				</tr>
+				<tr>
+					<td height="48" align="right"><strong>所属管理者：</strong></td>
+					<td colspan="3" class="lt">
+						<select name="belonguser" style="width:136px">
+							<volist name="userinfo" id="vo">
+								<option value="{lanrain:$vo.id}" <eq name="vo.id" value="$info.belonguser">selected=""</eq> >{lanrain:$vo.username}</option>
+							</volist>
+						</select>
 					</td>
 				</tr>
 				<tr>
@@ -91,10 +104,12 @@
 		<td colspan="4">
 			<gt name="info.id" value="0">
 				<input class="bginput" type="submit" name="dosubmit" value="修 改" >
-				<else />
-				<input class="bginput" type="submit" name="dosubmit" value="添 加"></gt>
+			<else />
+				<input class="bginput" type="submit" name="dosubmit" value="添 加">
+			</gt>
 			&nbsp;
-			<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+			<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" >
+		</td>
 	</tr>
 </table>
 </form>

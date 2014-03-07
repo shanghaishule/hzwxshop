@@ -2,6 +2,9 @@
 class GroupAction extends BackAction{
 	public function _initialize() {
         parent::_initialize();  //RBAC 验证接口初始化
+        
+        $this->assign('pid', $_REQUEST['pid']);
+        $this->assign('level', $_REQUEST['level']);
     }
 	public function index(){
 		$RoleDB = D('Role');
@@ -16,7 +19,6 @@ class GroupAction extends BackAction{
             //根据表单提交的POST数据创建数据对象
             if($RoleDB->create()){
                 if($RoleDB->add()){
-                    $this->assign("jumpUrl",U('Group/index'));
                     $this->success('添加成功！');
                 }else{
                      $this->error('添加失败!');
@@ -34,13 +36,16 @@ class GroupAction extends BackAction{
 		$RoleDB = D("Role");
         if(isset($_POST['dosubmit'])) {
             //根据表单提交的POST数据创建数据对象
-            if($RoleDB->create()){
+            $data = $RoleDB->create();
+            if($data){
+            	//$this->success(implode('@', $data));
+            	
                 if($RoleDB->save()){
                     $this->assign("jumpUrl",U('Group/index'));
                     $this->success('编辑成功！');
                 }else{
                 	
-                     $this->error('编辑失败!');
+                     $this->error('编辑失败了!');
                 }
             }else{
                 $this->error($RoleDB->getError());

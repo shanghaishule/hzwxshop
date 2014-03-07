@@ -1,8 +1,21 @@
 <?php
 class BackAction extends BaseAction{
 	protected $pid;
+	
+	protected $current_userid;
+	protected $belong_where;
+	
 	protected function _initialize(){		
 		if(!isset($_SESSION['username'])){$this->error('非法操作',U('System/Admin/index'));}
+		
+		//dump($_SESSION);exit;
+		$this->current_userid = $_SESSION["userid"];
+		if ($this->current_userid == 1) { //admin 可以看到所有前端用户
+			$this->belong_where = '1=1';
+		}else{
+			$this->belong_where = 'belonguser='.$this->current_userid;
+		}
+		
 		parent::_initialize();
 		if (C('USER_AUTH_ON') && !in_array(MODULE_NAME, explode(',', C('NOT_AUTH_MODULE')))) {
             if (!RBAC::AccessDecision()) {
