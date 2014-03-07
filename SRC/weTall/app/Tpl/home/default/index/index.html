@@ -36,20 +36,6 @@
 
 <body>
 	<include file="public:head" />
-	<!--  <div id="headshop">
-	<div id="leftfloat">
-        <div id="search_box"> 
-        	<select name="color" id="color">
-				<option value="red"  class="red">搜索本店</option>
-				<option value="blue" class="blue">搜微蔻</option>
-			</select>
-			<form id="search_form" method="post" action="#"> 
-				<input type="text" id="s" value="Search" class="swap_value" /> 
-				<input type="image" src="__ROOT__/static/weixin/css/images/btn_search_box.gif" width="27" height="24" id="go" alt="Search" title="Search" /> 
-			</form> 
-		</div> 
-	</div>
-</div> -->
 <script type="text/javascript" src="__STATIC__/weixin/js/jquery.js" charset="utf-8"></script>
 <script>
 function submitForm(){
@@ -67,18 +53,17 @@ $(document).ready(function() {
 <!-- xxl start -->
 <if condition="$systemBrowse eq 'X'  and $index_num2 eq 1">
 <div id="first" onclick="document.getElementById('first').style.display='';" style="display:none;">
-                    <img src="/tpl/User/default/common/images/first.png" />
+                    <img src="__PARENTURL__/tpl/User/default/common/images/first.png" />
 </div>
 </if>
 <!-- xxl end -->
 <div class="search_all">
-    <form id="form1" action="/weTall/index.php?m=index&a=search" method="post">       
+    <form id="form1" action="{:U('index/search')}" method="post">       
         <div class="search_content FloatLeft">
-        <select id="search_method" name="method"><option selected value="local">搜本店</option><option value="weFig">搜商城</option></select>
             <input type="text" id="txtKeyword" autocomplete="off" placeholder="请输入搜索内容" value=""
                name="txtkeyword" class="search_textbox" /></div>
         <div class="search_btn">
-            <input type="image" id="submit2" onclick="submitForm();" src="/tpl/Wap/default/common/images/weTall/search_btn.jpg" /></div>
+            <input type="image" id="submit2" onclick="submitForm();" src="__PARENTURL__/tpl/Wap/default/common/images/weTall/search_btn.jpg" /></div>
     </form>
 </div>
 	<div class="banner">
@@ -101,7 +86,7 @@ $(document).ready(function() {
 	    </div>
 	</div>
    <div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display:none;">
-                    <img src="/tpl/User/default/common/images/nav.png" />
+                    <img src="__PARENTURL__/tpl/User/default/common/images/nav.png" />
                 </div>
 	<div class="shoplogo">
 	   <div class="shoplogourl">
@@ -145,12 +130,12 @@ $(document).ready(function() {
 	          </li>
 	          <li id="m_2">
 	            <div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display:none;">
-                    <img src="/tpl/User/default/common/images/nav.png" />
+                    <img src="__PARENTURL__/tpl/User/default/common/images/nav.png" />
                 </div>
 	            <div>
                     <div>                       
                         <span onclick="document.getElementById('mcover').style.display='block';">
-                        <img src="/tpl/User/default/common/images/friend.jpg" width="20" height="20" />                            
+                        <img src="__PARENTURL__/tpl/User/default/common/images/friend.jpg" width="20" height="20" />                            
                          <br>分享
                         </span>
                      </div>          
