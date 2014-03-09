@@ -10,7 +10,7 @@ class brandlistAction extends backendAction
 
     public function _before_index() {
         $big_menu = array(
-            'title' => L('添加分类'),
+            'title' => L('添加品牌'),
             'iframe' => U('brandlist/add'),
             'id' => 'add',
             'width' => '400',

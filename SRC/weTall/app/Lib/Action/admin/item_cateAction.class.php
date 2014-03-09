@@ -35,7 +35,7 @@ class item_cateAction extends backendAction {
                 <td align='center'><span data-tdtype='view' data-field='ordid' data-id='\$id' class='tdview'>\$ordid</span></td>
                 <td align='center'>\$str_index</td>
                 <td align='center'>\$str_status</td>
-                <!--<td align='center'>\$str_manage</td>-->
+                <td align='center'>\$str_manage</td>
                 </tr>";
         $tree->init($array);
         $list = $tree->get_tree(0, $str);

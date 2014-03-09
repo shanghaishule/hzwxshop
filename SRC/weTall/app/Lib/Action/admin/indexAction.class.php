@@ -30,9 +30,9 @@ class indexAction extends backendAction {
         	
         	$data["name"]=$wxUser["wxname"];
         	$data["weName"]=$wxUser["wxname"];
-        	$data["title"]="微蔻店铺";
-        	$data["descr"]="微蔻店铺";
-        	$data["keywords"]="微蔻店铺";
+        	$data["title"]="微服客店铺";
+        	$data["descr"]="微服客店铺";
+        	$data["keywords"]="微服客店铺";
         	$weshop->add($data);
         }
         

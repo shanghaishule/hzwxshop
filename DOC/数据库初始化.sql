@@ -12069,7 +12069,7 @@ INSERT INTO `tp_wecha_shop` VALUES ('16', 'yiren', 'gqgwws1393152646', 'yiren', 
 INSERT INTO `tp_wecha_shop` VALUES ('17', '张丹', 'xcpxya1393207490', '张丹', '0', '/tpl/User/default/common/images/portrait.jpg', '0', null, null, null, null, '1', null, null, null, null, null);
 INSERT INTO `tp_wecha_shop` VALUES ('18', '微销售', 'zqdxjl1393247343', '微销售', '0', '/tpl/User/default/common/images/portrait.jpg', '0', null, null, null, null, '1', null, null, null, null, null);
 INSERT INTO `tp_wecha_shop` VALUES ('19', '微指购', 'mndeel1393253119', '微指购', '0', '/tpl/User/default/common/images/portrait.jpg', '0', null, null, null, null, '1', null, null, null, null, null);
-INSERT INTO `tp_wecha_shop` VALUES ('20', null, 'uszwdy1393569154', null, '0', '/tpl/User/default/common/images/portrait.jpg', '0', '微蔻店铺', '微蔻店铺', '微蔻店铺', null, '1', null, null, null, null, null);
+INSERT INTO `tp_wecha_shop` VALUES ('20', null, 'uszwdy1393569154', null, '0', '/tpl/User/default/common/images/portrait.jpg', '0', '微服客店铺', '微服客店铺', '微服客店铺', null, '1', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for `tp_wecha_user`
