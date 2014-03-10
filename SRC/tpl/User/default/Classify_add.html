@@ -14,7 +14,7 @@
 				editor.plugin.imageDialog({
 					fileUrl : K('#pic').val(),
 					clickFn : function(url, title) {
-						K('#pic').val(url);
+						K('#pic').val("__ROOT__"+url);
 						editor.hideDialog();
 					}
 				});

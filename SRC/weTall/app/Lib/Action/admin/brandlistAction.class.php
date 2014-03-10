@@ -23,8 +23,14 @@ class brandlistAction extends backendAction
         $this->order = 'ASC';
     }
 
+    public function _before_insert($data) {
+    	$data['tokenTall'] = $this->getTokenTall();
+    	return $data;
+    }
+    
     protected function _search() {
         $map = array();
+        $map['tokenTall'] = $this->getTokenTall();
         ($keyword = $this->_request('keyword', 'trim')) && $map['name'] = array('like', '%'.$keyword.'%');
         $this->assign('search', array(
             'keyword' => $keyword,

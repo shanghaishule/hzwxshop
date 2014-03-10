@@ -17,7 +17,7 @@
 						if(url.indexOf("http") > -1){
 							K('#pic').val(url);
 						}else{
-							K('#pic').val("{lanrain::C('site_url')}"+url);
+							K('#pic').val("__ROOT__"+url);
 						}
 						editor.hideDialog();
 					}

@@ -11,7 +11,7 @@ class item_cateAction extends backendAction {
         $tree = new Tree();
         $tree->icon = array('│ ','├─ ','└─ ');
         $tree->nbsp = '&nbsp;&nbsp;&nbsp;';
-        $result = $this->_mod->order($sort . ' ' . $order)->select();
+        $result = $this->_mod->order($sort . ' ' . $order)->where(array('tokenTall'=>$this->getTokenTall()))->select();
         $array = array();
         foreach($result as $r) {
             $r['str_img'] = $r['img'] ? '<span class="img_border"><img src="'.attach($r['img'], 'item_cate').'" style="width:26px; height:26px;" class="J_preview" data-bimg="'.attach($r['img'], 'item_cate').'" /></span>' : '';
@@ -75,6 +75,7 @@ class item_cateAction extends backendAction {
         }
         //生成spid
         $data['spid'] = $this->_mod->get_spid($data['pid']);
+        $data['tokenTall'] = $this->getTokenTall();
         return $data;
     }
 
@@ -245,7 +246,7 @@ class item_cateAction extends backendAction {
     public function ajax_getchilds() {
         $id = $this->_get('id', 'intval');
         $type = $this->_get('type', 'intval', null);
-        $map = array('pid'=>$id);
+        $map = array('pid'=>$id, 'tokenTall'=>$this->getTokenTall());
         if (!is_null($type)) {
             $map['type'] = $type;
         }
