@@ -341,10 +341,10 @@ div.order_cancel_box p span {color: #f34; font-weight: bold;}
 #nav .navlist li#n_3 i{ position:absolute; height:14px; width:14px;background:#C00; color:#fff; left:55%; top:10px; border-radius:50%; font-style:normal; text-align:center; font-size:12px; display:none;}
 #nav .navlist li span{ display:inline-block; width:100%; height:45px; cursor:pointer;}
 #nav .navlist li a{ display:block; height:45px;}
-#nav .navlist li#n_0 span{ background:url(/weTall/static/weixin/images/dingcan/icon5.png) no-repeat center center;}
-#nav .navlist li#n_1 span{ background:url(/weTall/static/weixin/images/dingcan/icon10.png) no-repeat center center;}
-#nav .navlist li#n_2 span{ background:url(/weTall/static/weixin/images/dingcan/icon9.png) no-repeat center center;}
-#nav .navlist li#n_3 span{ background:url(/weTall/static/weixin/images/dingcan/icon11.png) no-repeat center center;}
+#nav .navlist li#n_0 span{ background:url(../images/dingcan/icon5.png) no-repeat center center;}
+#nav .navlist li#n_1 span{ background:url(../images/dingcan/icon10.png) no-repeat center center;}
+#nav .navlist li#n_2 span{ background:url(../images/dingcan/icon9.png) no-repeat center center;}
+#nav .navlist li#n_3 span{ background:url(../images/dingcan/icon11.png) no-repeat center center;}
 #nav .navlist li#n_4 span{ text-align:left;padding-top:9px; color:white;font-weight:900;}
 #nav .navlist li#n_4{width:50%;}
 
@@ -903,7 +903,7 @@ div.order_cancel_box p span {color: #f34; font-weight: bold;}
 .newPro{
 	margin-left: 22px;
 	margin-bottom:6px;
-	background:url(/weTall/static/weixin/css/images/cate.jpg) no-repeat;
+	background:url(../css/images/cate.jpg) no-repeat;
 	width:60px;
 	height:60px;
 	box-shadow:0px 2px 4px #7A7A7A;
@@ -912,7 +912,7 @@ div.order_cancel_box p span {color: #f34; font-weight: bold;}
 .tuanPro{
 	margin-bottom:6px;
 	margin-left: 22px;
-	background:url(/weTall/static/weixin/css/images/hot.jpg) no-repeat;
+	background:url(../css/images/hot.jpg) no-repeat;
 	width:60px;
 	height:60px;
 	box-shadow:0px 2px 4px #7A7A7A;
@@ -921,7 +921,7 @@ div.order_cancel_box p span {color: #f34; font-weight: bold;}
 .mailPro{
 	margin-bottom:6px;
 	margin-left: 22px;
-	background:url(/weTall/static/weixin/css/images/order.jpg) no-repeat;
+	background:url(../css/images/order.jpg) no-repeat;
 	width:60px;
 	height:60px;
 	box-shadow:0px 2px 4px #7A7A7A;

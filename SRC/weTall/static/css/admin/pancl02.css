@@ -1,8 +1,8 @@
 @charset "utf-8";
 
-h4{background: url(/weTall/static/images/admin/pancl/p_top_bg.png) repeat 0 0;height: 32px; width:auto; line-height:32px; text-align: left; font-size:14px;font-family: "微软雅黑","宋体";color:#333; font-weight: normal;}
-.mleft{ width:70%; height:auto; float:left; margin:0px 0;border: 0px solid #ccc; min-height:300px;}
-.mright{ width:30%; height:auto; float:right; margin:0px 0;border: 0px solid #ccc;min-height:300px;}
+h4{background: #ba4c32;height: 32px; width:auto; line-height:32px; text-align: left; font-size:14px;font-family: "微软雅黑","宋体";color:white; font-weight: normal;}
+.mleft{ width:100%; height:auto; float:left; margin:0px 0;border: 0px solid #ccc; min-height:300px;}
+/*.mright{ width:30%; height:auto; float:right; margin:0px 0;border: 0px solid #ccc;min-height:300px;}*/
 
 .th{margin-top:10px;}
 .mbar{width:auto; height:auto; clear:both; margin:10px 0px 10px 0px;border: 1px solid #ededed;overflow: hidden;}
