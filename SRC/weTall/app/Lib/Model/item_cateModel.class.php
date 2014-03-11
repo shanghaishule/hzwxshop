@@ -136,7 +136,9 @@ class item_cateModel extends Model
      * @return bool 
      */
     public function name_exists($name, $pid, $id=0) {
-        $where = "name='" . $name . "' AND pid='" . $pid . "' AND id<>'" . $id . "'";
+    	//require_once '..\Action\baseAction.class.php';
+    	$base = new BaseAction();
+        $where = "name='" . $name . "' AND pid='" . $pid . "' AND id<>'" . $id . "' AND tokenTall='".$base->getTokenTall()."'";
         $result = $this->where($where)->count('id');
         if ($result) {
             return true;
