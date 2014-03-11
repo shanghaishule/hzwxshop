@@ -87,7 +87,11 @@ background: #2BD54D;
 	                        </case>
 	                        <case value="3"><!-- 待收货 -->
 	                           <a class="button_aaa" href="{:U('order/confirmOrder',array('orderId'=>$vo['orderId'],'status'=>$status,'tokenTall'=>$tokenTall))}" id="order118_action_confirm" >确认收货</a>
-	                           <a class="button_aaa" href="{:U('order/checkOrder',array('orderId'=>$vo['orderId'],'status'=>$status,'tokenTall'=>$tokenTall))}" >查看订单</a>	                           
+	                           <a class="button_aaa" href="{:U('order/checkOrder',array('orderId'=>$vo['orderId'],'status'=>$status,'tokenTall'=>$tokenTall))}" >查看订单</a>	     
+	                           <!--xxl 0309  start-->
+	                           <a class="button_aaa" href="{:U('order/checkLog',array('orderId'=>$vo['orderId'],'status'=>$status,'tokenTall'=>$tokenTall))}" >物流查询</a>
+	                           <!--xxl 0309  end-->	                           
+	                                                 
 	                        </case>
 	                        <default />
 	                           <a class="button_aaa" href="{:U('order/checkOrder',array('orderId'=>$vo['orderId'],'status'=>$status,'tokenTall'=>$tokenTall))}" >查看订单</a>
