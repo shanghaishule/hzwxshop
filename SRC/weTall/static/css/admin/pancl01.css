@@ -62,7 +62,7 @@ input{ color:#000;}
 /*footer*/
 #footer{width:100%;}
 #footer .f-box{line-height:25px; text-align:center; width:980px; margin:0px auto 0px auto;padding:0; overflow:hidden;}
-#footer .f-box .copy{ color:#666;}
+#footer .f-box .copy{ color:white;padding-top:10px;}
 #footer .f-box a{ margin:0px 6px 0px 6px;}
 
 /*mainer*/

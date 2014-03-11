@@ -36,6 +36,11 @@ class indexAction extends backendAction {
         	$weshop->add($data);
         }
         
+       
+        $tokenTall = $this->getTokenTall();
+        $weshopData["tokenTall"] = $tokenTall;
+        $weChaShopDetail = $weshop->where($weshopData)->find();//商城基本信息var_dump($weChaShopDetail);die();
+        $this->assign("weshopData",$weChaShopDetail);
         $this->display(); 
     }
 
@@ -247,6 +252,7 @@ class indexAction extends backendAction {
 
     public function left() {
         $menuid = $this->_request('menuid', 'intval');
+       
         if ($menuid) {
             $left_menu = $this->_mod->admin_menu($menuid);
             foreach ($left_menu as $key=>$val) {
@@ -291,6 +297,7 @@ class indexAction extends backendAction {
             array_unshift($left_menu[0]['sub'], array('id'=>0,'name'=>'后台首页','module_name'=>'index','action_name'=>'panel'));
         }
         $this->assign('left_menu', $left_menu);
+       
         $this->assign('tokenTall', $this->getTokenTall());
         $this->display();
     }

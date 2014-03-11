@@ -1,3 +1,5 @@
+
+
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, img {margin:0;padding:0;}
 body {font-family: Arial;font-size: 10px;line-height: 1.5;}
 html.off,html.off body {background: #ebefef url(bgimg/left_bg.png) repeat-y -40px top;}
@@ -19,7 +21,7 @@ button, input, select, textarea {font-size:100%;}
 .block {display: block;}
 .invisible {visibility:hidden;}
 .hand { cursor:pointer; }
-.cu,.cu_li li,.cu_span span {cursor: hand;!important;cursor: pointer}
+
 .clearfix:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;}
 .clearfix {clear:both;zoom:1;}
 
@@ -32,19 +34,7 @@ button, input, select, textarea {font-size:100%;}
 .f14 { font-size:14px; }
 address,cite,dfn,em,var{font-style:normal;}
 
-/*链接样式*/
-a{text-decoration:none; color:#444;}
-a:hover{text-decoration:underline;}
-.white,.white a{color:#fff}
-.blue,.blue a{color:#004499}
-.gray4,a.gray4{color:#999}
-.red, .red a, a.red{color:red;}
-.green{color:#0E774A}
-.blue{color:#00F;}
-.green{ color:#0C0;}
-.gray { color:#999;}
-.black{ color:#000;}
-.highlight{color: #C00;font-weight: 700;}
+
 
 .img_border img{border:1px #cfcdcd solid;padding:1px;}
 
@@ -66,7 +56,6 @@ a:hover{text-decoration:underline;}
 .title_2{text-align:left;height:25px;*height:24px;font:14px "MicroSoft YaHei","SimHei";color:#333;*line-height:25px; margin:0; padding:4px 0 3px 0px}
 .title_3{ text-align:left; font-size:12px; font-weight:normal; padding:4px 0 4px 0px}
 
-.ib, .ib_li li, .ib_a a, .ib-span span,.common_form ul li span.text,.fixed_bottom .fixed_but .btn,.arrowhead,.arrowhead-b,shortcut a,.shortcut a span,.picBut a,.tab_use{display:inline-block;display:-moz-inline-stack;zoom:1;*display:inline;}
 .cut_line span.cut{color:#4d82bc; padding:0 4px}
 
 /*按钮*/
@@ -211,7 +200,7 @@ select{ vertical-align:middle;background:none repeat scroll 0 0 #F9F9F9;border-c
 #header .admin_info{padding:18px 14px 0 0; color:#FFF;}
 #header .admin_info a{ text-decoration:none; color:#FFF;}
 
-.left_menu{margin-right:8px; padding:8px;_padding:8px 0 8px 8px;width:118px; position:relative; display:block;}
+.left_menu{margin-left:150px;margin-right:8px; padding:8px;_padding:8px 0 8px 8px;width:140px; position:relative; display:block;}
 .left_menu_on{ width:0; padding:0;}
 .left_menu_on div{ visibility:hidden;_display:none}
 .left_menu h3{font-weight: 700;color: #275d96;border-bottom:1px solid #d9e4ea; line-height:24px; height:24px; margin-bottom:4px;_width:112px;_margin-right:12px}
@@ -227,7 +216,7 @@ select{ vertical-align:middle;background:none repeat scroll 0 0 #F9F9F9;border-c
 .left_menu h3 span{background-position: left -78px; display:block; float:right; height:14px; width:14px; margin-top:5px}
 .left_menu h3 span.on{background-position: -33px -78px;}
 
-.right_main{overflow:hidden;_zoom:1;_float:left;}
+.right_main{overflow:hidden;_zoom:1;_float:left;width:800px;}
 
 /*页面tab*/
 .crumbs{height:26px;position:relative;}
@@ -406,3 +395,4 @@ body { _margin:0; _height:100%; }/*IE6 BUG*/
 /* 附件tip */
 .attachment_icon{ margin-left:8px; position:relative;}
 .attachment_tip{ border:1px #CCC solid; position:absolute; left:16px; top:16px; display:none; padding:1px; z-index:9;}
+

@@ -2,39 +2,59 @@
 <html class="off">
 <head>
     <meta charset="utf-8" />
+   
     <css file="__STATIC__/css/admin/style.css" />
     <link href="__PARENTURL__/tpl/User/default/common/css/style.css" rel="stylesheet" type="text/css" />
 <link href="__PARENTURL__/tpl/User/default/common/css/stylet.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="__PARENTURL__/tpl/User/default/common/js/jquery.min.js"></script>
 <script type="text/javascript" src="__PARENTURL__/tpl/User/default/common/js/main.js"></script>
-    
-    <title>{:L('website_manage')}</title>
-    <script>
-	var URL = '__URL__';
-	var SELF = '__SELF__';
-	var ROOT_PATH = '__ROOT__';
-	var APP	 =	 '__APP__';
-	//语言项目
-	var lang = new Object();
-	<volist name=":L('js_lang')" id="val">
-		lang.{$key} = "{$val}";
-	</volist>
-	</script>
+   
+
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>商家后台管理</title>
+	<link rel="stylesheet" href="__STATIC__/css/admin/css/style.css" type="text/css" media="all" />
 </head>
-<body scroll="no">
+<body>
+<!-- Header -->
 <div id="header">
-   <div id="top">
-		<img src="__STATIC__/images/logo1.png" width="195" height="33" />
-        <a href="__PARENTURL__/index.php?g=User&m=Adma&a=index&token={$tokenTall}">>>>返回管理中心</a>
-	</div> 
-</div>
+	<div class="shell">
+		<!-- Logo + Top Nav -->
+		<div id="top">
+		    <img src="__STATIC__/images/logo1.png" height="33" />
+			<h1>微信商城后台管理</h1>
+			<div id="top-navigation" class="right_back">
+				欢迎您， {$weshopData.name}
+				| <a href="__PARENTURL__/index.php?g=User&m=Adma&a=index&token={$tokenTall}">返回管理中心</a>
+				
+			</div>
+		</div>
+		<!-- End Logo + Top Nav -->
+		
+		<!-- Main Nav -->
+		<div id="navigation">
+			<ul>
+			    <li><a href="javascript:;" data-uri="{:U(index/index, array('menuid'=>0,'tokenTall'=>$tokenTall))}{$sval.data}" data-id="{$sval.id}" hidefocus="true" class="active"><span>商品管理</span></a></li>
+			    <li><a href="{:U('index/index',array('tokenTall'=>$tokenTall,'current_id'=>1))}"><span>交易管理</span></a></li>
+			    <li><a href="{:U('index/index',array('tokenTall'=>$tokenTall,'current_id'=>2))}"><span>广告管理</span></a></li>
+			    <li><a href="{:U('index/index',array('tokenTall'=>$tokenTall,'current_id'=>4))}"><span>会员管理</span></a></li>
+			    <li><a href="{:U('index/index',array('tokenTall'=>$tokenTall,'current_id'=>99))}"><span>店铺管理</span></a></li>
+			</ul>
+		</div>
+		<!-- End Main Nav -->
+	</div>
+	
+</div><div class="small-nav">
+			<a href="#">后台首页</a>
+			<span>&gt;</span>
+			商品管理
+		</div><br>
 <div id="content">
 	<div class="left_menu fl">
     	<div id="J_lmenu" class="J_lmenu" data-uri="{:U('index/left',array('tokenTall'=>$tokenTall))}"></div>
         <a href="javascript:;" id="J_lmoc" style="outline-style: none; outline-color: invert; outline-width: medium;" hidefocus="true" class="open" title="{:L('expand_or_contract')}"></a>
     </div>
     <div class="right_main">
-    	<div class="crumbs">
+    	<div class="crumbs box">
         	<div class="options">
 				<a href="javascript:;" title="{:L('refresh_page')}" id="J_refresh" class="refresh" hidefocus="true">{:L('refresh_page')}</a>
             	<a href="javascript:;" title="{:L('full_screen')}" id="J_full_screen" class="admin_full" hidefocus="true">{:L('full_screen')}</a>
@@ -52,8 +72,8 @@
             </div>
         </div>
         
-    	<div id="J_rframe" class="rframe_b">
-        	<iframe id="rframe_0" src="{:U('index/panel',array('tokenTall'=>$tokenTall))}" frameborder="0" scrolling="auto" style="height:100%;width:100%;"></iframe>
+    	<div id="J_rframe" class="box">
+        	<iframe id="rframe_0" src="{:U('index/panel',array('tokenTall'=>$tokenTall))}" frameborder="0" scrolling="auto" style="height:100%;width:900px;"></iframe>
         </div>
     </div>
 </div>
