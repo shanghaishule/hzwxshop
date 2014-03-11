@@ -44,13 +44,11 @@ function submitForm(){
 		});
 	
 }
-/* delete by zcb 20140311 不要银联的提示了
 //xxl start
 $(document).ready(function() { 
 		document.getElementById('first').style.display='block';
 	 }); 
-//xxl end
-*/
+//xxl end	 
 </script>
 <!-- xxl start -->
 <if condition="$systemBrowse eq 'X'  and $index_num2 eq 1">
@@ -59,6 +57,7 @@ $(document).ready(function() {
 </div>
 </if>
 <!-- xxl end -->
+<div data-role="content"><!-- 
 <div class="search_all">
     <form id="form1" action="{:U('index/search')}" method="post">       
         <div class="search_content FloatLeft">
@@ -67,7 +66,7 @@ $(document).ready(function() {
         <div class="search_btn">
             <input type="image" id="submit2" onclick="submitForm();" src="__PARENTURL__/tpl/Wap/default/common/images/weTall/search_btn.jpg" /></div>
     </form>
-</div>
+</div> -->
 	<div class="banner">
 	    <div id="slider" class="slider" style="overflow: hidden; visibility: visible; list-style: none outside none; position: relative;">
 	        <ul id="sliderlist" class="sliderlist" style="position: relative; overflow: hidden; transition: left 600ms ease 0s; width: 1800px; left: -1200px;">
@@ -87,6 +86,7 @@ $(document).ready(function() {
 	        </div>
 	    </div>
 	</div>
+	<!-- 
    <div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display:none;">
                     <img src="__PARENTURL__/tpl/User/default/common/images/nav.png" />
                 </div>
@@ -155,8 +155,14 @@ $(document).ready(function() {
 	   <hr>
 	</div>
 
-	<div class="s_bottom"></div>
-
+	<div class="s_bottom"></div> -->
+   <div class="btn_big">
+            <ul>
+                <li><a href="/weTall/index.php?m=index&a=search&method=new"><div class="newPro"></div><span id="newNav">商品分类</span></a></li>
+                <li><a href="/weTall/index.php?m=index&a=search&method=recom"><div class="tuanPro"></div><span id="newNav">热门排行</span></a></li>
+                <li><a href="/weTall/index.php?m=index&a=search&method=free"><div class="mailPro"></div><span id="newNav">我的订单</span></a></li>
+            </ul>
+        </div>
 	<script type="text/javascript">
 	function favi_action(act){
 		if(act == "add"){
@@ -216,7 +222,7 @@ $(document).ready(function() {
 			as[active].className='active';
 		}});
 	</script>
-
+<!-- 
 	<div id="content">    
 	    <div class="module_special">
 	        <h2 class="common_title veins2">
@@ -286,7 +292,30 @@ $(document).ready(function() {
 	    </div>
 	    <div class="clear"></div>
 	</div>
-
+</div>
+ -->
+    <div class="content">
+      <div class="title_day">每日商品精选</div> 
+      <ul class="all_goods">   
+         <volist name="news" id="item">
+             <li>  
+               <div class="sigle_good"  >    
+	           <div class="good_pic">
+	           	    <a href="/weTall/index.php?m=index&a=search&method={$item.name}"><img  src="/weTall/data/upload/item_cate/{$item.img}"></a>
+	           </div>
+	           <!-- <div class="good_attr">		            
+		            <a  href="{:U('Item/index',array('id'=>$item['id'], 'tokenTall'=>$item['tokenTall']))}">{$item.name}</a>		           
+		            <div class="good_price">¥:{$item.price}</div>
+		            <div class="good_descr">{$item.remark}</div>
+	           </div>
+	           <span class="show_good">
+	           	<a  href="{:U('Item/index',array('id'=>$item['id'], 'tokenTall'=>$item['tokenTall']))}"></a>
+	           </span> -->
+	           </div>
+            </li>
+	     </volist>
+      </ul>
+    </div>	
 	<include file="public:footer" />
    
     <script>

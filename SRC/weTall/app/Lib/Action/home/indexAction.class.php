@@ -19,13 +19,13 @@ class indexAction extends frontendAction {
     	$ads = $ad->field('url,content,desc')->where($where)->limit(5)->order('ordid asc')->select();
         $this->assign('ad',$ads);
         /*****首页广告end******/
-        
+   
         /****最新商品*****/
-        $where = array('news'=>1, 'tokenTall'=>$tokenTall);
-        $news = $this->getItem($where);
+        $where = array('pid'=>0,'tokenTall'=>$tokenTall);
+        $news = $this->getItem_cate($where);
         /****最新商品 END*****/
          
-        /****推荐商品*****/
+        /****推荐商品*****
         $where = array('tuijian'=>1, 'tokenTall'=>$tokenTall);
         $tuijian = $this->getItem($where);
         /****推荐商品 END*****/
@@ -69,6 +69,13 @@ class indexAction extends frontendAction {
         $this->assign('tuijian',$tuijian);
         $this->_config_seo();
         $this->display();
+    }
+    public function getItem_cate($where = array())
+    {
+    	$where_init = array('status'=>'1');
+    	$where =array_merge($where_init, $where);
+    
+    	return $item=M('item_cate')->where($where)->select();
     }
     public function search() {
     	//排序字段和方式的获得
