@@ -45,17 +45,19 @@ function submitForm(){
 	
 }
 //xxl start
+/* 去掉这个提示层 20140311 by zcb
 $(document).ready(function() { 
 		document.getElementById('first').style.display='block';
 	 }); 
+*/
 //xxl end	 
 </script>
 <!-- xxl start -->
-<if condition="$systemBrowse eq 'X'  and $index_num2 eq 1">
+<!-- if condition="$systemBrowse eq 'X'  and $index_num2 eq 1">
 <div id="first" onclick="document.getElementById('first').style.display='';" style="display:none;">
                     <img src="__PARENTURL__/tpl/User/default/common/images/first.png" />
 </div>
-</if>
+</if -->
 <!-- xxl end -->
 <div data-role="content"><!-- 
 <div class="search_all">
@@ -301,7 +303,7 @@ $(document).ready(function() {
              <li>  
                <div class="sigle_good"  >    
 	           <div class="good_pic">
-	           	    <a href="/weTall/index.php?m=index&a=search&method={$item.name}"><img  src="/weTall/data/upload/item_cate/{$item.img}"></a>
+	           	    <a href="__ROOT__/index.php?m=index&a=search&method={$item.name}"><img  src="__ROOT__/data/upload/item_cate/{$item.img}"></a>
 	           </div>
 	           <!-- <div class="good_attr">		            
 		            <a  href="{:U('Item/index',array('id'=>$item['id'], 'tokenTall'=>$item['tokenTall']))}">{$item.name}</a>		           
