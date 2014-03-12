@@ -44,13 +44,13 @@ h3 a{ text-decoration: none; }
 
 .shell { width:988px; margin:0 auto; }
 
-#header { height:89px; background:url(images/header.gif); white-space:nowrap; }
-#header h1{ float:left; display:inline; padding-top:12px; }
-#top-navigation { float:right; white-space:nowrap; color:#fff; padding-top:15px; }
-#top-navigation a{ color:#fff; }
-#top-navigation a:hove{color:black;}
+#header2 { height:56px; background:url(images/header.gif); white-space:nowrap; }
+#header2 h1{ float:left; display:inline; padding-top:12px; }
+#top-navigation { float:right; white-space:nowrap; color:#fff; padding-top:15px;margin-right:200px; }
+#top-navigation a{text-decoration:none;float:left;background:none;height:14px;width:50px; color:white; font-size:14px;margin:-15px -30px 0 0;}
+#top-navigation a:hover{color:red;background:none;text-decoration:underline;}
 #top-navigation span{ color:#dca598; }
-#top { height:53px; }
+#top { height:53px; background:url(images/header.gif);}
 
 #navigation { height:36px;}
 #navigation ul{ list-style-type: none;}
@@ -71,7 +71,7 @@ h3 a{ text-decoration: none; }
 
 #container { padding:20px 0;}
 
-.small-nav { color:#978b48; margin-left:150px; }
+.small-nav { color:#978b48; margin:10px; }
 .small-nav a{ color:#6f6636; }
 
 
@@ -136,7 +136,7 @@ textarea.size1 { height:180px; }
 .select-all label{ text-decoration: underline; padding-left:4px; }
 
 .add-button,
-.add-button span { float:left; height:26px; background:url(images/add-button.gif) no-repeat 0 0; padding:0 0 0 28px; }
+.add-button span { float:left; height:26px; background:url(images/add-button.gif) no-repeat 0 0; padding:0 0 0 2px; }
 .add-button span { background-position:right 0; padding:0 10px 0 0; }
 .add-button { font-weight: bold; font-size:12px; color:#747474; text-decoration: none; line-height:26px; }
 .add-button:hover { color:#333;}
