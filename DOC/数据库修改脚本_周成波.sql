@@ -18,3 +18,7 @@ CREATE TABLE `tp_background` (
   `info` varchar(90) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
+
+/*用户表增加头像*/
+alter table tp_users add `headerpic` varchar(255) NOT NULL DEFAULT '';
+

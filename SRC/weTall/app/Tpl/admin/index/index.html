@@ -16,7 +16,7 @@
 </head>
 <body>
 <!-- Header -->
-<div id="header">
+<div id="header2">
 	<div class="shell">
 		<!-- Logo + Top Nav -->
 		<div id="top">
@@ -24,13 +24,13 @@
 			<h1>微信商城后台管理</h1>
 			<div id="top-navigation" class="right_back">
 				欢迎您， {$weshopData.name}
-				| <a href="__PARENTURL__/index.php?g=User&m=Adma&a=index&token={$tokenTall}">返回管理中心</a>
+				<a href="__PARENTURL__/index.php?g=User&m=Adma&a=index&token={$tokenTall}">返回管理中心</a>
 				
 			</div>
 		</div>
 		<!-- End Logo + Top Nav -->
 		
-		<!-- Main Nav -->
+		<!-- Main Nav --><!-- 
 		<div id="navigation">
 			<ul>
 			    <li><a href="javascript:;" data-uri="{:U(index/index, array('menuid'=>0,'tokenTall'=>$tokenTall))}{$sval.data}" data-id="{$sval.id}" hidefocus="true" class="active"><span>商品管理</span></a></li>
@@ -39,7 +39,7 @@
 			    <li><a href="{:U('index/index',array('tokenTall'=>$tokenTall,'current_id'=>4))}"><span>会员管理</span></a></li>
 			    <li><a href="{:U('index/index',array('tokenTall'=>$tokenTall,'current_id'=>99))}"><span>店铺管理</span></a></li>
 			</ul>
-		</div>
+		</div> -->
 		<!-- End Main Nav -->
 	</div>
 	
@@ -47,7 +47,7 @@
 			<a href="#">后台首页</a>
 			<span>&gt;</span>
 			商品管理
-		</div><br>
+		</div>
 <div id="content">
 	<div class="left_menu fl">
     	<div id="J_lmenu" class="J_lmenu" data-uri="{:U('index/left',array('tokenTall'=>$tokenTall))}"></div>
