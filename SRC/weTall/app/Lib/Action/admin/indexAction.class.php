@@ -68,7 +68,7 @@ class indexAction extends backendAction {
     					'headurl'     => $data['headurl'],
     			);
     		}
-    		$datahead['headurl'] = "/weTall/data/upload/item/".$data['headurl'];
+    		$datahead['headurl'] = "__PARENTURL__/weTall/data/upload/item/".$data['headurl'];
     		$datahead2['tokenTall'] = $_SESSION["tokenTall"];
     		$wshop=M("wecha_shop");
     		if($wshop->where($datahead2)->save($datahead)){

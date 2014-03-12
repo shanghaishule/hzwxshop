@@ -167,6 +167,24 @@ class IndexAction extends UserAction{
 			$this->error('密码不能为空!',U('Index/useredit'));
 		}
 	}
+	public function userpic(){
+		if(IS_POST){
+			$picurl=$this->_post('picurl');
+			if($picurl!=false){
+				$data['headerpic']=$picurl;
+				$data['id']=$_SESSION['uid'];
+				if(M('Users')->save($data)){
+					$this->success('头像修改成功！',U('Index/index'));
+				}else{
+					$this->error('头像修改失败！',U('Index/userpic'));
+				}
+			}else{
+				$this->error('头像不能为空!',U('Index/userpic'));
+			}
+		}else{
+			$this->display();
+		}
+	}
 	//处理关键词
 	public function handleKeywords(){
 		$Model = new Model();

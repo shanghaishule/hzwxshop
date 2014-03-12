@@ -28,22 +28,25 @@ ul{
 }
 #herder{
 	width:auto;
-	height:53px;
+	/*height:55px;*/
 	/*background:#42454a;*/
-	margin-bottom:30px;
-	background-image:url(../images/Nav_bg.png);
-	background-repeat:repeat-x;
+	margin-bottom:0px;
+
+	
 }
 #top{
 	width:1210px;
-	height:55px;
+	height: 53px;
 	margin:0px auto;
 	padding:0px;
+	background-image:url(../images/Nav_bg.png);
+	background-repeat:repeat-x;
 }
 #top img{
 	border:0px;
 	float:left;
-	margin:11px 40px 11px 10px;
+	height: 53px;
+	margin: 0 100px 0 20px;
 }
 #top a{
 	width:auto;
@@ -74,31 +77,34 @@ ul{
 	height:51px;
 	padding:0px;
 }
+
+
+
 #top a.a{
 	display:block;
 	width:135px;
-	height:30px;
-	color:#E9E9E9;
+	height:25px;
+	
 	float:right;
-	margin:12px 15px 12px 0px;
+	
 	text-align:center;
-	line-height:30px;
-	background:#474646;
-	padding:0px;
-	border:1px solid #242424;
+	line-height:25px;
+	
+	padding:14px 24px;
+	
 }
 #top a.a1{
-	background:#999;
-	color:#333;
+	
+	
 	display:none;
 	width:135px;
-	height:30px;
+	height:25px;
 	float:right;
-	margin:12px 15px 12px 0px;
+	
 	text-align:center;
-	line-height:30px;
-	padding:0px;
-	border:1px solid #242424;
+	line-height:25px;
+	padding:14px 24px;
+	
 }
 #top a span{
 	color:#da3610;
@@ -110,7 +116,8 @@ ul{
 	margin:0px auto;
 	font-size:12px;
 	background:#e1e1e1;
-	border-bottom:#da3610 5px solid;
+	/*border-bottom:#da3610 5px solid;*/
+	border-bottom: lightgrey 2px solid;
 }
 #nav img{
 	float:left;
@@ -235,7 +242,7 @@ ul{
 	height:100%;
 	float:left;
 	position:relative;
-	background:#00859d;
+	/*background:#04ACCA;*/
 	padding:12px 0px 20px 0px;
 }
 #Menu .TwoMenu a{

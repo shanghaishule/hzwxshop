@@ -48,8 +48,8 @@ window.onload =getHost;
 
 <body>
 <div id="herder" >
-	<div id="top">
-		<img src="{lanrain::RES}/images/logo1.png" />
+	<div id="top" class="shadow">
+		<img src="{lanrain::RES}/images/logo2.png" />
 		
 		<a href="{lanrain::U('Home/Index/index')}" >首页</a>
 		<a href="{lanrain::U('Home/Index/fc')}" >功能介绍</a>
@@ -209,6 +209,7 @@ window.onload =getHost;
             	<img src="{lanrain::RES}/images/6-00.png" /><a class="a">互动</a>
             </div>
 		</div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- -->
 		<div class="ThreeMenu">
         	<div class="contab" <?php if(in_array(MODULE_NAME,array('Function','Areply','Text','Voiceresponse','Call','Company','Other','Requerydata','Alipay_config'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
                 <a href="{lanrain::U('Function/index',array('token'=>$token,'id'=>session('wxid')))}" class="Red" >

@@ -25,8 +25,8 @@ setTimeout("xian()",5000);
 
 <body>
 <div id="herder" >
-	<div id="top">
-		<img src="{lanrain::RES}/images/logo1.png" width="195px" height="33px" style="margin-top:10px" />
+	<div id="top"  class="shadow">
+		<img src="{lanrain::RES}/images/logo2.png" />
 		<a href="{lanrain::U('Home/Index/index')}" >首页</a>
 		<a href="{lanrain::U('Home/Index/fc')}" >功能介绍</a>
 		<a href="{lanrain::U('Home/Index/about')}" >关于我们</a>
@@ -44,7 +44,13 @@ setTimeout("xian()",5000);
     <?php if(!empty($_GET['id'])){ ?>
 		<img src="{lanrain:$wecha.headerpic}" width="50" height="50" />
     <?php }else{ ?>
+    	<a href="{lanrain::U('Index/userpic')}">
+    	<eq name="thisUser.headerpic" value="">
     	<img src="{lanrain::RES}/images/portrait.jpg" width="50" height="50" />
+    	<else />
+    	<img src="{lanrain:$thisUser.headerpic}" width="50" height="50" />
+    	</eq>
+    	</a>
     <?php } ?>
 		<ul class="ul">
         <?php if(!empty($_GET['id'])){ ?>
