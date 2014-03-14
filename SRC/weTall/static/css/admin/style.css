@@ -2,7 +2,7 @@
 
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, img {margin:0;padding:0;}
 body {font-family: Arial;font-size: 10px;line-height: 1.5;}
-html.off,html.off body {background: #ebefef url(bgimg/left_bg.png) repeat-y -40px top;}
+html.off,html.off body {background: #ebefef url(bgimg/left_bg.png) repeat-y  top;}
 html.on,html.on body{background: #e2e9ea; background-image:none;}
 html.addbg,html.addbg body{background:#e2e9ea}
 h1, h2, h3, h4, h5, h6 {font-size:100%;}
@@ -200,7 +200,7 @@ select{ vertical-align:middle;background:none repeat scroll 0 0 #F9F9F9;border-c
 #header .admin_info{padding:18px 14px 0 0; color:#FFF;}
 #header .admin_info a{ text-decoration:none; color:#FFF;}
 
-.left_menu{margin-left:7px;margin-right:6px; padding:8px;_padding:8px 0 8px 8px;width:120px; position:relative; display:block;}
+.left_menu{margin-left:7px;margin-right:6px; padding:8px;_padding:8px 0 8px 8px;width:10%; position:relative; display:block;}
 .left_menu_on{ width:0; padding:0;}
 .left_menu_on div{ visibility:hidden;_display:none}
 .left_menu h3{font-weight: 700;color: #275d96;border-bottom:1px solid #d9e4ea; line-height:24px; height:24px; margin-bottom:4px;_width:112px;_margin-right:12px}
@@ -216,7 +216,7 @@ select{ vertical-align:middle;background:none repeat scroll 0 0 #F9F9F9;border-c
 .left_menu h3 span{background-position: left -78px; display:block; float:right; height:14px; width:14px; margin-top:5px}
 .left_menu h3 span.on{background-position: -33px -78px;}
 
-.right_main{overflow:hidden;_zoom:1;_float:left;width:800px;}
+.right_main{overflow:hidden;_zoom:1;_float:left;width:85%;}
 
 /*页面tab*/
 .crumbs{height:26px;position:relative;}
