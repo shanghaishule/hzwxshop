@@ -26,11 +26,17 @@ class UserAction extends BaseAction{
 	}
 	
 	public function checkauth($funname, $modname){
+		//dump($_SESSION);exit;
 		//检查权限
-		$func = M('Function')->where(array('funname'=>$funname))->find();
-		if ($func['gid'] > session('gid')) {
-			$this->error('您没有该模块的使用权限,请升级您的账号！');
+		$func = M('Function')->where(array('funname'=>$funname,'belonguser'=>session('belonguser')))->find();
+		if ($func) {
+			if ($func['gid'] > session('gid')) {
+				$this->error('您没有该模块的使用权限,请升级您的账号！');
+			}
+		}else{
+			$this->error('您没有配置该模块,请联系您的总代理！');
 		}
+		
 		
 		//检查模块是否勾选
 		$token_open=M('token_open')->field('queryname')->where(array('token'=>session('token')))->find();

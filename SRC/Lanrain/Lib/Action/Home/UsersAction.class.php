@@ -15,7 +15,7 @@ class UsersAction extends BaseAction{
 		if($res&&($pwd===$res['password'])){
 			
 			if($res['status']==0){
-				$this->error('请联系在线客户，为你人工审核帐号');exit;
+				$this->error('你的帐号未审核或已冻结，请联系客服！');exit;
 			}
 			session('uid',$res['id']);
 			session('gid',$res['gid']);
@@ -25,6 +25,7 @@ class UsersAction extends BaseAction{
 			session('connectnum',$res['connectnum']);
 			session('activitynum',$res['activitynum']);
 			session('viptime',$res['viptime']);
+			session('belonguser',$res['belonguser']);
 			session('gname',$info['name']);
 			//每个月第一次登陆数据清零
 			$now=time();

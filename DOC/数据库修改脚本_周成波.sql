@@ -1,7 +1,7 @@
 /*本脚本可以反复执行，重复执行*/
 
-/*前台用户表，加所属人*/
-alter table tp_users add `belonguser` int NOT NULL DEFAULT 0;
+/*前台用户表，加所属人，默认所属admin*/
+alter table tp_users add `belonguser` int NOT NULL DEFAULT 1;
 
 /*品牌表，加tokenTall*/
 alter table tp_brandlist add `tokenTall` varchar(20) NOT NULL DEFAULT '';
@@ -22,3 +22,5 @@ CREATE TABLE `tp_background` (
 /*用户表增加头像*/
 alter table tp_users add `headerpic` varchar(255) NOT NULL DEFAULT '';
 
+/*功能表，加所属人，默认所属admin*/
+alter table tp_function add `belonguser` int NOT NULL DEFAULT 1;

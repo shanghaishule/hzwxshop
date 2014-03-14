@@ -4,13 +4,13 @@
   <h4 class="left">已经开发的功能 <span class="FAQ">请勾选你要开启的功能</span></h4>
  </div>
 <div class="msgWrap">
- <volist id="fun" name="fun">
+ <volist name="fun" id="vo">
  <fieldset>
 	<legend>
-		<span class="vipimgbig vip-iconbig<php>echo $i-1;</php>"></span> VIP<php>echo $i-1;</php>可以使用的功能
+		<span class="vipimgbig vip-iconbig{Lanrain:$key}"></span> VIP{Lanrain:$key}可以使用的功能
 	</legend>
 	<ul class="changeapp">
-	<volist name="fun" id="list" key="b">
+	<volist name="vo" id="list" key="b">
 	  <li>
 		  <label> 
 			<input  type="checkbox" <if condition="in_array($list['funname'],$check)">checked="checked"</if> <if condition="$list['gid'] gt session('gid')"> disabled="disabled" </if> onchange="changeapp(this,'{lanrain:$Think.session.token}','{lanrain:$list.id}')"  value="{lanrain:$list.id}"/> {lanrain:$list.name}
