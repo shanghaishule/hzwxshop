@@ -97,7 +97,7 @@ window.onload =getHost;
     <div id="floatline"></div>
 	<div id="Menu">
 		<div class="top">
-			<?php foreach($allfunction as $value){ if(MODULE_NAME.ACTION_NAME == $value['funname'].$value['actname']){ ?>
+			<?php foreach($allfunction as $value){ if(MODULE_NAME == $value['funname']){ ?>
 				<img src="{lanrain::RES}/images/TwoMenu-ico-<?php echo $value['funtype']; ?>.png" />
 				<a><?php echo $value['funtype']; ?></a>
 				<span><?php echo "- ".$value['name']; ?></span>
@@ -109,7 +109,7 @@ window.onload =getHost;
 					<img src="{lanrain::RES}/images/TwoMenu-ico-<?php echo $typevalue['funtype']; ?>t.png" />
 					<span><?php echo $typevalue['funtype']; ?></span>
 	            </a>
-				<div id="TwoMenu-0<?php echo $typekey+1; ?>" <?php $result='style="display: none;"'; foreach($allfunction as $allval){ if(MODULE_NAME.ACTION_NAME.$typevalue['funtype'] == $allval['funname'].$allval['actname'].$allval['funtype']){ $result='style="display: block;"';}}  echo $result;?> > 
+				<div id="TwoMenu-0<?php echo $typekey+1; ?>" <?php $result='style="display: none;"'; foreach($allfunction as $allval){ if(MODULE_NAME.$typevalue['funtype'] == $allval['funname'].$allval['funtype']){ $result='style="display: block;"';}}  echo $result;?> > 
             		<img src="{lanrain::RES}/images/TwoMenu-ico-<?php echo $typevalue['funtype']; ?>.png" />
             		<a class="a"><?php echo $typevalue['funtype']; ?></a>
             	</div>
@@ -117,7 +117,7 @@ window.onload =getHost;
 		</div>
 		<div class="ThreeMenu">
 			<?php foreach($allfunctiontype as $typekey => $typevalue){ ?>
-				<div class="contab" id="contab-0<?php echo $typekey+1; ?>" <?php $result='style="display: none;"'; foreach($allfunction as $allval){ if(MODULE_NAME.ACTION_NAME.$typevalue['funtype'] == $allval['funname'].$allval['actname'].$allval['funtype']){ $result='style="display: block;"';}}  echo $result;?> >
+				<div class="contab" id="contab-0<?php echo $typekey+1; ?>" <?php $result='style="display: none;"'; foreach($allfunction as $allval){ if(MODULE_NAME.$typevalue['funtype'] == $allval['funname'].$allval['funtype']){ $result='style="display: block;"';}}  echo $result;?> >
 					<?php foreach($allfunction as $allfunvalue2){ if($allfunvalue2['funtype'] == $typevalue['funtype']){ ?>
 		                <a href="
 			                <?php 
