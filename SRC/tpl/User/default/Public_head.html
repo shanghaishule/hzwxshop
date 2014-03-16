@@ -121,10 +121,9 @@ window.onload =getHost;
 					<?php foreach($allfunction as $allfunvalue2){ if($allfunvalue2['funtype'] == $typevalue['funtype']){ ?>
 		                <a href="
 			                <?php 
-			                	if($allfunvalue2['funname']=='WeTall'){echo '__ROOT__/weTall/index.php?g=admin&m=index&a=index&tokenTall='.$token;}else{
 			                	$para=''; 
 			                	switch($allfunvalue2['funname']){case 'Function': $para='&id='.session('wxid'); break; case 'Product': $para='&dining=1'; break;}  
-			                	echo 'index.php?g=User&m='.$allfunvalue2['funname'].'&a='.$allfunvalue2['actname'].'&token='.$token.$para; }
+			                	echo 'index.php?g=User&m='.$allfunvalue2['funname'].'&a='.$allfunvalue2['actname'].'&token='.$token.$para; 
 			                ?>" class="<?php echo $allfunvalue2['funcolor']; ?>" >
 		                	<img src="{lanrain::RES}/images/ico-<?php echo $allfunvalue2['name']; ?>.png" /><span><?php echo $allfunvalue2['name']; ?></span>
 		                </a>
