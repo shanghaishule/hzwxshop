@@ -189,7 +189,7 @@ init();
 <script>
  var frequency = 50; 
 var startTime = new Date().getTime(); 
-var loadingBgcolor = "http://www.bestchoice88.com/tpl/Wap/default/common/images/ding2.jpg";
+var loadingBgcolor = "__ROOT__/tpl/Wap/default/common/images/ding2.jpg";
 var totalWidth = 500;
 /*
 *参数说明:

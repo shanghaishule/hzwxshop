@@ -22,6 +22,27 @@ items : [
 'insertunorderedlist', '|', 'emoticons', 'image','link', 'unlink','baidumap','lineheight','table','anchor','preview','print','template','code','cut']
 });
 
+
+var editor2 = K.editor({
+	allowFileManager:true
+});
+K('#upload').click(function() {
+	editor2.loadPlugin('image', function() {
+		editor2.plugin.imageDialog({
+			fileUrl : K('#logourl').val(),
+			clickFn : function(url, title) {
+				if(url.indexOf("http") > -1){
+					K('#logourl').val(url);
+				}else{
+					K('#logourl').val('__ROOT__'+url);
+				}
+				editor2.hideDialog();
+			}
+		});
+	});
+});
+
+
 });
 </script>
 <div class="content" style="width:920px; background:none; margin-left:275px; border:none; margin-bottom:30px;" >
@@ -97,7 +118,8 @@ function setlatlng(longitude,latitude){
        </tr> 
        <tr> 
         <th><span class="red">*</span>Logo地址：</th> 
-        <td><input type="text" id="logourl" name="logourl" value="{lanrain:$set.logourl}" class="px require" style="width:400px;" /></td> 
+        <td><input type="text" id="logourl" name="logourl" value="{lanrain:$set.logourl}" class="px require" style="width:400px;" readonly="readonly"/><span class="ke-button-common" id="upload" style="margin-top: 3px;margin-left: 5px;"><input type="button" class="ke-button-common ke-button" value="上传"></span>
+        </td> 
        </tr>
         <tr> 
         <th><span class="red">*</span>经纬度：</th> 

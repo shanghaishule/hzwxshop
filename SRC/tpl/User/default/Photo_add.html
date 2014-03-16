@@ -1,4 +1,35 @@
 <include file="Public:head"/>
+
+<link rel="stylesheet" href="{lanrain::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{lanrain::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{lanrain::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{lanrain::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{lanrain::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<script>
+	KindEditor.ready(function(K){
+		var editor = K.editor({
+			allowFileManager:true
+		});
+		K('#upload').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					fileUrl : K('#pic').val(),
+					clickFn : function(url, title) {
+						if(url.indexOf("http") > -1){
+							K('#pic').val(url);
+						}else{
+							K('#pic').val('__ROOT__'+url);
+						}
+						editor.hideDialog();
+						$('#pic').focus();
+					}
+				});
+			});
+		});
+	});
+</script>
+
+
 <style type="text/css">
 .userinfoArea th {
 width: 100px;
@@ -66,7 +97,7 @@ padding: 0 0 5px;
          <div class="msgWrap bgfc">
             <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"><tbody>
 <tr>
-<th valign="top"><span class="red">*</span>相册名称：</th>
+<th valign="top"><span class="red">*</span>相册名称</th>
 <td width="430"><input type="text" name="title" value="" class="px" style="width:400px;" id="name" onkeyup="DivFollowingText1()">
 <script type="text/javascript">
 function DivFollowingText1()
@@ -125,10 +156,10 @@ document.getElementById("zname2").innerHTML=document.getElementById("name").valu
 
 </tr>
 <tr>
-<th valign="top"><span class="red">*</span>相册封面图：</th>
-<td width="430"><input type="text" name="picurl" value="" class="px" style="width:400px;" id="pic" onblur="document.getElementById('zpic').src=document.getElementById('pic').value;document.getElementById('zpic2').src=document.getElementById('pic').value;">
-<br>									
-外链图片地址，尺寸720×400.</td>
+<th valign="top"><span class="red">*</span>相册封面</th>
+<td width="430"><input type="text" id="pic" name="picurl" value="" class="px" style="width:400px;" onblur="document.getElementById('zpic').src=document.getElementById('pic').value;document.getElementById('zpic2').src=document.getElementById('pic').value;">
+<br><span class="ke-button-common" id="upload" style="margin-top: 3px;margin-left: 5px;"><input type="button" class="ke-button-common ke-button" value="上传"></span>
+外链图片地址，尺寸720×400px.</td>
 </tr>
 <tr>
    <th valign="top">相册介绍：</th>
@@ -164,7 +195,7 @@ document.getElementById("zname2").innerHTML=document.getElementById("name").valu
 	<th valign="top">&nbsp;</th>
 	<td>
 		<button type="submit" name="button" class="btnGreen">保存</button>
-		<a href="index.php?ac=photo-list&amp;id=9878" class="btnGray vm">取消</a></td>
+		<a href="{lanrain::U('Photo/index')}" class="btnGray vm">取消</a></td>
 		<td>&nbsp;
 	</td>
 </tr>

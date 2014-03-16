@@ -1,4 +1,33 @@
 <include file="Public:head"/>
+
+<link rel="stylesheet" href="{lanrain::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{lanrain::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{lanrain::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{lanrain::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{lanrain::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<script>
+	KindEditor.ready(function(K){
+		var editor = K.editor({
+			allowFileManager:true
+		});
+		K('#upload').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					fileUrl : K('#pic').val(),
+					clickFn : function(url, title) {
+						if(url.indexOf("http") > -1){
+							K('#pic').val(url);
+						}else{
+							K('#pic').val('__ROOT__'+url);
+						}
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+	});
+</script>
+
 <div class="content" style="width:920px; background:none; margin-left:275px; border:none; margin-bottom:30px;" >
 
 <div class="cLineB">
@@ -24,8 +53,8 @@
 		<th style=" width:70px;">显示顺序</th>
 		<th>图片外链地址（宽720够了，高不限制）</th>
 		<th>图片简单说明（可不填）</th>
-		<th style=" width:80px;">显示</th>
-		<th style=" width:100px;" class="norightborder">操作</th>
+		<th style=" width:50px;">显示</th>
+		<th style=" width:80px;" class="norightborder">操作</th>
 	</tr>
 </thead>  
 <tr>
@@ -33,10 +62,11 @@
 	<td><input type="text" name="sort" value="0"  class="px" style="width:50px;" /></td>
 	<td>
 		<div class="cateimg"></div>
-		<input class="px" style="width:250px;" type="text" name="picurl" value=""  />
 		<input type="hidden"   name="pid" value="{lanrain:$Think.get.id}"  />
+		<input type="text" class="px" id="pic" value="" name="picurl" style="width:250px" readonly="readonly"><span class="ke-button-common" id="upload" style="margin-top: 3px;margin-left: 5px;"><input type="button" class="ke-button-common ke-button" value="上传"></span>
 	</td>
-	<td><input class="px" type="text"  style="width:250px;"  name="info" value=""  /></td>
+	<td><input class="px" style="width:150px;" type="text" name="info" value=""  />
+	</td>
 	<td><input class="checkbox" type="checkbox" name="status" value="1"  checked ></td>
 	<td class="norightborder">
 		<button type="submit" id="vtype" class="btnGray vm" ><strong>添加</strong></button>　
