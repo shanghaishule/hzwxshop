@@ -23,6 +23,12 @@ class UserAction extends BaseAction{
 		if(session('uid')==false){
 			$this->redirect('Home/Index/login');
 		}
+		
+		$allfunction = M('Function')->where(array('belonguser'=>session('belonguser')))->select();
+		$allfunctiontype = M('Function')->Distinct(true)->field('funtype')->where(array('belonguser'=>session('belonguser'),'funtype'=>array('neq','默认')))->select();
+		$this->assign('allfunction',$allfunction);
+		$this->assign('allfunctiontype',$allfunctiontype);
+		
 	}
 	
 	public function checkauth($funname, $modname){

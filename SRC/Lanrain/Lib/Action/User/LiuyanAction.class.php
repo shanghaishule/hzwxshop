@@ -5,6 +5,9 @@
 class LiuyanAction extends UserAction{
 	//留言列表
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Liuyan','Liuyan');
+		
 		$db=D('Liuyan');
 		
 		/*$where['u1id']=session('uid');

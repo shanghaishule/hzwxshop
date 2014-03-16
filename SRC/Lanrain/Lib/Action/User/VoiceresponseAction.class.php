@@ -4,6 +4,9 @@
 **/
 class VoiceresponseAction extends UserAction{
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Voiceresponse','Voiceresponse');
+		
 		$where['uid']=session('uid');
 		$res=M('Voiceresponse')->where($where)->select();
 		$this->assign('info',$res);

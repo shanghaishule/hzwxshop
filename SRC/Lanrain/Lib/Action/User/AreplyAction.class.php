@@ -4,6 +4,9 @@
 **/
 class AreplyAction extends UserAction{
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Areply','Areply');
+		
 		$db=D('Areply');
 		$where['uid']=$_SESSION['uid'];
 		$where['token']=$_SESSION['token'];

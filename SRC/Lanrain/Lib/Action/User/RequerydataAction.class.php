@@ -9,6 +9,9 @@ class RequerydataAction extends UserAction{
 	
 	}
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Requerydata','Requerydata');
+		
 		if($this->_get('month')==false){
 			$month=date('m');
 		}else{

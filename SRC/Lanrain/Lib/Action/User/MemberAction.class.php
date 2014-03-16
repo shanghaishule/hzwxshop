@@ -1,6 +1,9 @@
 <?php
 class MemberAction extends UserAction{
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Member','Member');
+		
 		$sql=M('Member');
 		$data['token']=$this->_get('token');
 		$data['uid']=session('uid');

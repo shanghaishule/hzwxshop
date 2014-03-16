@@ -2,7 +2,9 @@
 class WechaWallAction extends UserAction{
      private $token;
   public function index(){
-    
+  	//检查权限和功能
+  	$this->checkauth('WechaWall','WechaWall');
+  	
      $this->token=$_GET['token'];
      if($_SESSION['token'] == "") $_SESSION['token']=$this->token;
      

@@ -14,6 +14,8 @@
 		<!-- td>使用次数</td -->
 		<td>状态</td>
 		<td>所属管理者</td>
+		<td>前端分类</td>
+		<td>前端颜色类</td>
 		<td>管理操作</td>
 	  </tr>
 	    <volist name="list" id="vo">
@@ -26,6 +28,8 @@
 				<td align='center'><eq name="vo.status" value="1"><font color="red">√</font><else/><font color="blue">×</font></eq> 
 				</td>
 				<td align='center'>{lanrain:$belong[$vo['belonguser']]}</td>
+				<td >{lanrain:$vo.funtype}</td>
+				<td >{lanrain:$vo.funcolor}</td>
 				<td align='center'>
 					<a href="{lanrain::U('Function/edit/',array('id'=>$vo['id']))}">修改</a>
 					| <eq name="vo.username" value="admin"><font color="#cccccc">删除</font><else/><a href="javascript:void(0)" onclick="return confirmurl('{lanrain::U('Function/del/',array('id'=>$vo['id']))}','确定删除该功能吗?')">删除</a></eq>

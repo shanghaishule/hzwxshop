@@ -4,6 +4,9 @@
 **/
 class ClassifyAction extends UserAction{
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Classify','Classify');
+		
 		$db=D('Classify');
 		$where['token']=session('token');
 		$count=$db->where($where)->count();

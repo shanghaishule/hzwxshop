@@ -1,9 +1,10 @@
 <?php
 class DiaoyanAction extends UserAction{
 	public function index(){
-	    if(session('gid')==1){
-			$this->error('vip0无法使用抽奖活动,请充值后再使用',U('Home/Index/price'));
-		}
+		//检查权限和功能
+		$this->checkauth('Diaoyan','Diaoyan');
+		
+	    
 		$user=M('Users')->field('gid,activitynum')->where(array('id'=>session('uid')))->find();
 		$group=M('User_group')->where(array('id'=>$user['gid']))->find();
 		$this->assign('group',$group);
@@ -43,9 +44,7 @@ class DiaoyanAction extends UserAction{
 		}
 	}
 	public function answer(){
-	    if(session('gid')==1){
-			$this->error('vip0无法使用优惠券管理,请充值后再使用',U('Home/Index/price'));
-		}
+	    
 		
 		$resech = M('micro_research');
 		$id=$_GET['id'];
@@ -55,9 +54,7 @@ class DiaoyanAction extends UserAction{
 		
 	}
 	public function edit(){
-	    if(session('gid')==1){
-			$this->error('vip0无法使用优惠券管理,请充值后再使用',U('Home/Index/price'));
-		}
+	   
 		if(IS_POST){
 			$resech = M('micro_research');
 			$data['id']=$_GET["id"];

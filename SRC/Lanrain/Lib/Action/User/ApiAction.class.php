@@ -2,7 +2,7 @@
 class ApiAction extends UserAction{
 	public function index(){
 		//检查权限和功能
-		$this->checkauth('api','api');
+		$this->checkauth('Api','Api');
 		
 		$data=D('Api');
 		$this->assign('api',$data->where(array('token'=>session('token'),'uid'=>session('uid')))->select());

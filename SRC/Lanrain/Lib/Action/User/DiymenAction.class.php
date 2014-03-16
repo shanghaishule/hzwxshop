@@ -2,6 +2,9 @@
 class DiymenAction extends UserAction{
 	//自定义菜单配置
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Diymen','Diymen');
+		
 		$data=M('Diymen_set')->where(array('token'=>$_SESSION['token']))->find();
 		if(IS_POST){
 			$_POST['token']=$_SESSION['token'];

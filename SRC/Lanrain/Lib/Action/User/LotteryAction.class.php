@@ -1,6 +1,9 @@
 <?php
 class LotteryAction extends UserAction{
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Lottery','Lottery');
+		
 		if(session('gid')==1){
 			$this->error('vip0无法使用抽奖活动,请充值后再使用',U('Home/Index/price'));
 		}

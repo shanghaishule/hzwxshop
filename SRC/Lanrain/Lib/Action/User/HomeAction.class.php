@@ -6,12 +6,11 @@ class HomeAction extends UserAction{
 		parent::_initialize();
 		$this->token=$this->_session('token');
 		$this->home_db=M('home');
+		//检查权限和功能
+		$this->checkauth('Home','Home');
 	}
 	//配置
-	public function set(){
-		//检查权限和功能
-		$this->checkauth('shouye','shouye');
-		
+	public function set(){		
 		$home=$this->home_db->where(array('token'=>session('token')))->find();
 		if(IS_POST){
 			if($home==false){				
@@ -26,7 +25,6 @@ class HomeAction extends UserAction{
 		}
 	}
 	public function plugmenu(){
-		
 		$where=array('token'=>$this->token);
 		$menuArr=array('tel','memberinfo','nav','message','share','home','album','email','shopping','membercard','activity','weibo','tencentweibo','qqzone','wechat','music','video','recommend','other');
 		$home=$this->home_db->where(array('token'=>session('token')))->find();

@@ -19,12 +19,12 @@ class Member_cardAction extends UserAction{
 			$data['cardisok'] = 1;
 			$this->wxuser_db->where(array('uid'=>session('uid'),'token'=>session('token')))->save($data);
 		}
+		
+		//检查权限和功能
+		$this->checkauth('Member_card','Member_card');
 	}
 	//会员卡配置
 	public function index(){
-		//检查权限和功能
-		$this->checkauth('huiyuanka','huiyuanka'); 
-		
 		$data=M('Member_card_set')->where(array('token'=>$_SESSION['token']))->find();
 		if(IS_POST){
 			$_POST['token']=$_SESSION['token'];			

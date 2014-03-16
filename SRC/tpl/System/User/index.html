@@ -29,7 +29,7 @@
 				<td align='center'><eq name="vo.status" value="1"><font color="red">√</font><else/><font color="blue">×</font></eq> 
 				</td>
 				<td align='center'>
-					<a href="{lanrain::U('User/edit/',array('id'=>$vo['id']))}">修改</a>
+					<eq name="vo.username" value="admin"><font color="#cccccc">修改</font><else/><a href="{lanrain::U('User/edit/',array('id'=>$vo['id']))}">修改</a></eq>
 					| <eq name="vo.username" value="admin"><font color="#cccccc">删除</font><else/><a href="javascript:void(0)" onclick="return confirmurl('{lanrain::U('User/del/',array('id'=>$vo['id']))}','警告！！！删除该用户将删除其下属的公众号、前端用户、以及所拥有的功能列表！！！确定删除该用户吗?')">删除</a></eq>
 				</td>
 			</tr>

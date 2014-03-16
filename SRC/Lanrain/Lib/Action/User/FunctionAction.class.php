@@ -1,6 +1,9 @@
 <?php
 class FunctionAction extends UserAction{
 	function index(){
+		//检查权限和功能
+		$this->checkauth('Function','Function');
+		
 		$id=$this->_get('id','intval');
 		$token=$this->_get('token','trim');	
 		$info=M('Wxuser')->find($id);
@@ -29,10 +32,11 @@ class FunctionAction extends UserAction{
 
 		//
 		$group=M('User_group')->field('id,name')->where('status=1')->select();
+		//dump($group);exit;
 		foreach($group as $key=>$vo){
 			$fun=M('Function')->where(array('status'=>1,'gid'=>$vo['id'],'belonguser'=>session('belonguser')))->select();
-			foreach($fun as $vkey=>$vo){
-				$function[$key][$vkey]=$vo;
+			foreach($fun as $vkey=>$vvo){
+				$function[$vo['id']][$vkey]=$vvo;
 			}
 		}
 		//dump($function);exit;

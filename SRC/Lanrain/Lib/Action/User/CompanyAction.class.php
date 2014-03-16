@@ -21,6 +21,9 @@ class CompanyAction extends UserAction{
 		$this->company_model=M('Company');
 	}
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Company','Company');
+		
 		$where=array('token'=>$this->token);
 		if ($this->isBranch){
 			$id=intval($_GET['id']);
