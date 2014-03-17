@@ -1,9 +1,6 @@
 <?php
 class FunctionAction extends UserAction{
 	function index(){
-		//检查权限和功能
-		$this->checkauth('Function','Function');
-		
 		$id=$this->_get('id','intval');
 		$token=$this->_get('token','trim');	
 		$info=M('Wxuser')->find($id);
@@ -47,6 +44,10 @@ class FunctionAction extends UserAction{
 		$this->assign('wecha',$wecha);
 		$this->assign('token',session('token'));
 		//
+		
+		//检查权限和功能
+		$this->checkauth('Function','Function');
+		
 		$this->display();
 	}
 }
