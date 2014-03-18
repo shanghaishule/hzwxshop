@@ -7480,7 +7480,7 @@ CREATE TABLE `tp_wecha_shop` (
 -- Records of tp_wecha_shop
 -- ----------------------------
 INSERT INTO `tp_wecha_shop` VALUES ('8', '微销售', 'xaybdf1393044422', '微销售', '0', '__PARENTURL__/tpl/User/default/common/images/portrait.jpg', '0', null, null, null, null, '1', null, null, null, null, null);
-INSERT INTO `tp_wecha_shop` VALUES ('21', '伊人', 'tmpjis1393039145', '伊人', '0', '__PARENTURL__/tpl/User/default/common/images/portrait.jpg', '0', '微服客店铺', '微服客店铺', '微服客店铺', null, '1', null, null, null, null, null);
+INSERT INTO `tp_wecha_shop` VALUES ('21', '伊人', 'tmpjis1393039145', '伊人', '0', '__PARENTURL__/tpl/User/default/common/images/portrait.jpg', '0', '微蔻店铺', '微蔻店铺', '微蔻店铺', null, '1', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for `tp_wecha_user`
