@@ -4,7 +4,7 @@ class itemAction extends backendAction {
         parent::_initialize();
         $this->_mod = D('item');
         $this->_cate_mod = D('item_cate');
-        $brandlist= $this->_brand=M('brandlist')->where('status=1')->order('ordid asc,id asc')->select();
+        $brandlist= $this->_brand=M('brandlist')->where(array('status'=>1,'tokenTall'=>$this->getTokenTall()))->order('ordid asc,id asc')->select();
         $this->assign('brandlist',$brandlist);
     }
 
@@ -15,7 +15,6 @@ class itemAction extends backendAction {
 
         //分类信息
         $res = $this->_cate_mod->field('id,name')->select();
-       
         $cate_list = array();
         foreach ($res as $val) {
             $cate_list[$val['id']] = $val['name'];
@@ -74,7 +73,15 @@ class itemAction extends backendAction {
     }
 
     public function add() {
-    	
+    	if ($_SESSION['is_master'] === "true") {
+    		
+    	}else{
+    		if ($_SESSION['allowproxyadd'] === "true") {
+
+    		}else {
+    			$this->error('无权操作', U('index/panel'));
+    		}
+    	}
     	$tokenTall = $this->getTokenTall();
     	$this->assign('tokenTall',$tokenTall);
         if (IS_POST) {
@@ -99,7 +106,6 @@ class itemAction extends backendAction {
             }
            
             if($_POST['brand']==''){
-            	
                 $this->error('请选择品牌');
             }
          
@@ -328,6 +334,14 @@ class itemAction extends backendAction {
 
             //更新商品
             $this->_mod->where(array('id'=>$item_id))->save($data);
+            //如果是主号，则同步更新其他号的这个商品
+            if ($_SESSION['is_master'] === "true") {
+            	$data_other = $data;
+            	unset($data_other['id']);
+            	$this->_mod->where(array('fromid'=>$item_id))->save($data_other);
+            }
+            
+            
             //更新图片和相册
             $item_imgs && M('item_img')->addAll($item_imgs);
 

@@ -1,4 +1,6 @@
-<!--添加禁止IP-->
+<if condition="($is_master eq 'true') OR (($is_master neq 'true') AND ($allowproxyadd eq 'true')) ">
+
+<!--添加-->
 <div class="dialog_content">
 	<form id="info_form" name="info_form" action="{:u('brandlist/add')}" method="post">
 	<table width="100%" cellpadding="2" cellspacing="1" class="table_form">
@@ -58,3 +60,7 @@ $(function(){
 	}
 });
 </script>
+
+<else />
+<div style="text-align:center;">无权操作</div>
+</if>

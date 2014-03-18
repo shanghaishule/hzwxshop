@@ -88,15 +88,26 @@
                 <td align="right">
                     <notempty name="val['img']"><div class="img_border"><img src="{:attach(get_thumb($val['img'], '_s'), 'item')}" width="32" width="32" class="J_preview" data-bimg="{:attach($val['img'], 'item')}"></div></notempty>
                 </td>
-                <td align="left"><span data-tdtype="edit" data-field="title" data-id="{$val.id}" class="tdedit" style="color:{$val.colors};">{$val.title}</span></td>
+                <td align="left"><span data-tdtype="view" data-field="title" data-id="{$val.id}" class="tdview" style="color:{$val.colors};">{$val.title}</span></td>
                 <td align="center"><b>{$val.goods_stock}</b></td>
                 <td align="center"><b>{$val.buy_num}</b></td>
                 <td align="center"><b>{$cate_list[$val['cate_id']]}</b></td>
                 <td align="center" class="red">{$val.price}</td> 
-                <td align="center"><span data-tdtype="edit" data-field="ordid" data-id="{$val.id}" class="tdedit">{$val.ordid}</span></td>
-                <td align="center"><img data-tdtype="toggle" data-id="{$val.id}" data-field="status" data-value="{$val.status}" src="__STATIC__/images/admin/toggle_<if condition="$val.status eq 0">disabled<else/>enabled</if>.gif" /></td>
+                <td align="center"><span data-tdtype="view" data-field="ordid" data-id="{$val.id}" class="tdview">{$val.ordid}</span></td>
+                <td align="center"><img data-tdtype="view" data-id="{$val.id}" data-field="status" data-value="{$val.status}" src="__STATIC__/images/admin/toggle_<if condition="$val.status eq 0">disabled<else/>enabled</if>.gif" /></td>
                 <td align="center">{$val.add_time|date='Y-m-d H:i:s',###}</td>
-                <td align="center"><a href="{:U('item/edit', array('id'=>$val['id'], 'menuid'=>$menuid, 'tokenTall'=>$val['tokenTall']))}">{:L('edit')}</a> | <a href="javascript:void(0);" class="J_confirmurl" data-uri="{:U('item/delete', array('id'=>$val['id'], 'tokenTall'=>$val['tokenTall']))}" data-acttype="ajax" data-msg="{:sprintf(L('confirm_delete_one'),$val['title'])}">{:L('delete')}</a></td>
+                <td align="center">
+                <eq name="is_master" value="true">
+                	<a href="{:U('item/edit', array('id'=>$val['id'], 'menuid'=>$menuid, 'tokenTall'=>$val['tokenTall']))}">{:L('edit')}</a> | <a href="javascript:void(0);" class="J_confirmurl" data-uri="{:U('item/delete', array('id'=>$val['id'], 'tokenTall'=>$val['tokenTall']))}" data-acttype="ajax" data-msg="{:sprintf(L('confirm_delete_one'),$val['title'])}">{:L('delete')}</a>
+                <else />
+                	<if condition="($allowproxyedit eq 'true') OR ($allowproxydelete eq 'true') ">
+	                	<eq name="allowproxyedit" value="true"><a href="{:U('item/edit', array('id'=>$val['id'], 'menuid'=>$menuid, 'tokenTall'=>$val['tokenTall']))}">{:L('edit')}</a>&nbsp&nbsp</eq>
+	                	<eq name="allowproxydelete" value="true"><a href="javascript:void(0);" class="J_confirmurl" data-uri="{:U('item/delete', array('id'=>$val['id'], 'tokenTall'=>$val['tokenTall']))}" data-acttype="ajax" data-msg="{:sprintf(L('confirm_delete_one'),$val['title'])}">{:L('delete')}</a></eq>
+	                <else />
+                		无权操作
+                	</if>
+                </eq>
+                </td>
             </tr>
             </volist>
     	</tbody>
@@ -105,7 +116,15 @@
     </if>
     <div class="btn_wrap_fixed">
         <label class="select_all mr10"><input type="checkbox" name="checkall" class="J_checkall">{:L('select_all')}/{:L('cancel')}</label>
-        <input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('item/delete', array('tokenTall'=>$search.tokenTall))}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />
+        <eq name="is_master" value="true">
+        	<input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('item/delete', array('tokenTall'=>$search.tokenTall))}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />
+        <else />
+        	<eq name="allowproxydelete" value="true">
+				<input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('item/delete', array('tokenTall'=>$search.tokenTall))}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />
+         	<else />
+        		无权操作
+        	</eq>
+        </eq>
         <div id="pages">{$page}</div>
     </div>
 </div>

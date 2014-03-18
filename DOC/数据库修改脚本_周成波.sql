@@ -96,3 +96,13 @@ INSERT INTO `tp_function` VALUES ('41', '4', '0', '第三方', 'Api', 'index', '
 INSERT INTO `tp_function` VALUES ('42', '4', '0', '留言板', 'Liuyan', 'index', '留言板', '1', '1', '1', '互动', 'Navy');
 -- ----------------------------
 -- ----------------------------
+
+
+/*商品表，加来源id*/
+alter table tp_item add `fromid` int(11) NOT NULL DEFAULT 0;
+/*品类表，加来源id*/
+alter table tp_item_cate add `fromid` int(11) NOT NULL DEFAULT 0;
+/*品牌表，加来源id*/
+alter table tp_brandlist add `fromid` int(11) NOT NULL DEFAULT 0;
+
+

@@ -67,6 +67,18 @@ class itemModel extends Model
                     $item_img_mod->add();
                 }
             }
+            
+            //如果是主号，则同步新增商品到其他号
+            if ($_SESSION['is_master'] === "true") {
+            	$item_other = $item;
+            	$item_other['fromid'] = $item_id;
+            	$item_other_mod = D('item');
+            	$alltoken = M('wxuser')->where("token !='".$_SESSION['master_token']."'")->select();
+            	foreach ($alltoken as $onetoken){
+            		$item_other['tokenTall'] = $onetoken['token'];
+            		$item_other_mod->add($item_other);
+            	}
+            }
 
           
             return $item_id;
@@ -149,5 +161,10 @@ class itemModel extends Model
         M('item_like')->where(array('item_id'=>$data['id']))->delete();
         //删除商品和专辑关系
         D('album')->del_item($data['id']);
+        
+        //如果是主号，则同步删除其他号的这个商品
+        if ($_SESSION['is_master'] === "true") {
+        	M('item')->where(array('fromid'=>$data['id']))->delete();
+        }
     }
 }

@@ -14,4 +14,7 @@ return array (
   'content' => '微蔻',
   'counts' => '',
   'copyright' => '',
+  'allowproxyadd' => 'true',
+  'allowproxyedit' => 'true',
+  'allowproxydelete' => 'false',
 );

@@ -29,6 +29,13 @@ class UserAction extends BaseAction{
 		$this->assign('allfunction',$allfunction);
 		$this->assign('allfunctiontype',$allfunctiontype);
 		
+		//把代理商配置读入session
+		$allowproxyadd = C('allowproxyadd'); $_SESSION['allowproxyadd'] = $allowproxyadd;
+		$allowproxyedit = C('allowproxyedit'); $_SESSION['allowproxyedit'] = $allowproxyedit;
+		$allowproxydelete = C('allowproxydelete'); $_SESSION['allowproxydelete'] = $allowproxydelete;
+		//把主号的token值读入session
+		$master_token = C('home_token'); $_SESSION['master_token'] = $master_token;
+		
 	}
 	
 	public function checkauth($funname, $modname){
