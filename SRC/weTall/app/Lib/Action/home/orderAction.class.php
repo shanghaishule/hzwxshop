@@ -541,6 +541,7 @@ class orderAction extends userbaseAction {
 			elseif (1 == $payment_id)
 			{
 				//支付宝
+				/*
 				foreach ($all_order_arr as $dingdanhao){
 					$data['supportmetho']=1;
 					if(M('item_order')->where("userId='".$this->visitor->info['id']."' and orderId='".$dingdanhao['orderid']."'")->data($data)->save())
@@ -551,6 +552,7 @@ class orderAction extends userbaseAction {
 						$this->error('操作失败!');
 					}
 				}
+				*/
 				$alipay=M('alipay')->find();
 				echo "<script>location.href='wapapli/alipayapi.php?WIDseller_email=".$alipay['alipayname']."&WIDout_trade_no=".$alldingdanhao."&WIDsubject=".$alldingdanhao."&WIDtotal_fee=".$all_order_price."'</script>";
 			
