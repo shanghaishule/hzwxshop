@@ -75,6 +75,11 @@ class itemModel extends Model
             	$item_other_mod = D('item');
             	$alltoken = M('wxuser')->where("token !='".$_SESSION['master_token']."'")->select();
             	foreach ($alltoken as $onetoken){
+            		$item_cate_rec = M('item_cate')->where(array('fromid'=>$item['cate_id'], 'tokenTall'=>$onetoken['token']))->find();
+            		$item_other['cate_id'] = $item_cate_rec['id'];
+            		$item_brand_rec = M('brandlist')->where(array('fromid'=>$item['brand'], 'tokenTall'=>$onetoken['token']))->find();
+            		$item_other['brand'] = $item_brand_rec['id'];
+            		
             		$item_other['tokenTall'] = $onetoken['token'];
             		$item_other_mod->add($item_other);
             	}

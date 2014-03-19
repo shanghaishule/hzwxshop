@@ -338,7 +338,19 @@ class itemAction extends backendAction {
             if ($_SESSION['is_master'] === "true") {
             	$data_other = $data;
             	unset($data_other['id']);
-            	$this->_mod->where(array('fromid'=>$item_id))->save($data_other);
+            	unset($data_other['tokenTall']);
+            	unset($data_other['fromid']);
+
+            	$alltoken = $this->_mod->where(array('fromid'=>$item_id))->select();
+            	foreach ($alltoken as $onetoken){
+            		$data_other['id'] = $onetoken['id'];
+            		$item_cate_rec = M('item_cate')->where(array('fromid'=>$data['cate_id'], 'tokenTall'=>$onetoken['tokenTall']))->find();
+            		$data_other['cate_id'] = $item_cate_rec['id'];
+            		$item_brand_rec = M('brandlist')->where(array('fromid'=>$data['brand'], 'tokenTall'=>$onetoken['tokenTall']))->find();
+            		$data_other['brand'] = $item_brand_rec['id'];
+            		$this->_mod->save($data_other);
+            	}
+            	
             }
             
             
