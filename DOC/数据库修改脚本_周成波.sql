@@ -105,4 +105,7 @@ alter table tp_item_cate add `fromid` int(11) NOT NULL DEFAULT 0;
 /*品牌表，加来源id*/
 alter table tp_brandlist add `fromid` int(11) NOT NULL DEFAULT 0;
 
+/*开放收款方式*/
+update tp_menu set often = 99 where `name` = '收款方式设置';
+
 
