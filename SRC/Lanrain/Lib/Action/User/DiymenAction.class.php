@@ -2,9 +2,6 @@
 class DiymenAction extends UserAction{
 	//自定义菜单配置
 	public function index(){
-		//检查权限和功能
-		$this->checkauth('Diymen','Diymen');
-		
 		$data=M('Diymen_set')->where(array('token'=>$_SESSION['token']))->find();
 		if(IS_POST){
 			$_POST['token']=$_SESSION['token'];
@@ -90,10 +87,13 @@ class DiymenAction extends UserAction{
 			
 			$data0 = $_POST;
 			$data0['token']=$_SESSION['token'];
-			if($data0['menutype'] == 'keyword')
+			if($data0['menutype'] == 'keyword'){
 				$data0['keyword'] = $data0['menutypeval'];
-			else
+				$data0['url'] = '';
+			}else{
+				$data0['keyword'] = '';
 				$data0['url'] = $data0['menutypeval'];
+			}
 				
 			//dump($data0);exit;
 			$db = M('Diymen_class');
@@ -101,13 +101,20 @@ class DiymenAction extends UserAction{
 				$this->error('创建数据对象失败！');
 			} else {
 				$id = $db->save();
-				if ($id) {
+				if ($id !== false) {
 					if ($data0['menutype'] == 'keyword') {
-						$data['pid']     = $id;
+						$data['pid']     = $data0['id'];
 						$data['module']  = 'diymen';
 						$data['token']   = $data0['token'];
 						$da['keyword'] = $data0['menutypeval'];
 						M('Keyword')->where($data)->save($da);
+					}
+					if ($data0['menutype'] == 'url') {
+						$data['pid']     = $data0['id'];
+						$data['module']  = 'diymen';
+						$data['token']   = $data0['token'];
+						
+						M('Keyword')->where($data)->delete();
 					}
 					$this->success('操作成功');
 				} else {
