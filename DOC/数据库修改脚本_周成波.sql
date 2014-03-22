@@ -109,3 +109,13 @@ alter table tp_brandlist add `fromid` int(11) NOT NULL DEFAULT 0;
 update tp_menu set often = 99 where `name` = '收款方式设置';
 
 
+/*商品表，加货号*/
+alter table tp_item add `item_code` varchar(100) NULL;
+/*商品表，加计量单位*/
+alter table tp_item add `item_unit` varchar(100) NULL;
+/*商品表，加市场价*/
+alter table tp_item add `item_market_price` varchar(100) NULL;
+/*商品表，加重量*/
+alter table tp_item add `item_weight` varchar(100) NULL;
+/*商品表，加标签*/
+alter table tp_item add `item_label` varchar(100) NULL;
