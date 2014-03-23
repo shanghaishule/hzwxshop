@@ -1,0 +1,117 @@
+<include file="Public:head"/>
+
+<script src="./tpl/static/jquery-1.4.2.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript"> 	
+
+
+$(document).ready(function(){
+
+    if("{lanrain:$is_open}" == "1"){
+		$("#chkAnimation").attr("checked","checked");
+    }
+});
+
+
+function changeapp(obj){
+	if(obj.checked==true){ 
+		var myurl='index.php?g=User&m=Guide&a=changeAnimation&open_animation=1';
+		$.get(myurl,function(data){
+			 if(data==1){
+				alert('该功能已经成功添加');
+			}
+		});
+	}else{		
+		var myurl='index.php?g=User&m=Guide&a=changeAnimation&open_animation=0';
+		$.get(myurl,function(data){
+		 if(data==1){
+				alert('已经取消该功能');
+			}
+		});
+	}
+}
+</script>
+
+<link rel="stylesheet" type="text/css" href="./tpl/User/default/common/music/inside.css" media="all">
+<link rel="stylesheet" type="text/css" href="./tpl/User/default/common/music/miniplayer.css" media="all">
+
+
+<script type="text/javascript" src="./tpl/User/default/common/music/jQuery.js"></script>
+<script type="text/javascript" src="./tpl/User/default/common/music/jquery_jplayer_min.js"></script>
+<script type="text/javascript" src="./tpl/User/default/common/music/jquery_mb_miniPlayer.js"></script>
+<script type="text/javascript" src="./tpl/User/default/common/music/inside.js"></script>
+
+
+
+<div class="content" style="width:920px; background:none; margin-left:275px; border:none; margin-bottom:30px;" >
+<div class="cLineB">
+	<h4>引导页设置<span class="FAQ">3G网站引导页。</span></h4>
+</div>
+
+<div class="cLineC" style="line-height: 32px;">
+	<a target="ddd" href="{lanrain::U('Guide/musicAdd')}" class="btnGrayS vm bigbtn" >添加背景音乐</a>
+</div>
+<div class="msgWrap form">
+		<div class="bdrcontent">
+			<div id="div_ptype">
+					<table class="ListProduct" border="0" cellSpacing="0" cellPadding="0" width="100%">
+						<thead>
+							<tr>
+							<th style=" width:120px;">音乐描述 </th>
+							<th>背景音乐</th>
+							<th style=" width:100px;" class="norightborder">操作</th>
+							</tr>
+						</thead>
+						<volist name="info" id="vo">
+							<tr>
+							<td>{lanrain:$vo.info}</td>
+							<td>
+								<div class="inline mp3">																			
+									<a id="m1" class="audio {skin:&#39;blue&#39;}" href="{lanrain:$vo.guide}" style="display: none; ">{lanrain:$vo.filename}</a>
+									<div id="mp_m1" isplaying="false" class="mbMiniPlayer blue shadow" style="display: inline-block; vertical-align: middle; ">
+										<table cellpadding="0" cellspacing="0" border="0">
+											<tbody>
+												<tr>
+													<td unselectable="on" style="display: none; ">
+													</td>
+													<td unselectable="on" style="display: none; ">						
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>				
+							</td>
+							
+							<td class="norightborder">
+								<a target="ddd" href="{lanrain::U('Guide/musicEdit',array('id'=>$vo['id']))}">编辑</a>
+								<a href="{lanrain::U('Guide/musicDel',array('id'=>$vo['id']))}">删除</a>
+							</td>
+							</tr>
+						</volist>
+					</table>
+			</div>
+		</div>
+
+	<div class="footactions" style="padding-left:10px">
+		<div class="pages">{lanrain:$page}</div>
+	</div>
+</div>
+
+
+<div class="cLineC" style="line-height: 32px;">
+
+</div>
+	<label>
+	<input type="checkbox" id="chkAnimation" name ="chkAnimation" onchange="changeapp(this)">
+	背景动画
+	</label>
+</div>
+
+<div class="clr"></div>
+
+<!--底部-->
+<div>
+	<include file="Public:footer"/>
+</div>
