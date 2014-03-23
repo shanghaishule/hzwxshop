@@ -25,7 +25,7 @@
  */
 
 body {font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3"; line-height:1.6; background:#f6f6f6; }
-html,body { max-width:320px; margin:0 auto;background:#EAEAEA;}
+html,body { max-width:320px; margin:0 auto;background:#EAEAEA; }
 h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, li, body, form, input, button, img, cite, strong, em, table, td, th { padding:0; margin:0; }
 h1, h2, h3, h4, h5, h6 { font-size: 16px;}
 hr{border:1px solid #D9D9D9;}
@@ -278,7 +278,7 @@ div.order_cancel_box p span {color: #f34; font-weight: bold;}
  * -------------------------------------------------------
  */
 
-#head {height: 45px; position: relative; margin: 0 auto; z-index: 0;text-align:center;}
+#head {height: auto; position: relative; margin: 0 auto; z-index: 0;text-align:center;}
 #head img{ display:none;}
 
 #subnav { position: absolute; top: 5px; right: 0; word-spacing: 3px; }
@@ -335,7 +335,7 @@ div.order_cancel_box p span {color: #f34; font-weight: bold;}
  * -------------------------------------------------------
  */
 
-#nav {width:100%; left:0px;position:fixed; top:0px; z-index: 100; margin: 0 auto;display:block;background:white;box-shadow:0 2px 3px #d9d9d9;}
+#nav {width:100%; max-width:320px; position: relative; margin: 0 auto; left:0px; top:0px; z-index: 100; display:block;background:white;box-shadow:0 2px 3px #d9d9d9;}
 #nav ul.navlist { position: relative; z-index:9999; height:45px; margin:0 auto; background:white; border-bottom:1px solid #ccc;box-shadow:0 2px 3px #d9d9d9;}
 #nav .navlist li { float: left; margin: 0px 0px 0 0;width:12%;height:45px;  position:relative;}
 #nav .navlist li#n_3 i{ position:absolute; height:14px; width:14px;background:#C00; color:#fff; left:55%; top:10px; border-radius:50%; font-style:normal; text-align:center; font-size:12px; display:none;}
@@ -876,7 +876,7 @@ div.order_cancel_box p span {color: #f34; font-weight: bold;}
  * -------------------------------------------------------
  */
 
-#sort_bg {width:100%; font-size:12px; left:0px;position:fixed; top:45px; z-index: 100; margin: 0 auto;display:block;
+#sort_bg {width:100%; max-width:320px; font-size:12px; left:0px;position:relative; top:0px; z-index: 100; margin:auto 0 ;display:block;
 		background: -webkit-gradient(linear, 50% 50%, 50% 50%, from(#fff), to(#999d9c));      /* Safari 4-5, Chrome 1-9*/  
         background: -webkit-linear-gradient(bottom, #fff, #999d9c);   /*Safari5.1 Chrome 10+*/  
         background: -o-linear-gradient(bottom, #fff, #999d9c);   

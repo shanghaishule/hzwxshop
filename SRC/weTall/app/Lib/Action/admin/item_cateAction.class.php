@@ -15,6 +15,7 @@ class item_cateAction extends backendAction {
         $array = array();
         foreach($result as $r) {
             $r['str_img'] = $r['img'] ? '<span class="img_border"><img src="'.attach($r['img'], 'item_cate').'" style="width:26px; height:26px;" class="J_preview" data-bimg="'.attach($r['img'], 'item_cate').'" /></span>' : '';
+            //$r['str_img'] = $r['img'] ? '<span class="img_border"><img src="'.attach(get_thumb($r['img'], '_s'), 'item_cate').'" width="32" width="32" class="J_preview" data-bimg="'.attach($r['img'], 'item_cate').'" /></span>' : '';
             $r['str_status'] = '<img data-tdtype="view" data-id="'.$r['id'].'" data-field="status" data-value="'.$r['status'].'" src="__STATIC__/images/admin/toggle_' . ($r['status'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
             $r['str_index'] = '<img data-tdtype="view" data-id="'.$r['id'].'" data-field="is_index" data-value="'.$r['is_index'].'" src="__STATIC__/images/admin/toggle_' . ($r['is_index'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
             $r['str_type'] = $r['type'] ? '<span class="gray">'.L('item_cate_type_tag').'</span>' : L('item_cate_type_cat');
@@ -331,14 +332,15 @@ class item_cateAction extends backendAction {
             $result = $this->_upload($_FILES['img'], 'item_cate', array(
                     'width' => C('pin_itemcate_img.width'),
                     'height' => C('pin_itemcate_img.height'),
-                    'remove_origin' => true,
+                    //'remove_origin' => true,
                 )
             );
             if ($result['error']) {
                 $this->ajaxReturn(0, $result['info']);
             } else {
                 $ext = array_pop(explode('.', $result['info'][0]['savename']));
-                $data['img'] = str_replace('.' . $ext, '_thumb.' . $ext, $result['info'][0]['savename']);
+                //$data['img'] = str_replace('.' . $ext, '_thumb.' . $ext, $result['info'][0]['savename']);
+                $data['img'] = $result['info'][0]['savename'];
                 $this->ajaxReturn(1, L('operation_success'), $data['img']);
             }
         } else {
