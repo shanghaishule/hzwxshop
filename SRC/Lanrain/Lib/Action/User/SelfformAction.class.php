@@ -9,7 +9,7 @@ class SelfformAction extends UserAction{
 		parent::_initialize();
 		
 		//检查权限和功能
-		$this->checkauth('diymen_set','diymen_set');
+		$this->checkauth('Selfform','Selfform');
 		
 		$this->selfform_model=M('Selfform');
 		$this->selfform_input_model=M('Selfform_input');

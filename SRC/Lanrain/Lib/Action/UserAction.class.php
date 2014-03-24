@@ -23,14 +23,33 @@ class UserAction extends BaseAction{
 		if(session('uid')==false){
 			$this->redirect('Home/Index/login');
 		}
+		
+		$allfunction = M('Function')->where(array('belonguser'=>session('belonguser')))->select();
+		$allfunctiontype = M('Function')->Distinct(true)->field('funtype')->where(array('belonguser'=>session('belonguser'),'funtype'=>array('neq','默认')))->select();
+		$this->assign('allfunction',$allfunction);
+		$this->assign('allfunctiontype',$allfunctiontype);
+		
+		//把代理商配置读入session
+		$allowproxyadd = C('allowproxyadd'); $_SESSION['allowproxyadd'] = $allowproxyadd;
+		$allowproxyedit = C('allowproxyedit'); $_SESSION['allowproxyedit'] = $allowproxyedit;
+		$allowproxydelete = C('allowproxydelete'); $_SESSION['allowproxydelete'] = $allowproxydelete;
+		//把主号的token值读入session
+		$master_token = C('home_token'); $_SESSION['master_token'] = $master_token;
+		
 	}
 	
 	public function checkauth($funname, $modname){
+		//dump($_SESSION);exit;
 		//检查权限
-		$func = M('Function')->where(array('funname'=>$funname))->find();
-		if ($func['gid'] > session('gid')) {
-			$this->error('您没有该模块的使用权限,请升级您的账号！');
+		$func = M('Function')->where(array('funname'=>$funname,'belonguser'=>session('belonguser')))->find();
+		if ($func) {
+			if ($func['gid'] > session('gid')) {
+				$this->error('您没有该模块的使用权限,请升级您的账号！');
+			}
+		}else{
+			$this->error('您没有配置该模块,请联系您的总代理！');
 		}
+		
 		
 		//检查模块是否勾选
 		$token_open=M('token_open')->field('queryname')->where(array('token'=>session('token')))->find();

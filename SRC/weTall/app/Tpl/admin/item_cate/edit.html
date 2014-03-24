@@ -22,7 +22,9 @@
 			<td>
 			    <input type="text" name="img" id="J_img" class="input-text fl mr10" size="30" value="{$info.img}">
             	<div id="J_upload_img" class="upload_btn"><span>{:L('upload')}</span></div>
-			    <notempty name="info['img']"><span class="attachment_icon J_attachment_icon" file-type="image" file-rel="{:attach($info['img'], 'item_cate')}"><img src="__STATIC__/images/filetype/image_s.gif" /></span></notempty></td>
+			    <notempty name="info['img']"><span class="attachment_icon J_attachment_icon" file-type="image" file-rel="{:attach($info['img'], 'item_cate')}"><img src="__STATIC__/images/filetype/image_s.gif" /></span></notempty>
+				<span>320*135 px</span>
+			</td>
 		</tr>
 		<tr>
 			<th>{:L('item_cate_type')} :</th>

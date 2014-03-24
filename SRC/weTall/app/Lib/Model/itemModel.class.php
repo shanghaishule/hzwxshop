@@ -67,6 +67,23 @@ class itemModel extends Model
                     $item_img_mod->add();
                 }
             }
+            
+            //如果是主号，则同步新增商品到其他号
+            if ($_SESSION['is_master'] === "true") {
+            	$item_other = $item;
+            	$item_other['fromid'] = $item_id;
+            	$item_other_mod = D('item');
+            	$alltoken = M('wxuser')->where("token !='".$_SESSION['master_token']."'")->select();
+            	foreach ($alltoken as $onetoken){
+            		$item_cate_rec = M('item_cate')->where(array('fromid'=>$item['cate_id'], 'tokenTall'=>$onetoken['token']))->find();
+            		$item_other['cate_id'] = $item_cate_rec['id'];
+            		$item_brand_rec = M('brandlist')->where(array('fromid'=>$item['brand'], 'tokenTall'=>$onetoken['token']))->find();
+            		$item_other['brand'] = $item_brand_rec['id'];
+            		
+            		$item_other['tokenTall'] = $onetoken['token'];
+            		$item_other_mod->add($item_other);
+            	}
+            }
 
           
             return $item_id;
@@ -149,5 +166,10 @@ class itemModel extends Model
         M('item_like')->where(array('item_id'=>$data['id']))->delete();
         //删除商品和专辑关系
         D('album')->del_item($data['id']);
+        
+        //如果是主号，则同步删除其他号的这个商品
+        if ($_SESSION['is_master'] === "true") {
+        	M('item')->where(array('fromid'=>$data['id']))->delete();
+        }
     }
 }

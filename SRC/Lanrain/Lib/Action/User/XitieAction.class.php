@@ -15,7 +15,7 @@ class XitieAction extends UserAction{
 	}
 	public function index(){
 		//检查权限和功能
-		$this->checkauth('WeiXitie','WeiXitie');
+		$this->checkauth('Xitie','Xitie');
 		
 		$where=array('token'=>$this->token);
 		if(IS_POST){

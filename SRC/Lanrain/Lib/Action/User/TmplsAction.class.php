@@ -4,8 +4,10 @@
  * 通用模板管理
  * */
 class TmplsAction extends UserAction {
-
     public function index() {
+    	//检查权限和功能
+    	$this->checkauth('Tmpls','Tmpls');
+    	
         $db = D('Wxuser');
         $where['token'] = session('token');
         $where['uid'] = session('uid');

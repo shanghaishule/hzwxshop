@@ -4,6 +4,9 @@
 **/
 class ImgAction extends UserAction{
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Img','Img');
+		
 		$db=D('Img');
 		//$where['uid']=session('uid');
 		$where['token']=session('token');

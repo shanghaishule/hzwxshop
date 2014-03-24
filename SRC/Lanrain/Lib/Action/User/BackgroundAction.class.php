@@ -16,6 +16,9 @@ class BackgroundAction extends UserAction{
 	}
 	
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Background','Background');
+		
 		$db=$this->back_db;
 		$where['uid']=session('uid');
 		$where['token']=$this->token;

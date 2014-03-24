@@ -35,6 +35,13 @@ class backendAction extends baseAction
         }
         $this->assign('menuid', $this->menuid);
         $this->assign('tokenTall', $this->getTokenTall());
+        
+        $allowproxyadd = $_SESSION['allowproxyadd']; $this->assign('allowproxyadd', $allowproxyadd);
+        $allowproxyedit = $_SESSION['allowproxyedit']; $this->assign('allowproxyedit', $allowproxyedit);
+        $allowproxydelete = $_SESSION['allowproxydelete']; $this->assign('allowproxydelete', $allowproxydelete);
+        $is_master = $_SESSION['token']==$_SESSION['master_token'] ? "true" : "false"; $this->assign('is_master', $is_master);
+        $_SESSION['is_master'] = $is_master;
+        //dump($_SESSION);exit;
     }
 
     /**

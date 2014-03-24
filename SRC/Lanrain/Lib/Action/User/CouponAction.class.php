@@ -1,6 +1,9 @@
 <?php
 class CouponAction extends UserAction{
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Coupon','Coupon');
+		
 	//dump(session('token'));
 		if(session('gid')==1){
 			$this->error('vip0无法使用抽奖活动,请充值后再使用',U('Home/Index/price'));

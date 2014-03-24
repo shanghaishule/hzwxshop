@@ -8,7 +8,7 @@ class GrouponAction extends UserAction{
 		parent::_initialize();
 		
 		//检查权限和功能
-		$this->checkauth('etuan','etuan');
+		$this->checkauth('Groupon','Groupon');
 		
 		$this->product_cat_model=M('Product_cat');
 		$this->product_cart_model=M('Product_cart');

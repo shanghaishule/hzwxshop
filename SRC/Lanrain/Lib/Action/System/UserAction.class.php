@@ -22,6 +22,8 @@ class UserAction extends BackAction{
 
     // 添加用户
     public function add(){
+    	$this->error('新增用户将新增一套功能列表，因此关闭此功能!');
+    	
         $UserDB = D("User");
         if(isset($_POST['dosubmit'])) {
             $password = $_POST['password'];
@@ -38,7 +40,18 @@ class UserAction extends BackAction{
                 if($user_id){
                     $data['user_id'] = $user_id;
                     $data['role_id'] = $_POST['role'];
-                    if (M("RoleUser")->data($data)->add()){
+                    if (M("role_user")->data($data)->add()){
+                    	//新建用户时，以admin所拥有的模块为模板，批量添加所属功能模块
+                    	$funmodel = M('Function');
+                    	$allfun = $funmodel->where(array('belonguser'=>1))->select();
+                    	foreach ($allfun as $val){
+                    		$d = $val;
+                    		unset($d['id']);
+                    		$d['belonguser']=$user_id;
+                    		$funmodel->add($d);
+                    	}
+                    	
+                    	
                         $this->assign("jumpUrl",U('User/index'));
                         $this->success('添加成功！');
                     }else{
@@ -76,7 +89,7 @@ class UserAction extends BackAction{
                 if($UserDB->save()){
                     $where['user_id'] = $_POST['id'];
                     $data['role_id'] = $_POST['role'];
-                    M("RoleUser")->where($where)->save($data);
+                    M("role_user")->where($where)->save($data);
                     $this->assign("jumpUrl",U('User/index'));
                     $this->success('编辑成功！');
                 }else{
@@ -117,8 +130,29 @@ class UserAction extends BackAction{
         if($info['username']==C('SPECIAL_USER')){     //无视系统权限的那个用户不能删除
            $this->error('禁止删除此用户!');
         }
+        //删除所属的前端用户、公众号、功能列表
+        //删除公众号
+        $model=new Model();
+        $querystr = "delete a from tp_wxuser a, tp_users b where a.uid=b.id and b.belonguser=".$id;
+        //dump($querystr);exit;
+        $res=$model->execute($querystr);
+    	if ($res===false) {
+        	$this->error('删除所管理的公众号失败!');
+        }
+        //删除前端用户
+        $res=M('users')->where(array('belonguser'=>$id))->delete();
+        if ($res===false) {
+        	$this->error('删除所管理的前端用户失败!');
+        }
+        //删除功能列表
+        $res=M('Function')->where(array('belonguser'=>$id))->delete();
+        if ($res===false) {
+        	$this->error('删除所拥有的功能列表失败!');
+        }
+        
+        //删除本表
         if($UserDB->delUser('id='.$id)){
-            if(M("RoleUser")->where('user_id='.$id)->delete()){
+            if(M("role_user")->where('user_id='.$id)->delete()){
                 $this->assign("jumpUrl",U('User/index'));
                 $this->success('删除成功！');
             }else{

@@ -2,7 +2,7 @@
 class HostAction extends UserAction{
 	public function index(){
 		//检查权限和功能
-		$this->checkauth('adma','adma'); 
+		$this->checkauth('Host','Host'); 
 		$data=M('Host');
 		$count      = $data->where(array('token'=>$_SESSION['token']))->count();
 		$Page       = new Page($count,12);

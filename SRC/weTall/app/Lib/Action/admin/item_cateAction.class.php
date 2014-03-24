@@ -15,14 +15,34 @@ class item_cateAction extends backendAction {
         $array = array();
         foreach($result as $r) {
             $r['str_img'] = $r['img'] ? '<span class="img_border"><img src="'.attach($r['img'], 'item_cate').'" style="width:26px; height:26px;" class="J_preview" data-bimg="'.attach($r['img'], 'item_cate').'" /></span>' : '';
-            $r['str_status'] = '<img data-tdtype="toggle" data-id="'.$r['id'].'" data-field="status" data-value="'.$r['status'].'" src="__STATIC__/images/admin/toggle_' . ($r['status'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
-            $r['str_index'] = '<img data-tdtype="toggle" data-id="'.$r['id'].'" data-field="is_index" data-value="'.$r['is_index'].'" src="__STATIC__/images/admin/toggle_' . ($r['is_index'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
+            //$r['str_img'] = $r['img'] ? '<span class="img_border"><img src="'.attach(get_thumb($r['img'], '_s'), 'item_cate').'" width="32" width="32" class="J_preview" data-bimg="'.attach($r['img'], 'item_cate').'" /></span>' : '';
+            $r['str_status'] = '<img data-tdtype="view" data-id="'.$r['id'].'" data-field="status" data-value="'.$r['status'].'" src="__STATIC__/images/admin/toggle_' . ($r['status'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
+            $r['str_index'] = '<img data-tdtype="view" data-id="'.$r['id'].'" data-field="is_index" data-value="'.$r['is_index'].'" src="__STATIC__/images/admin/toggle_' . ($r['is_index'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
             $r['str_type'] = $r['type'] ? '<span class="gray">'.L('item_cate_type_tag').'</span>' : L('item_cate_type_cat');
-            $r['str_manage'] = '<a href="javascript:;" class="J_showdialog" data-uri="'.U('item_cate/add',array('pid'=>$r['id'])).'" data-title="'.L('add_item_cate').'" data-id="add" data-width="520" data-height="360">'.L('add_item_subcate').'</a> |
-                            
-                                <a href="javascript:;" class="J_showdialog" data-uri="'.U('item_cate/edit',array('id'=>$r['id'])).'" data-title="'.L('edit').' - '. $r['name'] .'" data-id="edit" data-width="520" data-height="360">'.L('edit').'</a> |
-                                <a href="javascript:;" class="J_confirmurl" data-acttype="ajax" data-uri="'.U('item_cate/delete',array('id'=>$r['id'])).'" data-msg="'.sprintf(L('confirm_delete_one'),$r['name']).'">'.L('delete').'</a>';
-  // <a href="'.U('item_cate/tag_list',array('cate_id'=>$r['id'])).'">'.L('tag').'</a> |
+            
+            if ($_SESSION['is_master'] === "true") {
+	            $r['str_manage'] = '<a href="javascript:;" class="J_showdialog" data-uri="'.U('item_cate/add',array('pid'=>$r['id'])).'" data-title="'.L('add_item_cate').'" data-id="add" data-width="520" data-height="360">'.L('add_item_subcate').'</a> |
+                                	<a href="javascript:;" class="J_showdialog" data-uri="'.U('item_cate/edit',array('id'=>$r['id'])).'" data-title="'.L('edit').' - '. $r['name'] .'" data-id="edit" data-width="520" data-height="360">'.L('edit').'</a> |
+                                	<a href="javascript:;" class="J_confirmurl" data-acttype="ajax" data-uri="'.U('item_cate/delete',array('id'=>$r['id'])).'" data-msg="'.sprintf(L('confirm_delete_one'),$r['name']).'">'.L('delete').'</a>';
+            }else{
+            	if (($_SESSION['allowproxyadd'] === "true") OR ($_SESSION['allowproxyedit'] === "true") OR ($_SESSION['allowproxydelete'] === "true")) {
+            		if ($_SESSION['allowproxyadd'] === "true"){
+            			$r['str_manage'] = '<a href="javascript:;" class="J_showdialog" data-uri="'.U('item_cate/add',array('pid'=>$r['id'])).'" data-title="'.L('add_item_cate').'" data-id="add" data-width="520" data-height="360">'.L('add_item_subcate').'</a>  ';
+            		}
+            		if ($_SESSION['allowproxyedit'] === "true"){
+            			$r['str_manage'] .= '<a href="javascript:;" class="J_showdialog" data-uri="'.U('item_cate/edit',array('id'=>$r['id'])).'" data-title="'.L('edit').' - '. $r['name'] .'" data-id="edit" data-width="520" data-height="360">'.L('edit').'</a>  ';
+            		}
+            		if ($_SESSION['allowproxydelete'] === "true"){
+            			$r['str_manage'] .= '<a href="javascript:;" class="J_confirmurl" data-acttype="ajax" data-uri="'.U('item_cate/delete',array('id'=>$r['id'])).'" data-msg="'.sprintf(L('confirm_delete_one'),$r['name']).'">'.L('delete').'</a>';
+            		}
+            	}else {
+            		$r['str_manage'] = '无权操作';
+            	}
+            }
+            
+            
+            
+            
             $r['parentid_node'] = ($r['pid'])? ' class="child-of-node-'.$r['pid'].'"' : '';
             $array[] = $r;
         }
@@ -79,6 +99,28 @@ class item_cateAction extends backendAction {
         $data['tokenTall'] = $this->getTokenTall();
         return $data;
     }
+    
+    protected function _after_insert($id) {
+    	//如果是主号，则同步其他号的这个分类
+    	if ($_SESSION['is_master'] === "true") {
+    		$item_other_mod = D('item_cate');
+           	$item_other = $item_other_mod->where('id='.$id)->find();
+           	unset($item_other['id']);
+           	$item_other['fromid'] = $id;
+           	
+           	$alltoken = M('wxuser')->where("token !='".$_SESSION['master_token']."'")->select();
+           	foreach ($alltoken as $onetoken){
+           		if ($item_other['pid'] != '0') {
+           			$pidarr = $item_other_mod->where("tokenTall='".$onetoken['token']."' and fromid=".$item_other['pid'])->find();
+           			$item_other['pid'] = $pidarr['id'];
+           			$item_other['spid'] = $item_other_mod->get_spid($item_other['pid']);
+           		}
+
+           		$item_other['tokenTall'] = $onetoken['token'];
+           		$item_other_mod->add($item_other);
+          	}
+        }
+    }
 
     /**
      * 修改提交数据
@@ -98,6 +140,31 @@ class item_cateAction extends backendAction {
             $data['spid'] = $this->_mod->get_spid($data['pid']);
         }
         return $data;
+    }
+    
+    protected function _after_update($id) {
+    	//如果是主号，则同步其他号的这个分类
+    	if ($_SESSION['is_master'] === "true") {
+    		$item_other_mod = D('item_cate');
+    		$item_other = $item_other_mod->where('id='.$id)->find();
+    		
+    		$item_other_data = $item_other;
+    		unset($item_other_data['id']);
+    		unset($item_other_data['tokenTall']);
+    		unset($item_other_data['fromid']);
+
+    
+    		$alltoken = $item_other_mod->where(array('fromid'=>$id))->select();
+    		foreach ($alltoken as $onetoken){
+    			$item_other_data['id'] = $onetoken['id'];
+    			if ($item_other['pid'] != '0') {
+    				$pidarr = $item_other_mod->where("tokenTall='".$onetoken['tokenTall']."' and fromid=".$item_other['pid'])->find();
+    				$item_other_data['pid'] = $pidarr['id'];
+    				$item_other_data['spid'] = $item_other_mod->get_spid($item_other_data['pid']);
+    			}
+    			$item_other_mod->save($item_other_data);
+    		}
+    	}
     }
 
     /**
@@ -265,18 +332,45 @@ class item_cateAction extends backendAction {
             $result = $this->_upload($_FILES['img'], 'item_cate', array(
                     'width' => C('pin_itemcate_img.width'),
                     'height' => C('pin_itemcate_img.height'),
-                    'remove_origin' => true,
+                    //'remove_origin' => true,
                 )
             );
             if ($result['error']) {
                 $this->ajaxReturn(0, $result['info']);
             } else {
                 $ext = array_pop(explode('.', $result['info'][0]['savename']));
-                $data['img'] = str_replace('.' . $ext, '_thumb.' . $ext, $result['info'][0]['savename']);
+                //$data['img'] = str_replace('.' . $ext, '_thumb.' . $ext, $result['info'][0]['savename']);
+                $data['img'] = $result['info'][0]['savename'];
                 $this->ajaxReturn(1, L('operation_success'), $data['img']);
             }
         } else {
             $this->ajaxReturn(0, L('illegal_parameters'));
         }
+    }
+    
+    /**
+     * 删除
+     */
+    public function delete()
+    {
+    	$mod = D('item_cate');
+    	$ids = trim($this->_request('id'), ',');
+    	if ($ids) {
+    		if (false !== $mod->delete($ids)) {
+    			//如果是主号，则同步其他号的这个分类
+    			if ($_SESSION['is_master'] === "true") {
+    				$mod->where('fromid in('.$ids.')')->delete();
+    			}
+    			
+    			IS_AJAX && $this->ajaxReturn(1, L('operation_success'));
+    			$this->success(L('operation_success'));
+    		} else {
+    			IS_AJAX && $this->ajaxReturn(0, L('operation_failure'));
+    			$this->error(L('operation_failure'));
+    		}
+    	} else {
+    		IS_AJAX && $this->ajaxReturn(0, L('illegal_parameters'));
+    		$this->error(L('illegal_parameters'));
+    	}
     }
 }

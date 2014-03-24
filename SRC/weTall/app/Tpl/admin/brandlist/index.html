@@ -43,8 +43,17 @@
                 <td align="left"><span data-tdtype="view" data-field="ordid" data-id="{$val.id}" class="tdview" style="color:{$val.colors};">{$val.ordid}</span></td>
                 <td align="center"><img data-tdtype="view" data-id="{$val.id}" data-field="status" data-value="{$val.status}" src="__STATIC__/images/admin/toggle_<if condition="$val.status eq 0">disabled<else/>enabled</if>.gif" /></td>
                 <td align="center">
-                	<a href="javascript:;" class="J_showdialog" data-uri="{:U('brandlist/edit', array('id'=>$val['id']))}" data-title="{:L('edit')} - {$val.name}"  data-id="edit" data-acttype="ajax" data-width="400" data-height="130">{:L('edit')}</a> | 
-                    <a href="javascript:;" class="J_confirmurl" data-acttype="ajax" data-uri="{:U('brandlist/deletebrand', array('id'=>$val['id']))}" data-msg="{:sprintf(L('confirm_delete_one'),$val['name'])}">{:L('delete')}</a>
+				<eq name="is_master" value="true">
+					<a href="javascript:;" class="J_showdialog" data-uri="{:U('brandlist/edit', array('id'=>$val['id']))}" data-title="{:L('edit')} - {$val.name}"  data-id="edit" data-acttype="ajax" data-width="400" data-height="130">{:L('edit')}</a> | 
+					<a href="javascript:;" class="J_confirmurl" data-acttype="ajax" data-uri="{:U('brandlist/deletebrand', array('id'=>$val['id']))}" data-msg="{:sprintf(L('confirm_delete_one'),$val['name'])}">{:L('delete')}</a>
+				<else />
+					<if condition="($allowproxyedit eq 'true') OR ($allowproxydelete eq 'true') ">
+	                	<eq name="allowproxyedit" value="true"><a href="javascript:;" class="J_showdialog" data-uri="{:U('brandlist/edit', array('id'=>$val['id']))}" data-title="{:L('edit')} - {$val.name}"  data-id="edit" data-acttype="ajax" data-width="400" data-height="130">{:L('edit')}</a>&nbsp&nbsp</eq>
+	                	<eq name="allowproxydelete" value="true"><a href="javascript:;" class="J_confirmurl" data-acttype="ajax" data-uri="{:U('brandlist/deletebrand', array('id'=>$val['id']))}" data-msg="{:sprintf(L('confirm_delete_one'),$val['name'])}">{:L('delete')}</a></eq>
+	                <else />
+                		无权操作
+                	</if>
+				</eq>
                 </td>
             </tr>
             </volist>
@@ -54,7 +63,17 @@
 
     <div class="btn_wrap_fixed">
     	<label><input type="checkbox" name="checkall" class="J_checkall">{:L('select_all')}/{:L('cancel')}</label>
-    	<input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('brandlist/deletebrand')}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />
+    	<eq name="is_master" value="true">
+        	<input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('brandlist/deletebrand')}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />
+        <else />
+        	<eq name="allowproxydelete" value="true">
+				<input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('brandlist/deletebrand')}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />
+         	<else />
+        		无权操作
+        	</eq>
+        </eq>
+    	
+    	
     	<div id="pages">{$page}</div>
     </div>
 

@@ -1,3 +1,5 @@
+<if condition="($is_master eq 'true') OR (($is_master neq 'true') AND ($allowproxyadd eq 'true')) ">
+
 <!--添加栏目-->
 <div class="dialog_content">
 	<form id="info_form" action="{:U('item_cate/add')}" method="post">
@@ -22,6 +24,7 @@
             <td>
             	<input type="text" name="img" id="J_img" class="input-text fl mr10" size="30">
             	<div id="J_upload_img" class="upload_btn"><span>{:L('upload')}</span></div>
+            	<span>320*135 px</span>
             </td>
         </tr>
         <tr>
@@ -45,18 +48,7 @@
                 <label><input type="radio" name="status" value="1" checked> 已审核</label>
             </td>
         </tr>
-	<!--	<tr>
-			<th>{:L('seo_title')} :</th>
-			<td><input type="text" name="seo_title" class="input-text" style="width:300px;"></td>
-		</tr>
-		<tr>
-			<th>{:L('seo_keys')} :</th>
-			<td><input type="text" name="seo_keys" class="input-text" style="width:300px;"></td>
-		</tr>
-		<tr>
-			<th>{:L('seo_desc')} :</th>
-			<td><textarea name="seo_desc" style="width:295px; height:50px;"></textarea></td>
-		</tr>-->
+
 	</table>
 	</form>
 </div>
@@ -117,3 +109,8 @@ $(function(){
     });
 });
 </script>
+
+<else />
+<div style="text-align:center;">无权操作</div>
+</if>
+

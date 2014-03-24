@@ -61,9 +61,35 @@
 					</td>
 				</tr>
 				<tr>
+					<td height="48" align="right"><strong>所属管理者：</strong></td>
+					<td colspan="3" class="lt">
+						<select name="belonguser" style="width:136px">
+							<gt name="info.id" value="0">
+							<else />
+								<option value="0">全部</option>
+							</gt>	
+							<volist name="userinfo" id="vo">
+								<option value="{lanrain:$vo.id}" <eq name="vo.id" value="$info.belonguser">selected=""</eq> >{lanrain:$vo.username}</option>
+							</volist>
+						</select>
+					</td>
+				</tr>
+				<tr>
 					<td height="48" align="right"><strong>功能说明：</strong></td>
 					<td colspan="3" class="lt">
 						<textarea type="text" name="info" value="" class="ipt" style="width:450px;height:60px;margin:5px 0 5px 0;">{lanrain:$info.info}</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td height="48" align="right"><strong>前端分类：</strong></td>
+					<td colspan="3" class="lt">
+						<input type="text" name="funtype" class="ipt" size="45" value="{lanrain:$info.funtype}">
+					</td>
+				</tr>
+				<tr>
+					<td height="48" align="right"><strong>前端颜色类：</strong></td>
+					<td colspan="3" class="lt">
+						<input type="text" name="funcolor" class="ipt" size="45" value="{lanrain:$info.funcolor}">
 					</td>
 				</tr>
 	<tr>
@@ -74,7 +100,7 @@
 				<button class="button" type="submit" name="" value="">添 加</button>
 			</gt>
 			&nbsp;
-			<input type="button" onclick="javascript:history.back(-1);">返 回</input>
+			<a href="javascript:history.back(-1);">返 回</a>
 		</td>
 	</tr>
 </table>

@@ -2,7 +2,7 @@
 class AdmaAction extends UserAction{
 	public function index(){
 		//检查权限和功能
-		$this->checkauth('adma','adma');
+		$this->checkauth('Adma','Adma');
 		
 		$data=D('Adma');
 		$adma=$data->where(array('token'=>session('token'),'uid'=>session('uid')))->find();

@@ -27,6 +27,40 @@ class brandlistAction extends backendAction
     	$data['tokenTall'] = $this->getTokenTall();
     	return $data;
     }
+    protected function _after_insert($id) {
+    	//如果是主号，则同步其他号
+    	if ($_SESSION['is_master'] === "true") {
+    		$item_other_mod = D('brandlist');
+    		$item_other = $item_other_mod->where('id='.$id)->find();
+    		unset($item_other['id']);
+    		$item_other['fromid'] = $id;
+    
+    		$alltoken = M('wxuser')->where("token !='".$_SESSION['master_token']."'")->select();
+    		foreach ($alltoken as $onetoken){
+    			$item_other['tokenTall'] = $onetoken['token'];
+    			$item_other_mod->add($item_other);
+    		}
+    	}
+    }
+    protected function _after_update($id) {
+    	//如果是主号，则同步其他号
+    	if ($_SESSION['is_master'] === "true") {
+    		$item_other_mod = D('brandlist');
+    		$item_other = $item_other_mod->where('id='.$id)->find();
+    
+    		$item_other_data = $item_other;
+    		unset($item_other_data['id']);
+    		unset($item_other_data['tokenTall']);
+    		unset($item_other_data['fromid']);
+    
+    
+    		$alltoken = $item_other_mod->where(array('fromid'=>$id))->select();
+    		foreach ($alltoken as $onetoken){
+    			$item_other_data['id'] = $onetoken['id'];
+    			$item_other_mod->save($item_other_data);
+    		}
+    	}
+    }
     
     protected function _search() {
         $map = array();
@@ -65,6 +99,12 @@ class brandlistAction extends backendAction
         	}
         	
             if (false !== $mod->delete($ids)) {
+            	
+            	//如果是主号，则同步其他号
+            	if ($_SESSION['is_master'] === "true") {
+            		$mod->where('fromid in('.$ids.')')->delete();
+            	}
+            	
                 IS_AJAX && $this->ajaxReturn(1, L('operation_success'));
                 $this->success(L('operation_success'));
             } else {

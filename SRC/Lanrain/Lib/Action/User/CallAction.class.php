@@ -4,6 +4,9 @@
 **/
 class CallAction extends UserAction{
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Call','Call');
+		
 		$db=D('Call');
 		$where['uid']=$_SESSION['uid'];
 		$where['token']=$_SESSION['token'];

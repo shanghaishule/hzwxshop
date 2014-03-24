@@ -8,7 +8,7 @@ class ProductAction extends UserAction{
 		parent::_initialize();
 		//
 		//检查权限和功能
-		$this->checkauth('shop','shop');
+		$this->checkauth('Product','Product');
 		//是否是餐饮
 		if (isset($_GET['dining'])&&intval($_GET['dining'])){
 			$this->isDining=1;

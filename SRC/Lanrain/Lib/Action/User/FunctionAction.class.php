@@ -9,38 +9,45 @@ class FunctionAction extends UserAction{
 		}
 		session('token',$token);
 		session('wxid',$info['id']);
-		//第一次登陆　创建　功能所有权
+
+		//遍历功能列表
 		$token_open=M('Token_open');
 		$toback=$token_open->field('id,queryname')->where(array('token'=>session('token'),'uid'=>session('uid')))->find();
 		if (! $toback) {
-			$allfun=M('Function')->select();
+			$allfun=M('Function')->where(array('belonguser'=>session('belonguser')))->select();
+			//$allfun=$model->table('tp_function a, tp_user b, tp_users c')->where('a.belonguser = b.id and b.id = c.belonguser and c.id = '.session('uid'))->field('a.*')->select();
 			$queryname = '';
 			foreach ($allfun as $value){
 				$queryname .= $value['funname'].',';
 			}
 			$queryname=rtrim($queryname,',');
-			M('Token_open')->add(array('uid'=>session('uid'), 'token'=>session('token'), 'queryname'=>$queryname));
+			$token_open->add(array('uid'=>session('uid'), 'token'=>session('token'), 'queryname'=>$queryname));
 			$toback=$token_open->field('id,queryname')->where(array('token'=>session('token'),'uid'=>session('uid')))->find();
 		}
-		
-		$open['uid']=session('uid');
-		$open['token']=session('token');
-		//遍历功能列表
-		$group=M('User_group')->field('id,name')->where('status=1')->select();
 		$check=explode(',',$toback['queryname']);
 		$this->assign('check',$check);
+
+		//
+		$group=M('User_group')->field('id,name')->where('status=1')->select();
+		//dump($group);exit;
 		foreach($group as $key=>$vo){
-			$fun=M('Function')->where(array('status'=>1,'gid'=>$vo['id']))->select();
-			foreach($fun as $vkey=>$vo){
-				$function[$key][$vkey]=$vo;
+			$fun=M('Function')->where(array('status'=>1,'gid'=>$vo['id'],'belonguser'=>session('belonguser')))->select();
+			foreach($fun as $vkey=>$vvo){
+				$function[$vo['id']][$vkey]=$vvo;
 			}
 		}
+		//dump($function);exit;
+		
 		$this->assign('fun',$function);
 		//
 		$wecha=M('Wxuser')->field('wxname,wxid,headerpic,weixin')->where(array('token'=>session('token'),'uid'=>session('uid')))->find();
 		$this->assign('wecha',$wecha);
 		$this->assign('token',session('token'));
 		//
+		
+		//检查权限和功能
+		$this->checkauth('Function','Function');
+		
 		$this->display();
 	}
 }

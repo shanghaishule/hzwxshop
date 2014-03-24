@@ -70,7 +70,7 @@ class IndexAction extends UserAction{
 		if($users['wechat_card_num']<$data['wechat_card_num']){
 			
 		}else{
-			$this->error('您的VIP等级所能创建的公众号数量已经到达上线，请购买后再创建',U('User/Index/index'));exit();
+			$this->error('您的VIP等级所能创建的公众号数量已经到达上限，请购买后再创建',U('User/Index/index'));exit();
 		}
 		//$this->all_insert('Wxuser');
 		//
@@ -167,13 +167,20 @@ class IndexAction extends UserAction{
 			$this->error('密码不能为空!',U('Index/useredit'));
 		}
 	}
+	//头像
 	public function userpic(){
 		if(IS_POST){
 			$picurl=$this->_post('picurl');
 			if($picurl!=false){
 				$data['headerpic']=$picurl;
 				$data['id']=$_SESSION['uid'];
+				//更新users的headerpic字段
 				if(M('Users')->save($data)){
+					//同步更新下属公众号的头像
+					$where['uid']=$_SESSION['uid'];
+					$data2['headerpic']=$picurl;
+					M('Wxuser')->where($where)->save($data2);
+					
 					$this->success('头像修改成功！',U('Index/index'));
 				}else{
 					$this->error('头像修改失败！',U('Index/userpic'));

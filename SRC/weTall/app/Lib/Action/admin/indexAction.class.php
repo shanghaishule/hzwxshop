@@ -9,7 +9,7 @@ class indexAction extends backendAction {
     }
 
     public function index() {
-           
+    	//dump($_SESSION);exit;
         $top_menus = $this->_mod->admin_menu(0);
         $this->assign('top_menus', $top_menus);
         $my_admin = array('username'=>$_SESSION['admin']['username'], 'rolename'=>$_SESSION['admin']['role_id']);
@@ -17,6 +17,8 @@ class indexAction extends backendAction {
 
         $this->assign('tokenTall', $this->getTokenTall());
         $_SESSION["tokenTall"] = $this->getTokenTall();
+        
+        $this->assign('wxid', $_SESSION['wxid']);
         
         $token=$_SESSION["tokenTall"];
         $weshop=M("wecha_shop");
@@ -30,9 +32,9 @@ class indexAction extends backendAction {
         	
         	$data["name"]=$wxUser["wxname"];
         	$data["weName"]=$wxUser["wxname"];
-        	$data["title"]="微服客店铺";
-        	$data["descr"]="微服客店铺";
-        	$data["keywords"]="微服客店铺";
+        	$data["title"]="淘乐店铺";
+        	$data["descr"]="淘乐店铺";
+        	$data["keywords"]="淘乐店铺";
         	$weshop->add($data);
         }
         

@@ -5,7 +5,7 @@
 <title>登陆与注册－{lanrain::C('site_title')}</title>
 <include file="Public:header2"/>
 
-<div class="main2">
+
 <style>
 
 .contaier{ zoom: 1; }
@@ -30,7 +30,7 @@ a:hover{ text-decoration: underline; }
 .think-login .head a,.think-register .head a{ color: #007DDB; margin-left: 6px; text-decoration: underline; }
 .think-login .body,.think-register .body{ padding-top: 12px; }
 .think-login,.think-register{ float: left; }
-.think-form{ padding-bottom: 36px; }
+.think-form{ padding-bottom: 0px; }
 .think-form .must{ font-style: normal; color: #c00; margin-right: 3px; }
 .think-form th,.think-form td{ padding: 6px 0; }
 .think-form th{ font-weight: normal; vertical-align: top; line-height: 32px; padding-right: 9px; text-align: left; }
@@ -46,33 +46,28 @@ a:hover{ text-decoration: underline; }
 .login-other .head strong{ font-weight: normal; color: #999; }
 </style>
 <div class="abody">
-        
-
-    <div id="think-login2">
-        
-          <div class="head">
-            <strong style="font-weight: normal;font-size: 30px;vertical-align: bottom;color: white;">用户登录</strong>
-		　</div>
+<div id="company_name">淘乐微信商城后台管理系统</div>
       
-     <div class="class="body think-form "">       
+     <div class="body think-form">       
 <form action="{lanrain::U('Users/checklogin')}" method="post" class="login" id="tform">
-	<table width="600" border="0" align="center" style="margin-top:20px">
+	<table width="200" border="0" align="center">
+	<tr><td>
+            <strong style="font-weight: normal;font-size: 30px;vertical-align: bottom;color: white;">用户登录</strong>
+		　</td></tr>
 	<tr>
 		<td>
 			<span class="usedata">用户名：<input id="username" type="text" name="username"></input></span>
 		</td>
-		<td align="right">
+		
+	</tr>
+	<tr>
+	<td>
 			<span class="usedata"> 密码：<input id="password" type="password" name="password"></input></span>
 		</td>
-	</tr>
-
+</tr>
 	<tr>
-		<td>
-			
-		</td>
-		<td height="100px" align="right">
+		<td align="right">
 			<input id="login" type="image" src="{lanrain::RES}/images/login.png" width="100" height="35" onclick="return dosubmit();" />
-			<!-- a href="{lanrain::U('Index/reg')}"><img class="img2" width="100" height="35" src="{lanrain::RES}/images/register.png" /></a -->
 		</td>
 	</tr>
 	</table>
@@ -81,6 +76,6 @@ a:hover{ text-decoration: underline; }
             
     </div>
 </div>
-    </div>
+
 <script type="text/javascript">try{Dd('webpage_6').className='left_menu_on';}catch(e){}</script>
 </html>

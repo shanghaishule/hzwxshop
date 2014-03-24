@@ -3,15 +3,23 @@
  
 /*链接数据库*/
 require_once("../file.php");
+	/*
 	   $dbname ="bestchoi_shule";//这里填写你BAE数据库的名称称
  
-       /*从环境变量里取出数据库连接需要的参数*/
+       //从环境变量里取出数据库连接需要的参数
        $host = 'localhost';
        $port ='3306';
        $user = 'bestchoi_shule';
        $pwd = 'shule_123';
-	   
+	*/
+require_once("../../weTall/data/config/db.php");
 
+       $dbname = $arr['DB_NAME'];
+       $host = $arr['DB_HOST'];
+       $port = $arr['DB_PORT'];
+       $user = $arr['DB_USER'];
+       $pwd = $arr['DB_PWD'];
+       
  
        /*接着调用mysql_connect()连接服务器*/
         $link = @mysql_connect("{$host}:{$port}",$user,$pwd,true);

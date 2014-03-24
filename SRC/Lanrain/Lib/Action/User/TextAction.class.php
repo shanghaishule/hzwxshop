@@ -4,6 +4,9 @@
 **/
 class TextAction extends UserAction{
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Text','Text');
+		
 		$db=D('Text');
 		$where['uid']=session('uid');
 		$where['token']=session('token');

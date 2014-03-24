@@ -17,7 +17,7 @@
 						if(url.indexOf("http") > -1){
 							K('#pic').val(url);
 						}else{
-							K('#pic').val("__ROOT__"+url);
+							K('#pic').val("http://"+window.location.host+url);
 						}
 						editor.hideDialog();
 					}

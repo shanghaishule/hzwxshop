@@ -4,6 +4,9 @@
 **/
 class FlashAction extends UserAction{
 	public function index(){
+		//检查权限和功能
+		$this->checkauth('Flash','Flash');
+		
 		$db=D('Flash');
 		$where['uid']=session('uid');
 		$where['token']=session('token');
