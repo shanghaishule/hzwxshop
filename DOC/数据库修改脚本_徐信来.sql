@@ -1,6 +1,6 @@
 /*本脚本可以反复执行，重复执行*/
-DROP TABLE IF EXISTS `tp_guide`;
-CREATE TABLE `tp_guide` (
+DROP TABLE IF EXISTS `tp_music`;
+CREATE TABLE `tp_music` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `token` varchar(60) NOT NULL,
   `guide` char(255) NOT NULL,

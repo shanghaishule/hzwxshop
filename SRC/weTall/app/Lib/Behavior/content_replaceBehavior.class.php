@@ -25,7 +25,8 @@ class content_replaceBehavior extends Behavior {
         if ($parent_url != '') {
             $replace['__PARENTURL__'] = $parent_url;
         } else {
-            $replace['__PARENTURL__'] = rtrim(__ROOT__,'weTall/');
+            //$replace['__PARENTURL__'] = rtrim(__ROOT__,'weTall/');
+            $replace['__PARENTURL__'] = substr(__ROOT__, 0, -7);
         }
         
         //附件地址
