@@ -4421,7 +4421,7 @@ function _loadScript(url, fn) {
 	script.charset = 'utf-8';
 	script.onload = script.onreadystatechange = function() {
 		if (!this.readyState || this.readyState === 'loaded') {
-			if (fn) {
+			if (fn) {			
 				fn();
 			}
 			script.onload = script.onreadystatechange = null;
@@ -5438,6 +5438,7 @@ function _create(expr, options) {
 	if (_language[editor.langType]) {
 		return create(editor);
 	}
+
 	_loadScript(editor.langPath + editor.langType + '.js?ver=' + encodeURIComponent(K.DEBUG ? _TIME : _VERSION), function() {
 		create(editor);
 	});

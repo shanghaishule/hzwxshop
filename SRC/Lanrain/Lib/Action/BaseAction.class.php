@@ -12,7 +12,7 @@ class BaseAction extends Action
     protected function all_insert($name = '', $back = '/index')
     {
         $name = $name ? $name : MODULE_NAME;
-        $db   = D($name);
+        $db   = D($name);     
         if ($db->create() === false) {
             $this->error($db->getError());
         } else {
@@ -76,11 +76,12 @@ class BaseAction extends Action
     protected function all_save($name = '', $back = '/index')
     {
         $name = $name ? $name : MODULE_NAME;
-        $db   = D($name);
-        if ($db->create() === false) {
+        $db   = D($name);             
+        if ($db->create() === false) {      	
             $this->error($db->getError());
-        } else {
-            $id = $db->save();
+        } else {      	
+            $id = $db->save();      
+            
             if ($id) {
                 $m_arr = array(
                     'Img',
@@ -92,6 +93,7 @@ class BaseAction extends Action
                     'Product',
                     'Selfform'
                 );
+        
                 if (in_array($name, $m_arr)) {
                     $data['pid']    = $_POST['id'];
                     $data['module'] = $name;

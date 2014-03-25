@@ -15,9 +15,12 @@ class IndexAction extends BaseAction{
 	public function _initialize(){
 		parent::_initialize();
 		$agent = $_SERVER['HTTP_USER_AGENT']; 
+		
+/* xxl just for test 		
 		if(!strpos($agent,"icroMessenger")&&!isset($_GET['show'])) {
 			echo '此功能只能在微信浏览器中使用';exit;
 		}
+*/		
 		//
 		$Model = new Model();
 		$rt=$Model->query("CREATE TABLE IF NOT EXISTS `tp_site_plugmenu` (
@@ -88,10 +91,7 @@ class IndexAction extends BaseAction{
 			echo '<script>window.location.href="/cms/index.php?token='.$this->token.'&wecha_id='.$this->wecha_id.'";</script>';
 			exit();
 		}
-		//
-		$where['token']=$this->_get('token');
-		//dump($where);
-		//	$where['status']=1;
+				
 		$flash=M('Flash')->where($where)->select();
 		$flash=$this->convertLinks($flash);
 		$count=count($flash);
@@ -101,8 +101,128 @@ class IndexAction extends BaseAction{
 		$this->assign('info',$this->info);
 		$this->assign('tpl',$this->tpl);
 
+		$this->addGuide();
+		
 		$this->display($this->tpl['tpltypename']);
 	}
+	
+//xxl start	
+	public function addGuide(){		
+
+		$where['token']=$this->_get('token');
+		$where['upd_type']="1";
+		$music=M('Guide')->where($where)->select();
+		$this->assign('music',$music);
+		$imgJs = __ROOT__."/tpl/static/jquery.min.js";		
+		
+		$isMusic = False;
+		$isAnimation = False;
+		
+	    if($music != null)
+	    {
+	    	$musicPath = __ROOT__.$music[0]['guide'];
+	    	$imgPath = __ROOT__."/tpl/static/images/v72_2.png";
+	    	$isMusic = TRUE;
+	    }
+	    
+	    $animation=M('Animation')->where($where)->find();
+	    $open_animation = 0;
+	    if($animation != null){
+	    	if ($animation['open_animation'] == "1" ){
+	    		$open_animation = 1;
+	    	}
+	    }
+	    
+	    $animationPath =__ROOT__."/tpl/Wap/default/animation.html";
+		
+//xxl start
+echo <<< EOT
+<script src="{$imgJs}"  type="text/javascript" ></script>
+		
+<style type="text/css">
+#iframe_screen{
+    background:#fff;
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    z-index:30000;
+    overflow:hidden;
+}
+.music_blk{
+	z-index: 99999;
+	position:absolute;
+}
+		
+a.btn_music{
+	display:inline-block;
+	width:25px;
+	height:25px;
+	margin:5px 10px;
+	min-width:25px;
+	background:url("{$imgPath}") no-repeat right center;
+	background-size:auto 100%;
+}
+a.btn_music.on{
+	background-position:0 center!important;
+}
+</style>
+		
+<script>
+$().ready(function(){
+		
+   $("#playoff").hide();
+   $("#playon").hide();
+   $("#audio").attr("src","null");
+   if("{$open_animation}" == 1){
+		run(); //加载页面时启动定时器
+		var interval;
+		function run() {
+			interval = setInterval(chat, "3000");
+		}
+		function chat() {
+			clearTimeout(interval);  //关闭定时器
+			$("#iframe_screen").hide();
+			$("#playon").show();
+			$("#audio").attr("src","{$musicPath}");
+	    }
+    }else{
+			$("#iframe_screen").hide();
+			$("#playon").show();
+			$("#audio").attr("src","{$musicPath}");
+	}
+});
+function musicClick(param)
+{
+	if(param == "off"){
+		$("#playoff").hide();
+		$("#playon").show();
+		$("#autoMusic").show();
+		$("#audio").attr("src","{$musicPath}");
+		
+	}else{
+		$("#playoff").show();
+		$("#playon").hide();
+		$("#autoMusic").hide();
+		$("#audio").attr("src","null");
+	}
+}
+</script>
+		
+<iframe id="iframe_screen" src="{$animationPath}" frameborder="0"></iframe>
+		
+<div id="bkmusic" class="music_blk">
+	<a href="javascript:;" id="playoff" class="btn_music" onclick="musicClick('off');"></a>
+	<a href="javascript:;" id="playon" class="btn_music on" onclick="musicClick('on');"></a>
+	<div id="autoMusic">
+		<audio src="{$musicPath}"  loop="" id="audio" autoplay="autoplay" ></audio>
+	</div>
+</div>
+EOT;
+		
+	}	
+//xxl end
 	
 	public function lists(){
 		$where['token']=$this->_get('token','trim');

@@ -104,6 +104,7 @@ window.onload =getHost;
 			<?php break;}} ?>
 		</div>
 		<div class="TwoMenu">
+
 			<?php foreach($allfunctiontype as $typekey => $typevalue){ ?>
 				<a href="javascript:void(0);" onclick="clickTwoMenu(<?php echo $typekey+1; ?>)">
 					<img src="{lanrain::RES}/images/TwoMenu-ico-<?php echo $typevalue['funtype']; ?>t.png" />
@@ -114,8 +115,10 @@ window.onload =getHost;
             		<a class="a"><?php echo $typevalue['funtype']; ?></a>
             	</div>
 			<?php } ?>
+
 		</div>
 		<div class="ThreeMenu">
+
 			<?php foreach($allfunctiontype as $typekey => $typevalue){ ?>
 				<div class="contab" id="contab-0<?php echo $typekey+1; ?>" <?php $result='style="display: none;"'; foreach($allfunction as $allval){ if(MODULE_NAME.$typevalue['funtype'] == $allval['funname'].$allval['funtype']){ $result='style="display: block;"';}}  echo $result;?> >
 					<?php foreach($allfunction as $allfunvalue2){ if($allfunvalue2['funtype'] == $typevalue['funtype']){ ?>
@@ -130,6 +133,7 @@ window.onload =getHost;
 					<?php }} ?>
 	            </div>
             <?php } ?>
+
 		</div>
 	</div>
 	<div id="Content" ></div>

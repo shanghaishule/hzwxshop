@@ -50,12 +50,24 @@ $(document).ready(function() {
 		document.getElementById('first').style.display='block';
 	 }); 
 */
-//xxl end	 
+//背景音乐追加
+$(document).ready(function() {	
+	
+	if("{$music[0].music}" != ""){
+		document.getElementById('startMusic').style.display='block';
+	}
+}); 
+
+//xxl end
 </script>
 <!-- xxl start -->
+<div id="startMusic" onclick="document.getElementById('startMusic').style.display='';" style="display:none;">
+	<embed autostart=true src="__PARENTURL__{$music[0].music}" hidden=ture height=0 width=0 >
+</div> 
+
 <!-- if condition="$systemBrowse eq 'X'  and $index_num2 eq 1">
 <div id="first" onclick="document.getElementById('first').style.display='';" style="display:none;">
-                    <img src="__PARENTURL__/tpl/User/default/common/images/first.png" />
+<img src="__PARENTURL__/tpl/User/default/common/images/first.png" />
 </div>
 </if -->
 <!-- xxl end -->

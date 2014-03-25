@@ -417,6 +417,7 @@ class Model {
                 return false;
             }
         }
+             
         $result     =   $this->db->update($data,$options);
         if(false !== $result) {
             if(isset($pkValue)) $data[$pk]   =  $pkValue;

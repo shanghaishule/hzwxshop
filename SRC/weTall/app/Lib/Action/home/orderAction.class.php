@@ -724,5 +724,46 @@ class orderAction extends userbaseAction {
 			return "参数为空";
 		}
 	}
+	
+	/**
+	 * 物流查询
+	 *
+	 */
+	function checkLog(){
+		
+		$where['orderId']=$_GET['orderId'];
+		$item_order=M('item_order');
+	
+		$result = $item_order->where($where)->find();
+		$data['freecode']=$result['freecode'];
+		$data['userfree']=$result['userfree'];
+		/*
+		switch($result['freetype']){
+			case 0:
+				$data['freetype'] = "卖家包邮";
+				break;
+			case 1:
+				$data['freetype'] = "平邮";
+				break;
+			case 2:
+				$data['freetype'] = "快递";
+				break;
+			case 3:
+				$data['freetype'] = "EMS";
+				break;
+				
+			default:
+			break;
+		};
+		*/	
+		//$temp = str_replace("快递","",$data['userfree']);
+		
+		$data['kuaidi']  = file_get_contents('http://www.weinxinma.com/api/index.php?m=Express&a=index&name=' . $data['userfree'] . '&number=' . $data['userfree']);
+		$this->assign('checkLog',$data);
+		$this->display();
+		
+	}
+	
 
+	
 }

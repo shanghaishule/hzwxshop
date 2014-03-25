@@ -14,5 +14,5 @@ return array(
 'DB_PWD'=>'hzwxshop',
 	
 'DB_PREFIX'=>'tp_',
-
+		
 );
