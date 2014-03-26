@@ -3776,10 +3776,10 @@ CREATE TABLE `tp_setting` (
 -- ----------------------------
 -- Records of tp_setting
 -- ----------------------------
-INSERT INTO `tp_setting` VALUES ('site_name', '微指购', '');
-INSERT INTO `tp_setting` VALUES ('site_title', '微指购-微信商城', '');
-INSERT INTO `tp_setting` VALUES ('site_keyword', '微指购,微信商城,最新商城模式,电商领航者', '');
-INSERT INTO `tp_setting` VALUES ('site_description', '微指购专注微信客户端应用开发，众多真实案例，微信商城、微信餐饮系统、微房产、微汽车等产品受到广大商家和用户好评。因为真诚，所以值得信赖！', '');
+INSERT INTO `tp_setting` VALUES ('site_name', '淘乐', '');
+INSERT INTO `tp_setting` VALUES ('site_title', '淘乐-微信商城', '');
+INSERT INTO `tp_setting` VALUES ('site_keyword', '淘乐,微信商城,最新商城模式,电商领航者', '');
+INSERT INTO `tp_setting` VALUES ('site_description', '淘乐专注微信客户端应用开发，众多真实案例，微信商城、微信餐饮系统、微房产、微汽车等产品受到广大商家和用户好评。因为真诚，所以值得信赖！', '');
 INSERT INTO `tp_setting` VALUES ('site_status', '1', '');
 INSERT INTO `tp_setting` VALUES ('closed_reason', '网站升级中。。', '');
 INSERT INTO `tp_setting` VALUES ('site_icp', '', '');
@@ -7572,7 +7572,7 @@ CREATE TABLE `tp_wxuser` (
 -- Records of tp_wxuser
 -- ----------------------------
 INSERT INTO `tp_wxuser` VALUES ('30', '1', '蜀乐订餐', 'gh_7bb59981c2bd', 'shuleding', './tpl/User/default/common/images/portrait.jpg', 'gmbqsf1389536537', '上海', '上海', '1389536537@yourdomain.com', '0', '1', '情感', '', '100000', '1', '0', '0', '1389536568', '15', '1389536568', '115_index', '4', 'ktv_list', '3', 'ktv_content', '6');
-INSERT INTO `tp_wxuser` VALUES ('37', '1', '微指购', 'gh_69e97bb30d8d', 'TTvzhigo', './tpl/User/default/common/images/portrait.jpg', 'eolvhz1392992775', '河北', '保定', '1392992775@yourdomain.com', '0', '1', '情感', '', '100', '1', '0', '0', '1392992832', '1', '1392992832', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');
+INSERT INTO `tp_wxuser` VALUES ('37', '1', '淘乐', 'gh_69e97bb30d8d', 'TTvzhigo', './tpl/User/default/common/images/portrait.jpg', 'eolvhz1392992775', '河北', '保定', '1392992775@yourdomain.com', '0', '1', '情感', '', '100', '1', '0', '0', '1392992832', '1', '1392992832', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');
 INSERT INTO `tp_wxuser` VALUES ('38', '33', '伊人', 'gh_8154d3ddaa39', 'yiren_yours', './tpl/User/default/common/images/portrait.jpg', 'tmpjis1393039145', '都市', '都市', '1393039145@yourdomain.com', '0', '1', '情感', '', '0', '0', '0', '0', '1393039261', '11', '1393039261', '111_index', '1', 'yl_list', '1', 'ktv_content', '0');
 INSERT INTO `tp_wxuser` VALUES ('39', '33', '微销售', 'gh_ea77b91d57ea', 'Vxiao_shou', './tpl/User/default/common/images/portrait.jpg', 'xaybdf1393044422', '上海', '上海', '1393044422@yourdomain.com', '0', '8', '服务', '', '0', '0', '0', '0', '1393044533', '1', '1393044533', 'ty_index', '1', 'yl_list', '1', 'ktv_content', '0');
 INSERT INTO `tp_wxuser` VALUES ('40', '33', '卡通', 'gh_73878890f1e0', 'wxsc000', './tpl/User/default/common/images/portrait.jpg', 'rpniee1393046049', '河北', '保定', '1393046049@yourdomain.com', '0', '6', '购物', '', '100', '1', '98', '98', '1393046352', '11', '1393046352', '111_index', '1', 'yl_list', '1', 'yl_content', '0');

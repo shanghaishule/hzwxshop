@@ -481,7 +481,7 @@ class orderAction extends userbaseAction {
 					$req['merId']       		= upmp_config::$mer_id; // 商户代码
 					$req['backEndUrl']      	= $this->_server('HTTP_ORIGIN')."/weTall/wapupay/yinlian_notify_back.php"; // 后台通知URL
 					$req['frontEndUrl']     	= ""; // 前台通知URL(可选)  //经过沟通,银联还未实现这个功能.
-					$req['orderDescription']	= "微指购订单支付";// 订单描述(可选)
+					$req['orderDescription']	= "淘乐订单支付";// 订单描述(可选)
 					$req['orderTime']   		= substr($alldingdanhao, 0, 14);    //date("YmdHis"); // 交易开始日期时间yyyyMMddHHmmss
 					$req['orderTimeout']   		= ""; // 订单超时时间yyyyMMddHHmmss(可选)
 					$req['orderNumber'] 		= $alldingdanhao;  //支付号
@@ -654,7 +654,7 @@ class orderAction extends userbaseAction {
 				$content = "顾客".$orderinfo['address_name']."在您微店已下单购买\"".$orderinfo['title']."\"商品,订单号为：".$orderinfo['orderid']." 您尽快为顾客安排发货";				
 				$smsrs = file_get_contents('http://api.smsbao.com/sms?u='.$user.'&p='.$pass.'&m='.$shop_tel['phone'].'&c='.urlencode($content));
 				//用户信息
-				$content = "您在微指购商城购买的\"".$orderinfo['title']."\"商品,订单号为：".$orderinfo['orderid']." 请 微信搜索\"微指购\"+关注 查询物流信息！";
+				$content = "您在淘乐商城购买的\"".$orderinfo['title']."\"商品,订单号为：".$orderinfo['orderid']." 请 微信搜索\"淘乐\"+关注 查询物流信息！";
 				$smsrs = file_get_contents('http://api.smsbao.com/sms?u='.$user.'&p='.$pass.'&m='.$orderinfo['mobile'].'&c='.urlencode($content));
 			}			
 		}				
