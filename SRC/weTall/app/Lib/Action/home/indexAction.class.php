@@ -68,11 +68,6 @@ class indexAction extends frontendAction {
         $this->assign('news',$news);
         $this->assign('tuijian',$tuijian);
         
-        //xxl start
-        $music=M('Music')->where($where)->select();
-        $this->assign('music',$music);
-        //xxl end
-        
         $this->_config_seo();
         $this->display();
     }
