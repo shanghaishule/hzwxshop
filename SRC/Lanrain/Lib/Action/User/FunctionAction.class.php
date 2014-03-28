@@ -46,7 +46,7 @@ class FunctionAction extends UserAction{
 		//
 		
 		//检查权限和功能
-		$this->checkauth('Function','Function');
+		//$this->checkauth('Function','Function');
 		
 		$this->display();
 	}
