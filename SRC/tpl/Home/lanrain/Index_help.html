@@ -150,7 +150,7 @@ border: 1px solid #C1C9D4;
             <div class="normalTitle"><h2>如何为微信公众号配置接口？</h2></div>
                 <div class="collapsible">
 <div class="section lastSection">
-<p>请务必认真阅读以下2步内容，才能更有效的完成配置工作，有疑问的请联系QQ：{lanrain::C('site_qq')}提问。<br/><if condition="$_GET['token'] neq ''">你的接口URL是：<font color="red">{lanrain::C('site_url')}/index.php/api/<php>echo $_GET['token'];</php></font><br>您的token是：<font color="red"><php>echo $_GET['token'];</php></font></if></p>
+<p>请务必认真阅读以下2步内容，才能更有效的完成配置工作，有疑问的请联系QQ：{lanrain::C('site_qq')}提问。<br/><if condition="$_GET['token'] neq ''">你的接口URL是：<font color="red">{lanrain::C('site_url')}/index.php?g=Home&m=Weixin&a=index&token=<php>echo $_GET['token'];</php></font><br>您的token是：<font color="red"><php>echo $_GET['token'];</php></font></if></p>
 </div>
                 <div id="CollapsiblePanel2" class="CollapsiblePanel">
                     <div class="CollapsiblePanelTab clicked">第一步、在{lanrain::C('site_name')}绑定你的微信公众号。<span></span></div>

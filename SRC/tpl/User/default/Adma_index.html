@@ -110,7 +110,7 @@ font-size:12px;line-height: 48px;
 <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"><tbody>
 <tr>
 <th width="120">推广页地址：</th>
-<td width="430"><a href="__ROOT__/index.php/show/{lanrain:$Think.session.token}" target="ddd" title="点击查看推广页" class="green" target="_blank">{lanrain::C('site_url')}__ROOT__/index.php/show/{lanrain:$Think.session.token}</a></td>
+<td width="430"><a href="__ROOT__/index.php?g=Home&m=Weixin&a=index&token={lanrain:$Think.session.token}" target="ddd" title="点击查看推广页" class="green" target="_blank">__ROOT__/index.php?g=Home&m=Weixin&a=index&token={lanrain:$Think.session.token}</a></td>
 <td rowspan="6" valign="top" class="yulan">
 <div class="main">
 <h1 id="adtitle">{lanrain:$adma.title}</h1>
@@ -178,7 +178,7 @@ document.getElementById("gzhinfo").innerHTML=document.getElementById("info").val
 <td>&nbsp;</td>
 <td><button type="submit" name="button" class="btnGreen">保存</button>
 <a href="index.php?ac=erweima-edit&amp;id=9878" class="btnGray vm">取消</a>
-<a href="__ROOT__/index.php/show/{lanrain:$Think.session.token}" class="right btnGray vm" target="ddd" style=" margin-right:20px" target="_blank">查看推广页</a>
+<a href="__ROOT__/index.php?g=Home&m=Weixin&a=index&token={lanrain:$Think.session.token}" class="right btnGray vm" target="ddd" style=" margin-right:20px" target="_blank">查看推广页</a>
 </td>
 </tr>
 
