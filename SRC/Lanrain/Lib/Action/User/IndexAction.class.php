@@ -53,7 +53,21 @@ class IndexAction extends UserAction{
 	public function del(){
 		$where['id']=$this->_get('id','intval');
 		$where['uid']=session('uid');
+		$myArr = M('Wxuser')->where($where)->find();
+		$tokenTall = $myArr['token'];
 		if(D('Wxuser')->where($where)->delete()){
+			
+			//如果不是主号，则同步删除自己的商品资料   by zcb 20140331
+			if ($tokenTall != $_SESSION['master_token']) {
+				//分类
+				M('item_cate')->where(array('tokenTall'=>$tokenTall))->delete();
+				//品牌
+				M('brandlist')->where(array('tokenTall'=>$tokenTall))->delete();
+				//商品
+				M('item')->where(array('tokenTall'=>$tokenTall))->delete();
+			}
+			//end by zcb 20140331
+			
 			$this->success('操作成功',U(MODULE_NAME.'/index'));
 		}else{
 			$this->error('操作失败',U(MODULE_NAME.'/index'));
@@ -112,6 +126,56 @@ class IndexAction extends UserAction{
 						$weChaShop->add($data1);
 					}
 					
+					
+					//如果添加不是主号，则同步主号商品资料到自己   by zcb 20140331
+					if ($_POST['token'] != $_SESSION['master_token']) {
+						//分类
+						$item_cates_mod = M('item_cate');
+						$item_cates = $item_cates_mod->where(array('tokenTall'=>$_SESSION['master_token']))->order('id')->select();
+						foreach ($item_cates as $onecate){
+							$othercate = $onecate;
+							unset($othercate['id']);
+							$othercate['tokenTall'] = $_POST['token'];
+							$othercate['fromid'] = $onecate['id'];
+							if ($othercate['pid'] != '0') {
+								$pidarr = $item_cates_mod->where("tokenTall='".$_POST['token']."' and fromid=".$othercate['pid'])->find();
+								$othercate['pid'] = $pidarr['id'];
+								$othercate['spid'] = $this->get_spid($othercate['pid']);
+							}
+							$item_cates_mod->add($othercate);
+						}
+						//品牌
+						$item_brands_mod = M('brandlist');
+						$item_brands = $item_brands_mod->where(array('tokenTall'=>$_SESSION['master_token']))->order('id')->select();
+						foreach ($item_brands as $onebrand){
+							$otherbrand = $onebrand;
+							unset($otherbrand['id']);
+							$otherbrand['tokenTall'] = $_POST['token'];
+							$otherbrand['fromid'] = $onebrand['id'];
+							$item_brands_mod->add($otherbrand);
+						}
+						//商品
+						$items_mod = M('item');
+						$items = $items_mod->where(array('tokenTall'=>$_SESSION['master_token']))->select();
+						foreach ($items as $oneitem){
+							$otheritem = $oneitem;
+							unset($otheritem['id']);
+							$otheritem['tokenTall'] = $_POST['token'];
+							$otheritem['fromid'] = $oneitem['id'];
+							
+							$item_cate_rec = M('item_cate')->where(array('fromid'=>$otheritem['cate_id'], 'tokenTall'=>$_POST['token']))->find();
+							$otheritem['cate_id'] = $item_cate_rec['id'];
+							$item_brand_rec = M('brandlist')->where(array('fromid'=>$otheritem['brand'], 'tokenTall'=>$_POST['token']))->find();
+							$otheritem['brand'] = $item_brand_rec['id'];
+					
+							$items_mod->add($otheritem);
+						}
+					}
+					//end by zcb 20140331
+					
+					
+					
+					
 					if($flag){
 						$this->success('欢迎回来',U('Index/index'));
 					}else{
@@ -124,6 +188,19 @@ class IndexAction extends UserAction{
 			}
 		}
 		
+	}
+	
+	public function get_spid($pid) {
+		if (!$pid) {
+			return 0;
+		}
+		$pspid = M('item_cate')->where(array('id'=>$pid))->getField('spid');
+		if ($pspid) {
+			$spid = $pspid . $pid . '|';
+		} else {
+			$spid = $pid . '|';
+		}
+		return $spid;
 	}
 	
 	//功能
