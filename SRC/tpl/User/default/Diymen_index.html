@@ -74,8 +74,8 @@
 			</td>
 			 <td><span><if condition="$class1['url'] eq false">无链接地址<else/>{lanrain:$class1.url}</if></span></td>
 			<td colspan="1">
-			<a class="ajax btnGreen cboxElement" href='javascript:tipsWindown("修改菜单","iframe:{lanrain::C('site_url')}/{lanrain::U('Diymen/class_edit',array('id'=>$class1['id']))}","460","600","true","","true","leotheme");' title="修改主菜单">修改</a>
-			<a class=" btnGreen " href="javascript:drop_confirm('您确定要删除吗?', '{lanrain::C('site_url')}/{lanrain::U('Diymen/class_del',array('id'=>$class1['id']))}');">删除</a></td>				
+			<a class="ajax btnGreen cboxElement" href='javascript:tipsWindown("修改菜单","iframe:{lanrain::U('Diymen/class_edit',array('id'=>$class1['id']))}","460","600","true","","true","leotheme");' title="修改主菜单">修改</a>
+			<a class=" btnGreen " href="javascript:drop_confirm('您确定要删除吗?', '{lanrain::U('Diymen/class_del',array('id'=>$class1['id']))}');">删除</a></td>				
 	 </tr>	
 	</volist>
 	</volist>
