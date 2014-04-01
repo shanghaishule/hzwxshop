@@ -100,7 +100,7 @@ class settingAction extends backendAction {
 		        			'twodcode'     => $data['twodcode'],
 		        	);
 		        }
-		        $data['twodcode'] = "/weTall/data/upload/item/".$data['twodcode'];
+		        $data['twodcode'] = "__PARENTURL__/weTall/data/upload/item/".$data['twodcode'];
 	        }
 	        if (!empty($_FILES['logo']['name'])) {
 		        //上传图片
@@ -121,7 +121,7 @@ class settingAction extends backendAction {
 		        			'logo'     => $data['logo'],
 		        	);
 		        }
-		        $data['logo'] = "/weTall/data/upload/item/".$data['logo'];
+		        $data['logo'] = "__PARENTURL__/weTall/data/upload/item/".$data['logo'];
 	        }
     	}
         $weChaShop = M("wecha_shop");
