@@ -13,5 +13,7 @@ return array(
 		'api/:token'        => 'Home/Weixin/index',
 		'show/:token'        => 'Home/Adma/index',
 		
+		//'/^api\/([A-Za-z0-9]+)$/'        => 'Home/Index/view?id=:1',
+		
 	),
 );
