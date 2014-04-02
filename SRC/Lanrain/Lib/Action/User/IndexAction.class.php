@@ -81,11 +81,11 @@ class IndexAction extends UserAction{
 	public function insert(){
 		$data=M('User_group')->field('wechat_card_num')->where(array('id'=>session('gid')))->find();
 		$users=M('Users')->field('wechat_card_num')->where(array('id'=>session('uid')))->find();
-		if($users['wechat_card_num']<$data['wechat_card_num']){
+		/*if($users['wechat_card_num']<$data['wechat_card_num']){
 			
 		}else{
 			$this->error('您的VIP等级所能创建的公众号数量已经到达上限，请购买后再创建',U('User/Index/index'));exit();
-		}
+		}*/
 		//$this->all_insert('Wxuser');
 		//
 		$db=D('Wxuser');
