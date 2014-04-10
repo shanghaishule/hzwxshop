@@ -32,6 +32,11 @@
         var sizeid=$("#size");
         sizeid.append("<input name='size[]' type='text' size='12'>&nbsp;");
     }
+	function addColor()
+    {
+        var colorid=$("#color");
+        colorid.append("<input name='color[]' type='text' size='12'>&nbsp;");
+    }
 </script>
 <!--添加商品-->
 <div class="subnav">
@@ -69,7 +74,7 @@
 			</tr>
 			<tr>
 				<th width="120">颜色 :</th>
-                <td><input type="checkbox" name="color[]" value="white">白色</input>&nbsp;
+                <td><!-- <input type="checkbox" name="color[]" value="white">白色</input>&nbsp;
                     <input type="checkbox" name="color[]" value="blue">蓝色</input>&nbsp;
                     <input type="checkbox" name="color[]" value="yellow">黄色</input>&nbsp;
                     <input type="checkbox" name="color[]" value="red">红色</input>&nbsp;
@@ -80,7 +85,8 @@
                     <input type="checkbox" name="color[]" value="piller">紫色</input>&nbsp;
                     <input type="checkbox" name="color[]" value="green">绿色</input>&nbsp;
                     <input type="checkbox" name="color[]" value="indigo">靛色</input>&nbsp;
-                    <input type="checkbox" name="color[]" value="mix">杂色</input>
+                    <input type="checkbox" name="color[]" value="mix">杂色</input> -->
+                    <div id="color"><input type="button" value="  添加    " onclick="addColor()"></div>
                     </td>
 			</tr>
 			<tr>
