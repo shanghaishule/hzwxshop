@@ -56,7 +56,7 @@
 			</tr>
 			<tr>
 				<th width="120">颜色 :</th>
-                <td><input type="checkbox" name="color[]" <if condition="$colorarrwhite eq 'white' ">checked</if> value="white">白色</input>&nbsp;
+                <td><!-- <input type="checkbox" name="color[]" <if condition="$colorarrwhite eq 'white' ">checked</if> value="white">白色</input>&nbsp;
                     <input type="checkbox" name="color[]" <if condition="$colorarrblue eq 'blue' ">checked</if> value="blue">蓝色</input>&nbsp;
                     <input type="checkbox" name="color[]" <if condition="$colorarryellow eq 'yellow' ">checked</if> value="yellow">黄色</input>&nbsp;
                     <input type="checkbox" name="color[]" <if condition="$colorarrred eq 'red' ">checked</if> value="red">红色</input>&nbsp;
@@ -68,6 +68,13 @@
                     <input type="checkbox" name="color[]" <if condition="$colorarrgreen eq 'green' ">checked</if> value="green">绿色</input>&nbsp;
                     <input type="checkbox" name="color[]" <if condition="$colorarrindigo eq 'indigo' ">checked</if> value="indigo">靛色</input>&nbsp;
                     <input type="checkbox" name="color[]" <if condition="$colorarrmix eq 'mix' ">checked</if> value="mix">杂色</input>
+                    --> <div id="color"><input type="button" value="  添加    " onclick="addColor()">
+                     <volist name="colorarr" id="colorarr">
+                      <if condition="$colorarr neq ''">
+                      <input type="text" name="color[]" value="{$colorarr}" size='12'>
+                      </if>
+                     </volist>
+                     </div>
                     </td>
 			</tr>
             <tr>
@@ -373,6 +380,11 @@ function addSize()
 {
     var sizeid=$("#size");
     sizeid.append("<input name='size[]' type='text' size='12'>&nbsp;");
+}
+function addColor()
+{
+    var colorid=$("#color");
+    colorid.append("<input name='color[]' type='text' size='12'>&nbsp;");
 }
 $(function() {
 	KindEditor.create('#info', {

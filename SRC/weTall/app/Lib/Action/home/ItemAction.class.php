@@ -26,7 +26,8 @@ class itemAction extends frontendAction {
         $size = substr(trim($item['size']),0,1) == '|' ? explode('|', substr(trim($item['size']),1)) : explode('|', $item['size']);
         
         //颜色
-        $color_tmp = substr(trim($item['color']),0,1) == '|' ? explode('|', substr(trim($item['color']),1)) : explode('|', $item['color']);
+        $color = substr(trim($item['color']),0,1) == '|' ? explode('|', substr(trim($item['color']),1)) : explode('|', $item['color']);
+        /*
         $color = array();
         foreach ($color_tmp as $key => $value){
         	switch ($value)
@@ -73,7 +74,7 @@ class itemAction extends frontendAction {
         			
         	}
         }
-
+		*/
         
         //品牌 
         $brand = M('brandlist')->field('name')->find($item['brand']);
@@ -107,7 +108,6 @@ class itemAction extends frontendAction {
         $this->assign('countSize', $countSize);
         $this->assign('countColor', $countColor);
 
-//>>>>>>> branch 'master' of https://github.com/shanghaishule/weixinshop.git
         $this->assign('item', $item);
         $this->assign('img_list', $img_list);
         $this->assign('tokenTall', $tokenTall);
