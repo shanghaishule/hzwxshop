@@ -14,8 +14,8 @@ class baseAction extends Action
             $setting = D('setting')->setting_cache();
         }
         //设置tokenTall值
-        $tokenTall = $this->_request('tokenTall', 'trim', '');
-        if($tokenTall != "") {$_SESSION["tokenTall"]=$tokenTall;}
+        $tokenTall = $this->getTokenTall();
+        $this->assign('tokenTall', $tokenTall);
         
         //设置wecha_id值
         $this->getWechaId();
@@ -140,8 +140,10 @@ class baseAction extends Action
     /*取商家token值，取不到则默认为空*/
     public function getTokenTall(){
     	$tokenTall = $this->_request('tokenTall', 'trim', '');
-    	if($tokenTall != "") {$_SESSION["tokenTall"]=$tokenTall;}
     	if($tokenTall == "" && $_SESSION["tokenTall"] != "") {$tokenTall = $_SESSION["tokenTall"];}
+    	if($tokenTall == "" && $_SESSION["token"] != "") {$tokenTall = $_SESSION["token"];}
+    	if($tokenTall != "") {$_SESSION["tokenTall"]=$tokenTall;}
+    	
     	return $tokenTall;
     }
     
