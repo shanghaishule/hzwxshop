@@ -18,9 +18,9 @@ class alipayAction extends backendAction
     		$data['alipayname']=$alipayname;
     		$data['partner']=$partner;
     		$data['key']=$key;
+    		$data['tokenTall']=$this->getTokenTall();
     		if(empty($_POST['id']))
     		{
-
     			if($this->_mod->data($data)->add()!==false)
     			{
     				$this->success('修改成功!');exit;
@@ -43,7 +43,9 @@ class alipayAction extends backendAction
     		
     	}else 
     	{
-    		$info= $this->_mod->find();
+    		
+    		$where["tokenTall"]=$this->getTokenTall();
+    		$info = $this->_mod->where($where)->find();
     		$this->assign('info',$info);
     	}
     	

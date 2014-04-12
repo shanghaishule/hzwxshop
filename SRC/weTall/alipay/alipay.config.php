@@ -20,7 +20,7 @@
  
 //↓↓↓↓↓↓↓↓↓↓请在这里配置您的基本信息↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 //合作身份者id，以2088开头的16位纯数字
-
+/*
 include_once("../data/config/db.php");
 
 $conn= mysql_connect($arr['DB_HOST'],$arr['DB_USER'],$arr['DB_PWD']) or die("连接数据库失败!");
@@ -29,7 +29,7 @@ $conn= mysql_connect($arr['DB_HOST'],$arr['DB_USER'],$arr['DB_PWD']) or die("连
 
 $sql="select * from tp_alipay";
 $result=mysql_query($sql,$conn);
- $row=mysql_fetch_array($result);
+$row=mysql_fetch_array($result);
 
 $alipay_config['partner']		= $row['partner'];//'2088901779545447';//
 //$alipay_config['partner']		= '2088601266739497';
@@ -38,6 +38,10 @@ $alipay_config['partner']		= $row['partner'];//'2088901779545447';//
 //如果签名方式设置为“MD5”时，请设置该参数
 $alipay_config['key']			= $row['key'];//'efhzncpzoxnto3r6z6in7m21uzdog15x';//$row['key'];
 //$alipay_config['key']			= 'abq6lde5sbeq1jkzyulbej66ub7xvh84';
+*/
+
+$alipay_config['partner']		= '';
+$alipay_config['key']			= '';
 
 //商户的私钥（后缀是.pen）文件相对路径
 //如果签名方式设置为“0001”时，请设置该参数

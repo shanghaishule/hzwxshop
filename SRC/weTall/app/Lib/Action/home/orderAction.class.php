@@ -553,7 +553,8 @@ class orderAction extends userbaseAction {
 					}
 				}
 				*/
-				$alipay=M('alipay')->find();
+				$where["tokenTall"]=$this->getTokenTall();
+				$alipay=M('alipay')->where($where)->find();
 				echo "<script>location.href='alipay/alipayapi.php?WIDseller_email=".$alipay['alipayname']."&WIDout_trade_no=".$alldingdanhao."&WIDsubject=".$alldingdanhao."&WIDtotal_fee=".$all_order_price."'</script>";
 			
 			}

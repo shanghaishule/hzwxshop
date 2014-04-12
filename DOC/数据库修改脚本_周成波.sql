@@ -119,3 +119,7 @@ alter table tp_item add `item_market_price` varchar(100) NULL;
 alter table tp_item add `item_weight` varchar(100) NULL;
 /*商品表，加标签*/
 alter table tp_item add `item_label` varchar(100) NULL;
+
+
+/*alipay增加tokenTall*/
+alter table tp_alipay add `tokenTall` varchar(20) NOT NULL DEFAULT '';
