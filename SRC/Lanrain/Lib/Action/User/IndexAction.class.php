@@ -128,17 +128,18 @@ class IndexAction extends UserAction{
 					
 					
 					//如果添加不是主号，则同步主号商品资料到自己   by zcb 20140331
-					if ($_POST['token'] != $_SESSION['master_token']) {
+					$me = $db->where(array('id'=>$id))->find();
+					if ($me['token'] != $_SESSION['master_token']) {
 						//分类
 						$item_cates_mod = M('item_cate');
 						$item_cates = $item_cates_mod->where(array('tokenTall'=>$_SESSION['master_token']))->order('id')->select();
 						foreach ($item_cates as $onecate){
 							$othercate = $onecate;
 							unset($othercate['id']);
-							$othercate['tokenTall'] = $_POST['token'];
+							$othercate['tokenTall'] = $me['token'];
 							$othercate['fromid'] = $onecate['id'];
 							if ($othercate['pid'] != '0') {
-								$pidarr = $item_cates_mod->where("tokenTall='".$_POST['token']."' and fromid=".$othercate['pid'])->find();
+								$pidarr = $item_cates_mod->where("tokenTall='".$me['token']."' and fromid=".$othercate['pid'])->find();
 								$othercate['pid'] = $pidarr['id'];
 								$othercate['spid'] = $this->get_spid($othercate['pid']);
 							}
@@ -150,7 +151,7 @@ class IndexAction extends UserAction{
 						foreach ($item_brands as $onebrand){
 							$otherbrand = $onebrand;
 							unset($otherbrand['id']);
-							$otherbrand['tokenTall'] = $_POST['token'];
+							$otherbrand['tokenTall'] = $me['token'];
 							$otherbrand['fromid'] = $onebrand['id'];
 							$item_brands_mod->add($otherbrand);
 						}
@@ -160,12 +161,12 @@ class IndexAction extends UserAction{
 						foreach ($items as $oneitem){
 							$otheritem = $oneitem;
 							unset($otheritem['id']);
-							$otheritem['tokenTall'] = $_POST['token'];
+							$otheritem['tokenTall'] = $me['token'];
 							$otheritem['fromid'] = $oneitem['id'];
 							
-							$item_cate_rec = M('item_cate')->where(array('fromid'=>$otheritem['cate_id'], 'tokenTall'=>$_POST['token']))->find();
+							$item_cate_rec = M('item_cate')->where(array('fromid'=>$otheritem['cate_id'], 'tokenTall'=>$me['token']))->find();
 							$otheritem['cate_id'] = $item_cate_rec['id'];
-							$item_brand_rec = M('brandlist')->where(array('fromid'=>$otheritem['brand'], 'tokenTall'=>$_POST['token']))->find();
+							$item_brand_rec = M('brandlist')->where(array('fromid'=>$otheritem['brand'], 'tokenTall'=>$me['token']))->find();
 							$otheritem['brand'] = $item_brand_rec['id'];
 					
 							$items_mod->add($otheritem);
