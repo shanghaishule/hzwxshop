@@ -91,7 +91,7 @@ class IndexAction extends BaseAction{
 			echo '<script>window.location.href="/cms/index.php?token='.$this->token.'&wecha_id='.$this->wecha_id.'";</script>';
 			exit();
 		}
-				
+		$where['token']=$this->_get('token');		
 		$flash=M('Flash')->where($where)->select();
 		$flash=$this->convertLinks($flash);
 		$count=count($flash);

@@ -12,7 +12,7 @@ class FunctionAction extends UserAction{
 
 		//遍历功能列表
 		$token_open=M('Token_open');
-		$toback=$token_open->field('id,queryname')->where(array('token'=>session('token'),'uid'=>session('uid')))->find();
+		$toback=$token_open->field('id,queryname')->where(array('token'=>session('token')))->find();
 		if (! $toback) {
 			$allfun=M('Function')->where(array('belonguser'=>session('belonguser')))->select();
 			//$allfun=$model->table('tp_function a, tp_user b, tp_users c')->where('a.belonguser = b.id and b.id = c.belonguser and c.id = '.session('uid'))->field('a.*')->select();
