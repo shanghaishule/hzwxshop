@@ -334,13 +334,17 @@ class itemAction extends backendAction {
 
             //更新商品
             $this->_mod->where(array('id'=>$item_id))->save($data);
+            
+            //更新图片和相册
+            $item_imgs && M('item_img')->addAll($item_imgs);
+
             //如果是主号，则同步更新其他号的这个商品
             if ($_SESSION['is_master'] === "true") {
             	$data_other = $data;
             	unset($data_other['id']);
             	unset($data_other['tokenTall']);
             	unset($data_other['fromid']);
-
+            
             	$alltoken = $this->_mod->where(array('fromid'=>$item_id))->select();
             	foreach ($alltoken as $onetoken){
             		$data_other['id'] = $onetoken['id'];
@@ -349,14 +353,24 @@ class itemAction extends backendAction {
             		$item_brand_rec = M('brandlist')->where(array('fromid'=>$data['brand'], 'tokenTall'=>$onetoken['tokenTall']))->find();
             		$data_other['brand'] = $item_brand_rec['id'];
             		$this->_mod->save($data_other);
-            	}
             	
+            		//更新图片和相册
+            		if($item_imgs){
+            			$item_imgs_other = $item_imgs;
+            			//dump($item_imgs_other);
+            			foreach ($item_imgs_other as $key => $value) {
+            				unset($item_imgs_other[$key]['item_id']);
+            				$item_imgs_other[$key]['item_id'] = $onetoken['id'];
+            			}
+            			//dump($item_imgs_other);exit;
+            			
+            			M('item_img')->addAll($item_imgs_other);
+            		}
+            	}
+            	 
             }
             
             
-            //更新图片和相册
-            $item_imgs && M('item_img')->addAll($item_imgs);
-
             //附加属性
             $attr = $this->_post('attr', ',');
             if( $attr ){
@@ -411,6 +425,11 @@ class itemAction extends backendAction {
         $album_id = $this->_get('album_id','intval');
         $album_img = $album_mod->where('id='.$album_id)->getField('url');
         if( $album_img ){
+        	//如果是主号，则同步更新其他号的这个商品
+            if ($_SESSION['is_master'] === "true") {
+            	$album_mod->where(array('url'=>$album_img))->delete();
+            }
+        	
             $ext = array_pop(explode('.', $album_img));
             $album_min_img = C('pin_attach_path') . 'item/' . str_replace('.' . $ext, '_s.' . $ext, $album_img);
             is_file($album_min_img) && @unlink($album_min_img);
@@ -418,6 +437,7 @@ class itemAction extends backendAction {
             is_file($album_img) && @unlink($album_img);
             $album_mod->delete($album_id);
         }
+
         echo '1';
         exit;
     }

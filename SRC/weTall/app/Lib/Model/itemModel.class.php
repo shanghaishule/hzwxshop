@@ -81,7 +81,17 @@ class itemModel extends Model
             		$item_other['brand'] = $item_brand_rec['id'];
             		
             		$item_other['tokenTall'] = $onetoken['token'];
-            		$item_other_mod->add($item_other);
+            		$item_other_id = $item_other_mod->add($item_other);
+            		
+            		//商品相册处理
+            		if (isset($item_other['imgs']) && $item_other['imgs'] && $item_other_id) {
+            			$item_other_img_mod = D('item_img');
+            			foreach ($item_other['imgs'] as $_img_other) {
+            				$_img_other['item_id'] = $item_other_id;
+            				$item_other_img_mod->create($_img_other);
+            				$item_other_img_mod->add();
+            			}
+            		}
             	}
             }
 
@@ -159,6 +169,15 @@ class itemModel extends Model
      * 删除商品也删除关联关系
      */
     protected function _after_delete($data, $options) {
+    	
+    	//如果是主号，则同步删除其他号的这个商品
+    	if ($_SESSION['is_master'] === "true") {
+    		$album_img = M('item_img')->where(array('item_id'=>$data['id']))->select();
+    		foreach ($album_img as $one_img){
+    			M('item_img')->where(array('url'=>$one_img['url']))->delete();
+    		}
+    	}
+    	
         M('item_img')->where(array('item_id'=>$data['id']))->delete();
         M('item_comment')->where(array('item_id'=>$data['id']))->delete();
         M('item_attr')->where(array('item_id'=>$data['id']))->delete();
