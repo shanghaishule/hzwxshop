@@ -66,10 +66,11 @@ class bookAction extends frontendAction {
     	
         $cid = $this->_get('cid', 'intval');
         !$cid && $this->_404();
+        
         //分类数据
-        if (false === $cate_data = F('cate_data')) {
+        //if (false === $cate_data = F('cate_data')) {
             $cate_data = D('item_cate')->cate_data_cache();
-        }
+        //}
        
         //当前分类信息
         if (isset($cate_data[$cid])) {
@@ -78,13 +79,13 @@ class bookAction extends frontendAction {
             $this->_404();
         }
         //分类列表
-        if (false === $cate_list = F('cate_list')) {
+        //if (false === $cate_list = F('cate_list')) {
             $cate_list = D('item_cate')->cate_cache();
-        }
+        //}
         //分类关系
-        if (false === $cate_relate = F('cate_relate')) {
+        //if (false === $cate_relate = F('cate_relate')) {
             $cate_relate = D('item_cate')->relate_cache();
-        }
+        //}
         //获取当前分类的顶级分类
         $tid = $cate_relate[$cid]['tid']; 
       
