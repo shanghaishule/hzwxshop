@@ -169,7 +169,13 @@ class IndexAction extends UserAction{
 							$item_brand_rec = M('brandlist')->where(array('fromid'=>$otheritem['brand'], 'tokenTall'=>$me['token']))->find();
 							$otheritem['brand'] = $item_brand_rec['id'];
 					
-							$items_mod->add($otheritem);
+							$item_other_id = $items_mod->add($otheritem);
+							
+							//商品相册处理
+							if ($item_other_id) {
+								$item_other_img_mod = M('item_img');
+								$item_other_img_mod->add(array('item_id'=>$item_other_id, 'url'=>$oneitem['img'], 'status'=>1));
+							}
 						}
 					}
 					//end by zcb 20140331
